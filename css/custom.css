@@ -1,0 +1,614 @@
+/* ==========================================================================
+   custom.css - Tailwind CSS を補完するカスタムスタイル
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. カスタムプロパティ（カラースキーム）
+   -------------------------------------------------------------------------- */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3651d4;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-yellow: #f59e0b;
+}
+
+/* --------------------------------------------------------------------------
+   2. ベースリセット・スムーズスクロール
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. カスタムスクロールバー
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Firefox 用 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 var(--bg-dark);
+}
+
+/* --------------------------------------------------------------------------
+   4. スクロールアニメーション（Intersection Observer 連携）
+   -------------------------------------------------------------------------- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 遅延バリエーション */
+.fade-in-up.delay-100 { transition-delay: 0.1s; }
+.fade-in-up.delay-200 { transition-delay: 0.2s; }
+.fade-in-up.delay-300 { transition-delay: 0.3s; }
+.fade-in-up.delay-400 { transition-delay: 0.4s; }
+
+/* --------------------------------------------------------------------------
+   5. Hero 背景グラデーションアニメーション
+   -------------------------------------------------------------------------- */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.hero-bg {
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark) 0%,
+    #1a1a4e 25%,
+    var(--primary-dark) 50%,
+    #1a1a4e 75%,
+    var(--bg-dark) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* --------------------------------------------------------------------------
+   6. カードホバーエフェクト
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-card-hover);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.4),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   7. カテゴリフィルタータブ
+   -------------------------------------------------------------------------- */
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* スクロールバー非表示 */
+.filter-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-tabs {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.filter-tab {
+  flex-shrink: 0;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+
+.filter-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 1px;
+  transition: transform 0.2s ease;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+}
+
+.filter-tab.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+.filter-tab.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   8. テクノロジータグ（ピル型）
+   -------------------------------------------------------------------------- */
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* カテゴリ別カラー */
+.tech-tag--python {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.tech-tag--js {
+  color: var(--accent-yellow);
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+.tech-tag--gas {
+  color: var(--accent-green);
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.tech-tag--api {
+  color: #a78bfa;
+  background-color: rgba(167, 139, 250, 0.15);
+}
+
+.tech-tag--db {
+  color: var(--accent-red);
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.tech-tag--default {
+  color: var(--text-secondary);
+  background-color: rgba(148, 163, 184, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   9. モーダル
+   -------------------------------------------------------------------------- */
+
+/* オーバーレイ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* モーダル本体 */
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 640px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: var(--bg-card);
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2rem;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.is-open .modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+  background-color: rgba(148, 163, 184, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   10. AI 推薦セクション - チャット風 UI
+   -------------------------------------------------------------------------- */
+
+/* 吹き出し共通 */
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.875rem 1.25rem;
+  border-radius: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  animation: bubble-in 0.4s ease forwards;
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ユーザー側 */
+.chat-bubble--user {
+  align-self: flex-end;
+  background-color: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 0.25rem;
+}
+
+/* AI 側 */
+.chat-bubble--ai {
+  align-self: flex-start;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid #334155;
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* ローディングアニメーション（3つの点が順に跳ねる） */
+.chat-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.chat-loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  animation: dot-bounce 1.4s ease-in-out infinite;
+}
+
+.chat-loading-dot:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.chat-loading-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes dot-bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 結果カードのスライドイン */
+.ai-result-card {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slide-in-left 0.5s ease forwards;
+}
+
+@keyframes slide-in-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ai-result-card:nth-child(2) { animation-delay: 0.1s; }
+.ai-result-card:nth-child(3) { animation-delay: 0.2s; }
+.ai-result-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* --------------------------------------------------------------------------
+   11. お問い合わせフォーム
+   -------------------------------------------------------------------------- */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+/* 送信ボタン */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.4);
+}
+
+.btn-submit:active {
+  transform: scale(0.97);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 送信完了チェックマークアニメーション */
+.submit-success {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-green);
+  animation: checkmark-pop 0.4s ease forwards;
+}
+
+@keyframes checkmark-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: checkmark-draw 0.4s ease 0.3s forwards;
+}
+
+@keyframes checkmark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. ハンバーガーメニュー（モバイル）
+   -------------------------------------------------------------------------- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* 3本線 -> X トランスフォーム */
+.hamburger.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* モバイルメニュー展開 */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.mobile-menu.is-open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   13. 数字カウントアップ
+   -------------------------------------------------------------------------- */
+.counter {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   14. ユーティリティ
+   -------------------------------------------------------------------------- */
+
+/* テキスト省略（1行） */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* テキスト省略（複数行） */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* グラスモーフィズム */
+.glass {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* グローエフェクト */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
