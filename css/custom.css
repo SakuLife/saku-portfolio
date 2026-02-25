@@ -1,21 +1,31 @@
 /* ==========================================================================
-   custom.css - Tailwind CSS を補完するカスタムスタイル
+   custom.css - ライトテーマ（Excel Green / Warm & Friendly）
+   キャラクター: ちびアニメ男の子 × Excel グリーン
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. カスタムプロパティ（カラースキーム）
+   1. カスタムプロパティ（ライトテーマ カラースキーム）
    -------------------------------------------------------------------------- */
 :root {
-  --primary: #4361ee;
-  --primary-dark: #3651d4;
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --bg-card-hover: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-green: #10b981;
-  --accent-red: #ef4444;
-  --accent-yellow: #f59e0b;
+  --primary: #217346;
+  --primary-light: #2d8c4e;
+  --primary-dark: #1a5c38;
+  --bg-main: #fafbf7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f7f1;
+  --card-border: #e8ebe5;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-muted: #b2bec3;
+  --accent-green: #27ae60;
+  --accent-yellow: #f39c12;
+  --accent-red: #e74c3c;
+  --shadow-soft: rgba(0, 0, 0, 0.06);
+  --shadow-hover: rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --radius-card: 16px;
+  --green-focus-ring: 0 0 0 3px rgba(33, 115, 70, 0.2);
 }
 
 /* --------------------------------------------------------------------------
@@ -26,12 +36,13 @@ html {
 }
 
 body {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-main);
   color: var(--text-primary);
+  font-family: "Noto Sans JP", "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
 /* --------------------------------------------------------------------------
-   3. カスタムスクロールバー
+   3. カスタムスクロールバー（ライトテーマ）
    -------------------------------------------------------------------------- */
 ::-webkit-scrollbar {
   width: 6px;
@@ -39,27 +50,29 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: #f0f2ed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #c4c9be;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #a3a99e;
 }
 
-/* Firefox 用 */
+/* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #475569 var(--bg-dark);
+  scrollbar-color: #c4c9be #f0f2ed;
 }
 
 /* --------------------------------------------------------------------------
    4. スクロールアニメーション（Intersection Observer 連携）
    -------------------------------------------------------------------------- */
+
+/* fade-in-up: custom.css 独自 */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -77,8 +90,20 @@ body {
 .fade-in-up.delay-300 { transition-delay: 0.3s; }
 .fade-in-up.delay-400 { transition-delay: 0.4s; }
 
+/* fade-in-section: HTML インラインから移行 （JS が .is-visible を付与） */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* --------------------------------------------------------------------------
-   5. Hero 背景グラデーションアニメーション
+   5. Hero 背景（ソフト＆ウォーム、パーティクルなし）
    -------------------------------------------------------------------------- */
 @keyframes gradient-shift {
   0% {
@@ -93,16 +118,41 @@ body {
 }
 
 .hero-bg {
-  background: linear-gradient(
-    135deg,
-    var(--bg-dark) 0%,
-    #1a1a4e 25%,
-    var(--primary-dark) 50%,
-    #1a1a4e 75%,
-    var(--bg-dark) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(33, 115, 70, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(39, 174, 96, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 80%, rgba(243, 156, 18, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #fafbf7 0%, #f0f5ec 100%);
+  background-size: 100% 100%;
+}
+
+/* ソフトなフローティンググロー（パーティクルの代替） */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 40%, rgba(33, 115, 70, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 60%, rgba(39, 174, 96, 0.04) 0%, transparent 50%);
+  animation: heroFloat 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes heroFloat {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.05) translate(-10px, -10px); }
+}
+
+/* パーティクル風の点は不要 -> 微細なドットパターンに置き換え */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(33, 115, 70, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -110,16 +160,30 @@ body {
    -------------------------------------------------------------------------- */
 .card {
   background-color: var(--bg-card);
-  border-radius: 0.75rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  background-color: var(--bg-card-hover);
-  box-shadow:
-    0 10px 25px -5px rgba(0, 0, 0, 0.4),
-    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(33, 115, 70, 0.25);
+}
+
+/* card-hover: HTML インラインクラスとの互換 */
+.card-hover {
+  background-color: var(--bg-card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(33, 115, 70, 0.3);
 }
 
 /* --------------------------------------------------------------------------
@@ -151,7 +215,7 @@ body {
   font-weight: 500;
   color: var(--text-secondary);
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid var(--card-border);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
   position: relative;
@@ -172,20 +236,28 @@ body {
 
 .filter-tab:hover {
   color: var(--text-primary);
+  border-color: #c4c9be;
+  background-color: #f4f7f1;
 }
 
 .filter-tab.active {
-  color: var(--primary);
+  color: #ffffff;
   border-color: var(--primary);
-  background-color: rgba(67, 97, 238, 0.1);
+  background-color: var(--primary);
+}
+
+.filter-tab.active:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 
 .filter-tab.active::after {
   transform: translateX(-50%) scaleX(1);
+  background-color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
-   8. テクノロジータグ（ピル型）
+   8. テクノロジータグ（ピル型 - ライトテーマ）
    -------------------------------------------------------------------------- */
 .tech-tag {
   display: inline-flex;
@@ -196,41 +268,48 @@ body {
   font-weight: 500;
   line-height: 1.4;
   white-space: nowrap;
+  border: 1px solid transparent;
 }
 
-/* カテゴリ別カラー */
+/* カテゴリ別カラー（ライト背景向け） */
 .tech-tag--python {
-  color: #3b82f6;
-  background-color: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.15);
 }
 
 .tech-tag--js {
-  color: var(--accent-yellow);
-  background-color: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  background-color: rgba(217, 119, 6, 0.08);
+  border-color: rgba(217, 119, 6, 0.15);
 }
 
 .tech-tag--gas {
-  color: var(--accent-green);
-  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--primary);
+  background-color: rgba(33, 115, 70, 0.08);
+  border-color: rgba(33, 115, 70, 0.15);
 }
 
 .tech-tag--api {
-  color: #a78bfa;
-  background-color: rgba(167, 139, 250, 0.15);
+  color: #7c3aed;
+  background-color: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.15);
 }
 
 .tech-tag--db {
-  color: var(--accent-red);
-  background-color: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  background-color: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.15);
 }
 
 .tech-tag--default {
   color: var(--text-secondary);
-  background-color: rgba(148, 163, 184, 0.15);
+  background-color: rgba(99, 110, 114, 0.08);
+  border-color: rgba(99, 110, 114, 0.12);
 }
 
 /* --------------------------------------------------------------------------
-   9. モーダル
+   9. モーダル（ライト背景）
    -------------------------------------------------------------------------- */
 
 /* オーバーレイ */
@@ -241,9 +320,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(45, 52, 54, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -262,9 +341,10 @@ body {
   max-height: 80vh;
   overflow-y: auto;
   background-color: var(--bg-card);
-  border: 1px solid #334155;
-  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
   padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
   transform: translateY(20px) scale(0.95);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -294,11 +374,11 @@ body {
 
 .modal-close:hover {
   color: var(--text-primary);
-  background-color: rgba(148, 163, 184, 0.15);
+  background-color: rgba(99, 110, 114, 0.1);
 }
 
 /* --------------------------------------------------------------------------
-   10. AI 推薦セクション - チャット風 UI
+   10. AI 推薦セクション - チャット風 UI（ライトテーマ）
    -------------------------------------------------------------------------- */
 
 /* 吹き出し共通 */
@@ -333,9 +413,35 @@ body {
 /* AI 側 */
 .chat-bubble--ai {
   align-self: flex-start;
-  background-color: var(--bg-card);
+  background-color: #f0f5ec;
   color: var(--text-primary);
-  border: 1px solid #334155;
+  border: 1px solid var(--card-border);
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* ai-bubble: JS 互換クラス */
+.ai-bubble {
+  max-width: 85%;
+  padding: 0.875rem 1.25rem;
+  border-radius: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  animation: bubble-in 0.4s ease forwards;
+}
+
+.ai-bubble.user-message {
+  align-self: flex-end;
+  background-color: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 0.25rem;
+  margin-left: auto;
+}
+
+.ai-bubble.ai-message {
+  align-self: flex-start;
+  background-color: #f0f5ec;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
   border-bottom-left-radius: 0.25rem;
 }
 
@@ -351,7 +457,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--text-secondary);
+  background-color: var(--text-muted);
   animation: dot-bounce 1.4s ease-in-out infinite;
 }
 
@@ -360,6 +466,31 @@ body {
 }
 
 .chat-loading-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+/* loading-dots: JS 互換クラス */
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0.5;
+  animation: dot-bounce 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.loading-dots span:nth-child(3) {
   animation-delay: 0.32s;
 }
 
@@ -390,8 +521,22 @@ body {
 .ai-result-card:nth-child(3) { animation-delay: 0.2s; }
 .ai-result-card:nth-child(4) { animation-delay: 0.3s; }
 
+/* slide-in-result: JS 互換クラス */
+.slide-in-result {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slide-in-result-anim 0.5s ease forwards;
+}
+
+@keyframes slide-in-result-anim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --------------------------------------------------------------------------
-   11. お問い合わせフォーム
+   11. お問い合わせフォーム（ライトテーマ）
    -------------------------------------------------------------------------- */
 .form-input,
 .form-select,
@@ -399,8 +544,8 @@ body {
   width: 100%;
   padding: 0.75rem 1rem;
   background-color: var(--bg-card);
-  border: 1px solid #334155;
-  border-radius: 0.5rem;
+  border: 1px solid var(--card-border);
+  border-radius: 0.625rem;
   color: var(--text-primary);
   font-size: 0.9375rem;
   outline: none;
@@ -409,14 +554,14 @@ body {
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+  box-shadow: var(--green-focus-ring);
 }
 
 /* 送信ボタン */
@@ -431,14 +576,14 @@ body {
   font-weight: 600;
   font-size: 0.9375rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .btn-submit:hover {
-  background-color: var(--primary-dark);
-  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.4);
+  background-color: var(--primary-light);
+  box-shadow: 0 4px 16px rgba(33, 115, 70, 0.3);
 }
 
 .btn-submit:active {
@@ -446,7 +591,7 @@ body {
 }
 
 .btn-submit:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -500,7 +645,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   12. ハンバーガーメニュー（モバイル）
+   12. ハンバーガーメニュー（ライトテーマ）
    -------------------------------------------------------------------------- */
 .hamburger {
   display: flex;
@@ -539,28 +684,33 @@ body {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* モバイルメニュー展開 */
+/* モバイルメニュー（右からスライドイン、ライト背景） */
 .mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--card-border);
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
 }
 
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* 旧形式（max-height展開）のフォールバック */
 .mobile-menu.is-open {
-  max-height: 400px;
-  opacity: 1;
+  transform: translateX(0);
 }
 
 /* --------------------------------------------------------------------------
-   13. 数字カウントアップ
+   13. 数字カウントアップ（グリーンカラー）
    -------------------------------------------------------------------------- */
 .counter {
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--primary);
   font-variant-numeric: tabular-nums;
 }
 
@@ -596,19 +746,170 @@ body {
   overflow: hidden;
 }
 
-/* グラスモーフィズム */
+/* グラスモーフィズム（ライトテーマ） */
 .glass {
-  background: rgba(30, 41, 59, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(232, 235, 229, 0.6);
 }
 
-/* グローエフェクト */
+/* グローエフェクト（ライトテーマ） */
 .glow-primary {
-  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3);
+  box-shadow: 0 0 20px rgba(33, 115, 70, 0.2);
 }
 
 .glow-green {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   15. プロジェクトカード（ライトテーマ）
+   -------------------------------------------------------------------------- */
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   16. グラデーションテキスト（グリーン）
+   -------------------------------------------------------------------------- */
+.gradient-text {
+  background: linear-gradient(135deg, #217346, #27ae60, #217346);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* --------------------------------------------------------------------------
+   17. バッジグロー（グリーンパルス）
+   -------------------------------------------------------------------------- */
+.badge-glow {
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(33, 115, 70, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(33, 115, 70, 0.1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. セクション区切りライン（ライトグリーン）
+   -------------------------------------------------------------------------- */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(33, 115, 70, 0.2), transparent);
+}
+
+/* --------------------------------------------------------------------------
+   19. 追加ユーティリティ
+   -------------------------------------------------------------------------- */
+
+/* グリーングラデーションテキスト（ユーティリティ） */
+.text-gradient-green {
+  background: linear-gradient(135deg, #217346, #27ae60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ソフトカード（汎用） */
+.soft-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(33, 115, 70, 0.2);
+}
+
+/* グリーンフォーカスリング（汎用） */
+.focus-green:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--green-focus-ring);
+}
+
+/* ボタンプライマリ（汎用） */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  box-shadow: 0 4px 16px rgba(33, 115, 70, 0.25);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ボタンアウトライン（汎用） */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1.5px solid var(--primary);
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-outline:active {
+  transform: scale(0.97);
+}
+
+/* セレクション色 */
+::selection {
+  background-color: rgba(33, 115, 70, 0.15);
+  color: var(--text-primary);
 }

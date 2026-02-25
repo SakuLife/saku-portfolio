@@ -4,17 +4,17 @@
  */
 
 const CATEGORIES = {
-  youtube: { label: "YouTube自動化", icon: "🎬", color: "#ff0000" },
-  ec: { label: "EC・物販", icon: "🛒", color: "#f59e0b" },
-  sns: { label: "SNS・メッセージ", icon: "📱", color: "#8b5cf6" },
-  shift: { label: "勤怠・シフト管理", icon: "📅", color: "#10b981" },
-  document: { label: "帳票・書類", icon: "📄", color: "#3b82f6" },
-  accounting: { label: "経理・給与", icon: "💰", color: "#ef4444" },
-  education: { label: "教育・学校", icon: "🎓", color: "#06b6d4" },
-  realestate: { label: "不動産", icon: "🏠", color: "#84cc16" },
-  email: { label: "メール自動化", icon: "✉️", color: "#ec4899" },
-  data: { label: "データ分析", icon: "📊", color: "#6366f1" },
-  other: { label: "その他", icon: "⚙️", color: "#64748b" },
+  youtube: { label: "YouTube自動化", icon: "🎬", color: "#dc2626" },
+  ec: { label: "EC・物販", icon: "🛒", color: "#d97706" },
+  sns: { label: "SNS・メッセージ", icon: "📱", color: "#7c3aed" },
+  shift: { label: "勤怠・シフト管理", icon: "📅", color: "#059669" },
+  document: { label: "帳票・書類", icon: "📄", color: "#2563eb" },
+  accounting: { label: "経理・給与", icon: "💰", color: "#dc2626" },
+  education: { label: "教育・学校", icon: "🎓", color: "#0891b2" },
+  realestate: { label: "不動産", icon: "🏠", color: "#65a30d" },
+  email: { label: "メール自動化", icon: "✉️", color: "#db2777" },
+  data: { label: "データ分析", icon: "📊", color: "#4f46e5" },
+  other: { label: "その他", icon: "⚙️", color: "#475569" },
 };
 
 const PROJECTS = [

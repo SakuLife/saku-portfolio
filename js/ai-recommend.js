@@ -209,9 +209,9 @@ function renderRecommendations(results, query) {
   if (results.recommendations.length === 0) {
     container.innerHTML = `
       <div class="ai-bubble ai-message slide-in-result">
-        <p class="text-gray-300">申し訳ありません。「${escapeHtml(query)}」に直接マッチする実績は見つかりませんでした。</p>
-        <p class="text-gray-400 text-sm mt-2">お問い合わせいただければ、ご要望に合わせたカスタム開発のご提案が可能です。</p>
-        <a href="#contact" class="inline-block mt-3 bg-accent hover:bg-accent/80 text-white px-4 py-2 rounded-lg text-sm transition-colors">お問い合わせする</a>
+        <p class="text-gray-600">申し訳ありません。「${escapeHtml(query)}」に直接マッチする実績は見つかりませんでした。</p>
+        <p class="text-gray-500 text-sm mt-2">お問い合わせいただければ、ご要望に合わせたカスタム開発のご提案が可能です。</p>
+        <a href="#contact" class="inline-block mt-3 bg-primary hover:bg-primary-light text-white px-4 py-2 rounded-lg text-sm transition-colors">お問い合わせする</a>
       </div>
     `;
     return;
@@ -219,8 +219,8 @@ function renderRecommendations(results, query) {
 
   const sourceLabel =
     results.source === "gemini"
-      ? '<span class="text-xs text-accent">✨ Gemini AIが分析しました</span>'
-      : '<span class="text-xs text-gray-500">📋 キーワードマッチングの結果です</span>';
+      ? '<span class="text-xs text-primary">✨ AIが分析しました</span>'
+      : '<span class="text-xs text-gray-400">📋 キーワードで検索しました</span>';
 
   const cardsHtml = results.recommendations
     .map((rec, index) => {
@@ -229,26 +229,26 @@ function renderRecommendations(results, query) {
       const cat = CATEGORIES[project.category] || CATEGORIES.other;
 
       return `
-      <div class="slide-in-result bg-navy-800 border border-navy-700 rounded-xl p-4 hover:border-accent/50 transition-all cursor-pointer"
+      <div class="slide-in-result bg-white border border-gray-200 rounded-xl p-4 hover:border-primary/50 transition-all cursor-pointer"
            style="animation-delay: ${index * 100}ms"
            onclick="openProjectModal('${project.id}')">
         <div class="flex items-start justify-between mb-2">
           <div class="flex items-center gap-2">
             <span class="text-2xl">${cat.icon}</span>
             <div>
-              <h4 class="text-white font-bold text-sm">${project.title}</h4>
+              <h4 class="text-gray-800 font-bold text-sm">${project.title}</h4>
               <span class="text-xs px-2 py-0.5 rounded-full" style="background: ${cat.color}22; color: ${cat.color}">${cat.label}</span>
             </div>
           </div>
           <div class="text-right">
-            <div class="text-accent font-bold text-lg">${rec.matchScore}%</div>
-            <div class="text-gray-500 text-xs">マッチ度</div>
+            <div class="text-primary font-bold text-lg">${rec.matchScore}%</div>
+            <div class="text-gray-400 text-xs">マッチ度</div>
           </div>
         </div>
-        <p class="text-gray-400 text-xs mb-2">${rec.reason}</p>
+        <p class="text-gray-500 text-xs mb-2">${rec.reason}</p>
         <div class="flex items-center justify-between">
-          <span class="text-accent text-sm font-bold">${project.estimatedPrice}</span>
-          <span class="text-gray-500 text-xs">詳細を見る →</span>
+          <span class="text-primary text-sm font-bold">${project.estimatedPrice}</span>
+          <span class="text-gray-400 text-xs">詳細を見る →</span>
         </div>
       </div>
     `;
@@ -257,15 +257,15 @@ function renderRecommendations(results, query) {
 
   container.innerHTML = `
     <div class="ai-bubble ai-message slide-in-result mb-4">
-      <p class="text-gray-300 mb-2">「${escapeHtml(query)}」に関連する実績を${results.recommendations.length}件見つけました。</p>
+      <p class="text-gray-600 mb-2">「${escapeHtml(query)}」に関連する実績を${results.recommendations.length}件見つけました。</p>
       ${sourceLabel}
     </div>
     <div class="grid gap-3">
       ${cardsHtml}
     </div>
     <div class="mt-4 text-center">
-      <p class="text-gray-500 text-xs mb-2">ぴったりのものが見つからない場合も、カスタム開発が可能です</p>
-      <a href="#contact" class="inline-block bg-accent hover:bg-accent/80 text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors">
+      <p class="text-gray-400 text-xs mb-2">ぴったりのものが見つからない場合も、カスタム開発が可能です</p>
+      <a href="#contact" class="inline-block bg-primary hover:bg-primary-light text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors">
         お問い合わせする
       </a>
     </div>
@@ -305,7 +305,7 @@ async function submitAIQuery() {
       <div class="loading-dots">
         <span></span><span></span><span></span>
       </div>
-      <p class="text-gray-400 text-sm mt-2">分析中...</p>
+      <p class="text-gray-500 text-sm mt-2">分析中...</p>
     </div>
   `;
 
@@ -327,7 +327,7 @@ async function submitAIQuery() {
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles mr-2"></i>AIに提案してもらう';
+      submitBtn.innerHTML = '<i class="fa-solid fa-search mr-2"></i>検索する';
     }
   }
 }

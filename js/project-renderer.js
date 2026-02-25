@@ -8,6 +8,16 @@ let displayCount = 12;
 const ITEMS_PER_LOAD = 12;
 
 /**
+ * HEXカラーをrgba文字列に変換
+ */
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+/**
  * プロジェクトカードのHTML生成
  */
 function createProjectCard(project) {
@@ -23,19 +33,19 @@ function createProjectCard(project) {
 
   const imageHtml = project.image
     ? `<img src="${project.image}" alt="${project.title}" class="w-full h-40 object-cover rounded-t-xl">`
-    : `<div class="w-full h-40 rounded-t-xl flex items-center justify-center text-5xl" style="background: linear-gradient(135deg, ${cat.color}22, ${cat.color}44)">${cat.icon}</div>`;
+    : `<div class="w-full h-40 rounded-t-xl flex items-center justify-center text-5xl" style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5)">${cat.icon}</div>`;
 
   const typeLabel =
     project.type === "python"
-      ? '<span class="absolute top-3 right-3 bg-blue-600/80 text-white text-xs px-2 py-0.5 rounded-full backdrop-blur-sm">Python</span>'
-      : '<span class="absolute top-3 right-3 bg-green-600/80 text-white text-xs px-2 py-0.5 rounded-full backdrop-blur-sm">Excel VBA</span>';
+      ? '<span class="absolute top-3 right-3 text-white text-xs px-2 py-0.5 rounded-full" style="background:rgba(37,99,235,0.85)">Python</span>'
+      : '<span class="absolute top-3 right-3 text-white text-xs px-2 py-0.5 rounded-full" style="background:rgba(22,163,74,0.85)">Excel VBA</span>';
 
   const featuredBadge = project.featured
-    ? '<span class="absolute top-3 left-3 bg-yellow-500/90 text-gray-900 text-xs font-bold px-2 py-0.5 rounded-full">詳細あり</span>'
+    ? '<span class="absolute top-3 left-3 text-xs font-bold px-2 py-0.5 rounded-full" style="background:rgba(234,179,8,0.9);color:#1a1a1a">詳細あり</span>'
     : "";
 
   return `
-    <div class="project-card bg-navy-800 border border-navy-700 rounded-xl overflow-hidden cursor-pointer hover:border-accent/50 transition-all duration-300"
+    <div class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer hover:border-primary/50 transition-all duration-300"
          data-project-id="${project.id}"
          onclick="openProjectModal('${project.id}')">
       <div class="relative">
@@ -45,16 +55,16 @@ function createProjectCard(project) {
       </div>
       <div class="p-5">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-xs px-2 py-0.5 rounded-full" style="background: ${cat.color}22; color: ${cat.color}">${cat.label}</span>
+          <span class="text-xs px-2 py-0.5 rounded-full" style="background: ${hexToRgba(cat.color, 0.1)}; color: ${cat.color}">${cat.label}</span>
         </div>
-        <h3 class="text-white font-bold text-sm mb-2 line-clamp-2">${project.title}</h3>
-        <p class="text-gray-400 text-xs mb-3 line-clamp-2">${project.summary}</p>
+        <h3 class="text-gray-800 font-bold text-sm mb-2 line-clamp-2">${project.title}</h3>
+        <p class="text-gray-500 text-xs mb-3 line-clamp-2">${project.summary}</p>
         <div class="flex flex-wrap gap-1 mb-3">
           ${tagsHtml}${remainingTags}
         </div>
-        <div class="flex items-center justify-between pt-3 border-t border-navy-700">
-          <span class="text-accent font-bold text-sm">${project.estimatedPrice}</span>
-          <span class="text-gray-500 text-xs">${project.priceNote || ""}</span>
+        <div class="flex items-center justify-between pt-3 border-t border-gray-200">
+          <span class="text-primary font-bold text-sm">${project.estimatedPrice}</span>
+          <span class="text-gray-400 text-xs">${project.priceNote || ""}</span>
         </div>
       </div>
     </div>
@@ -131,16 +141,16 @@ function openProjectModal(projectId) {
 
   const detailHtml = project.detail
     ? `<div class="mb-6">
-        <h4 class="text-white font-bold mb-2">詳細説明</h4>
-        <p class="text-gray-300 text-sm leading-relaxed">${project.detail}</p>
+        <h4 class="text-gray-800 font-bold mb-2">詳細説明</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">${project.detail}</p>
        </div>`
-    : `<div class="mb-6 p-4 rounded-lg bg-navy-900/50 border border-navy-700">
-        <p class="text-gray-400 text-sm">詳細説明はお問い合わせください。類似のシステム開発もご相談可能です。</p>
+    : `<div class="mb-6 p-4 rounded-lg bg-gray-50 border border-gray-200">
+        <p class="text-gray-500 text-sm">詳細説明はお問い合わせください。類似のシステム開発もご相談可能です。</p>
        </div>`;
 
   const imageHtml = project.image
     ? `<img src="${project.image}" alt="${project.title}" class="w-full h-56 object-cover rounded-xl mb-6">`
-    : `<div class="w-full h-56 rounded-xl mb-6 flex items-center justify-center text-7xl" style="background: linear-gradient(135deg, ${cat.color}22, ${cat.color}44)">${cat.icon}</div>`;
+    : `<div class="w-full h-56 rounded-xl mb-6 flex items-center justify-center text-7xl" style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5)">${cat.icon}</div>`;
 
   const modal = document.getElementById("project-modal");
   const content = document.getElementById("modal-content");
@@ -148,28 +158,28 @@ function openProjectModal(projectId) {
   content.innerHTML = `
     <div class="flex items-center justify-between mb-4">
       <div class="flex items-center gap-2">
-        <span class="text-sm px-3 py-1 rounded-full" style="background: ${cat.color}22; color: ${cat.color}">${cat.label}</span>
-        <span class="text-xs px-2 py-0.5 rounded-full ${project.type === "python" ? "bg-blue-600/80" : "bg-green-600/80"} text-white">
+        <span class="text-sm px-3 py-1 rounded-full" style="background: ${hexToRgba(cat.color, 0.1)}; color: ${cat.color}">${cat.label}</span>
+        <span class="text-xs px-2 py-0.5 rounded-full text-white" style="background:${project.type === "python" ? "rgba(37,99,235,0.85)" : "rgba(22,163,74,0.85)"}">
           ${project.type === "python" ? "Python" : "Excel VBA"}
         </span>
       </div>
-      <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+      <button onclick="closeProjectModal()" class="text-gray-400 hover:text-gray-800 text-2xl">&times;</button>
     </div>
-    <h2 class="text-white text-xl font-bold mb-4">${project.title}</h2>
+    <h2 class="text-gray-800 text-xl font-bold mb-4">${project.title}</h2>
     ${imageHtml}
-    <p class="text-gray-300 mb-4">${project.summary}</p>
+    <p class="text-gray-600 mb-4">${project.summary}</p>
     ${detailHtml}
     <div class="mb-6">
-      <h4 class="text-white font-bold mb-2">使用技術</h4>
+      <h4 class="text-gray-800 font-bold mb-2">使用技術</h4>
       <div class="flex flex-wrap gap-2">${tagsHtml}</div>
     </div>
-    <div class="flex items-center justify-between p-4 rounded-xl bg-accent/10 border border-accent/30">
+    <div class="flex items-center justify-between p-4 rounded-xl bg-primary-50 border border-primary/30">
       <div>
-        <p class="text-gray-400 text-xs">開発目安金額</p>
-        <p class="text-accent font-bold text-xl">${project.estimatedPrice}</p>
-        <p class="text-gray-500 text-xs">${project.priceNote || ""}</p>
+        <p class="text-gray-500 text-xs">開発目安金額</p>
+        <p class="text-primary font-bold text-xl">${project.estimatedPrice}</p>
+        <p class="text-gray-400 text-xs">${project.priceNote || ""}</p>
       </div>
-      <a href="#contact" onclick="closeProjectModal()" class="bg-accent hover:bg-accent/80 text-white px-6 py-3 rounded-xl font-bold transition-colors">
+      <a href="#contact" onclick="closeProjectModal()" class="bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-xl font-bold transition-colors">
         相談する
       </a>
     </div>
