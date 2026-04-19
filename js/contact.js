@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       detail || "（記載なし）",
     ].join("\n");
 
-    // mailto:リンクを開く
+    // mailto:リンクを開く（同一タブで開くことで空白タブが残る問題を回避）
     const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoUrl, "_blank");
+    window.location.href = mailtoUrl;
 
     showFormMessage("メールアプリが開きます。送信ボタンを押してください。", "success");
   });
