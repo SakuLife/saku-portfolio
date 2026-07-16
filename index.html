@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saku | Excel VBA × Python 業務自動化</title>
-  <meta name="description" content="Excel VBA・Python を活用した業務自動化・効率化の個人開発者。受注実績70件以上。" />
+  <title>SakuLife｜お店の「めんどくさい」を自動化｜北海道発・オンライン全国対応</title>
+  <meta name="description" content="予約の記録、売上の集計、シフト、請求書…紙とExcelの手作業を、お店に合わせて自動化します。ココナラ評価★4.9／販売実績118件（プラチナランク・本人確認済み）。相談・お見積りは無料、北海道発・オンラインで全国対応（SakuLife）。" />
+  <meta name="theme-color" content="#217346" />
 
   <!-- OGP -->
-  <meta property="og:title" content="Saku | Excel VBA × Python で業務を自動化" />
-  <meta property="og:description" content="Excel VBA × Python で業務の自動化・効率化を支援。受注実績70件以上の個人開発者です。" />
+  <meta property="og:title" content="SakuLife｜お店の「めんどくさい」を、まるごと自動化します" />
+  <meta property="og:description" content="予約・売上集計・シフト・請求書…紙とExcelの手作業を、お店に合わせて自動化。ココナラ評価★4.9／販売実績118件。相談・お見積り無料。北海道発・オンライン全国対応。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sakulife.github.io/saku-portfolio/" />
-  <meta property="og:image" content="https://sakulife.github.io/saku-portfolio/ogp.png" />
+  <meta property="og:image" content="https://sakulife.github.io/saku-portfolio/images/ogp.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <!-- Google Fonts: Noto Sans JP -->
@@ -28,197 +28,141 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['"Noto Sans JP"', 'sans-serif'],
-          },
+          fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'] },
           colors: {
-            primary: {
-              DEFAULT: '#217346',
-              light: '#2d8c4e',
-              dark: '#1a5c38',
-              50: '#f0faf4',
-            },
-            surface: {
-              DEFAULT: '#ffffff',
-              muted: '#fafbf7',
-              card: '#ffffff',
-            },
-            charcoal: {
-              DEFAULT: '#2d3436',
-              light: '#636e72',
-              lighter: '#b2bec3',
-            },
+            primary: { DEFAULT: '#217346', light: '#2d8c4e', dark: '#1a5c38', 50: '#f0faf4' },
+            line: { DEFAULT: '#06c755' },
+            surface: { DEFAULT: '#ffffff', muted: '#fafbf7', card: '#ffffff' },
+            charcoal: { DEFAULT: '#2d3436', light: '#636e72', lighter: '#b2bec3' },
           },
-          maxWidth: {
-            site: '1200px',
-          },
+          maxWidth: { site: '1200px' },
         },
       },
     };
   </script>
 
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- カスタムCSS -->
-  <link rel="stylesheet" href="css/custom.css" />
+  <!--
+    ============================================================
+    ▼▼▼ あとで差し替えるリンク一覧（プレースホルダ）▼▼▼
+    下の <script id="sakulife-links"> の中の URL を書き換えるだけでOK。
+      LINE_URL : LINE公式アカウントの友だち追加リンク
+      LINE_OA_ID : LINE公式アカウントID（@付き）。「相談する」の本文をLINEに事前入力するのに使用
+      NOTE_MEMBERSHIP_URL : note メンバーシップのURL（月額会員の登録先）
+      CONTACT_EMAIL : メール相談先アドレス（LINEが使えない方向けの控え）
+      NOTE_URL : note トップ
+      COCONALA_URL : ココナラ プロフィール/サービス
+      PORTFOLIO_V1_URL : 既存ポートフォリオ（詳しい開発実績）
+    ============================================================
+  -->
+  <script id="sakulife-links">
+    window.SAKULIFE_LINKS = {
+      LINE_URL: "https://lin.ee/ZG89Kuf",   // LINE友だち追加リンク
+      LINE_OA_ID: "@213caarj",       // LINE公式アカウントID。相談文の事前入力に使用
+      NOTE_MEMBERSHIP_URL: "https://note.com/sakusaku_excel/membership", // note メンバーシップ（月額会員）
+      CONTACT_EMAIL: "sktknsk5509@gmail.com", // メール相談先（LINEが使えない方向け）
+      NOTE_URL: "https://note.com/sakusaku_excel",
+      COCONALA_URL: "https://coconala.com/users/2497162", // ココナラ プロフィール
+      PORTFOLIO_V1_URL: "v1.html",
+    };
+  </script>
 
-  <!-- インラインで最低限のカスタムスタイル -->
   <style>
-    /* ========================================
-       ベーススタイル
-    ======================================== */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       background-color: #fafbf7;
       color: #2d3436;
+      font-feature-settings: "palt" 1;      /* 日本語の字詰め（約物・仮名を自然に） */
+      letter-spacing: .01em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2 { letter-spacing: -.02em; }        /* 大見出しは少し締めて力強く */
+    /* 固定ヘッダーに隠れないようアンカー位置を補正 */
+    section[id] { scroll-margin-top: 5rem; }
+    /* キーボード操作のフォーカスを見やすく */
+    a:focus-visible, button:focus-visible { outline: 2px solid #217346; outline-offset: 3px; border-radius: 8px; }
+    /* アニメーションを控える設定の人には動きを止める */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .float-animation, .badge-glow, .fade-in-section { animation: none !important; transition: none !important; }
+      .hero-bg::before { animation: none !important; }
+      .fade-in-section { opacity: 1; transform: none; }
     }
 
-    /* ========================================
-       スクロール連動フェードインアニメーション
-    ======================================== */
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .fade-in-section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in-section { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+    .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
-    /* ========================================
-       Heroセクション背景
-    ======================================== */
-    .hero-bg {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(170deg, #f0faf4 0%, #fafbf7 40%, #fff9f0 100%);
-    }
+    .hero-bg { position: relative; overflow: hidden; background: linear-gradient(168deg, #eef8f1 0%, #fafbf7 44%, #fff8ee 100%); }
     .hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: -20%; z-index: 0;
       background:
-        radial-gradient(circle at 15% 50%, rgba(33, 115, 70, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(33, 115, 70, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(245, 200, 100, 0.05) 0%, transparent 50%);
-      z-index: 0;
+        radial-gradient(circle at 15% 45%, rgba(33,115,70,.10) 0%, transparent 45%),
+        radial-gradient(circle at 82% 28%, rgba(45,140,78,.08) 0%, transparent 45%),
+        radial-gradient(circle at 55% 82%, rgba(245,200,100,.10) 0%, transparent 50%);
+      animation: heroDrift 20s ease-in-out infinite alternate;
     }
+    @keyframes heroDrift { from { transform: translate3d(0,0,0) scale(1);} to { transform: translate3d(-2%,1.5%,0) scale(1.06);} }
 
-    /* ========================================
-       カードホバーエフェクト
-    ======================================== */
-    .card-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(33, 115, 70, 0.08);
-    }
+    /* カード：ホバーで柔らかく持ち上げ（多層シャドウ） */
+    .card-hover { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -16px rgba(16,50,32,.18), 0 0 0 1px rgba(33,115,70,.10); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(33,115,70,.18), transparent); }
+    .float-animation { animation: floatUpDown 5s ease-in-out infinite; }
+    @keyframes floatUpDown { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-12px);} }
+    .badge-glow { animation: badgePulse 4s ease-in-out infinite; }
+    @keyframes badgePulse { 0%,100% { box-shadow: 0 6px 18px rgba(33,115,70,.10);} 50% { box-shadow: 0 10px 30px rgba(33,115,70,.20);} }
+    .mobile-menu { transform: translateX(100%); transition: transform .3s ease; }
+    .mobile-menu.open { transform: translateX(0); }
+    .ver-badge { background: linear-gradient(90deg,#217346,#2d8c4e); }
 
-    /* ========================================
-       フィルタータブのアクティブ状態
-    ======================================== */
-    .filter-tab {
-      transition: all 0.2s ease;
-    }
-    .filter-tab.active {
-      background-color: #217346;
-      color: #ffffff;
-      border-color: #217346;
-    }
+    /* 主要CTA：奥行きのあるグラデ */
+    .cta-primary { background-image: linear-gradient(135deg, #2d8c4e 0%, #217346 58%, #1a5c38 100%); box-shadow: 0 10px 24px -8px rgba(33,115,70,.55); }
+    .cta-primary:hover { box-shadow: 0 14px 30px -8px rgba(33,115,70,.62); }
 
-    /* ========================================
-       アクセントテキスト
-    ======================================== */
-    .text-accent-green {
-      color: #217346;
+    /* ヒーローのキャラ背後のやわらかい光輪 */
+    .avatar-halo { position: relative; }
+    .avatar-halo::before {
+      content: ''; position: absolute; inset: -8%; z-index: 0; border-radius: 9999px;
+      background: radial-gradient(circle, rgba(33,115,70,.18) 0%, rgba(245,200,100,.10) 46%, transparent 70%);
+      filter: blur(8px);
     }
-
-    /* ========================================
-       モバイルメニュー
-    ======================================== */
-    .mobile-menu {
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-    .mobile-menu.open {
-      transform: translateX(0);
-    }
-
-    /* ========================================
-       数字バッジ
-    ======================================== */
-    .badge-glow {
-      animation: badgePulse 3s ease-in-out infinite;
-    }
-    @keyframes badgePulse {
-      0%, 100% { box-shadow: 0 4px 15px rgba(33, 115, 70, 0.1); }
-      50% { box-shadow: 0 4px 25px rgba(33, 115, 70, 0.2); }
-    }
-
-    /* ========================================
-       セクション区切りライン
-    ======================================== */
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(33, 115, 70, 0.15), transparent);
-    }
-
-    /* ========================================
-       キャラクター画像のふわふわアニメーション
-    ======================================== */
-    .float-animation {
-      animation: floatUpDown 3s ease-in-out infinite;
-    }
-    @keyframes floatUpDown {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* ========================================
-       セレクトボックスの矢印（ライトテーマ用）
-    ======================================== */
-    .select-arrow {
-      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22%3E%3Cpath fill=%22%23636e72%22 d=%22M2 4l4 4 4-4%22/%3E%3C/svg%3E');
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-    }
+    .avatar-halo img { position: relative; z-index: 1; }
   </style>
+
+  <!-- 保険：JSが動かない環境でも本文が必ず見えるようにする（フェードインは初期opacity:0のため）-->
+  <noscript>
+    <style>
+      .fade-in-section { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body class="antialiased">
 
-  <!-- =====================================================================
-       ヘッダー（固定ナビゲーション）
-  ====================================================================== -->
+  <!-- ヘッダー -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-
-        <!-- ロゴ -->
         <a href="#" class="text-xl font-bold tracking-tight text-primary flex items-center gap-2">
-          <img src="images/avatar.png" alt="Saku" class="w-8 h-8 rounded-full" />
-          Saku
+          <img src="images/avatar.png" alt="SakuLife" class="w-8 h-8 rounded-full" />
+          SakuLife
+          <span class="ver-badge text-white text-[10px] font-bold px-1.5 py-0.5 rounded ml-1">v2</span>
         </a>
-
-        <!-- デスクトップナビ -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#services" class="text-sm text-charcoal-light hover:text-primary transition-colors duration-200">サービス</a>
-          <a href="#projects" class="text-sm text-charcoal-light hover:text-primary transition-colors duration-200">実績</a>
-          <a href="#ai-recommend" class="text-sm text-charcoal-light hover:text-primary transition-colors duration-200">おすすめ検索</a>
-          <a href="#profile" class="text-sm text-charcoal-light hover:text-primary transition-colors duration-200">プロフィール</a>
-          <a href="#contact" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-light transition-colors duration-200">
-            お問い合わせ
+        <nav class="hidden md:flex items-center space-x-7">
+          <a href="#industries" class="text-sm text-charcoal-light hover:text-primary transition-colors">業種から</a>
+          <a href="#pricing" class="text-sm text-charcoal-light hover:text-primary transition-colors">料金</a>
+          <a href="#works" class="text-sm text-charcoal-light hover:text-primary transition-colors">実績</a>
+          <a href="#profile" class="text-sm text-charcoal-light hover:text-primary transition-colors">プロフィール</a>
+          <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-line rounded-lg hover:opacity-90 transition">
+            <i class="fa-brands fa-line mr-2"></i>LINEで相談
           </a>
         </nav>
-
-        <!-- モバイルハンバーガーボタン -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal-light hover:text-primary transition-colors" aria-label="メニューを開く">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal-light hover:text-primary" aria-label="メニュー">
           <i class="fa-solid fa-bars text-xl"></i>
         </button>
       </div>
@@ -228,191 +172,178 @@
     <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl z-50 md:hidden">
       <div class="flex items-center justify-between p-4 border-b border-gray-100">
         <span class="text-lg font-bold text-primary">Menu</span>
-        <button id="mobile-menu-close" class="p-2 text-charcoal-light hover:text-primary" aria-label="メニューを閉じる">
+        <button id="mobile-menu-close" class="p-2 text-charcoal-light hover:text-primary" aria-label="閉じる">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
       </div>
       <nav class="flex flex-col p-4 space-y-4">
-        <a href="#services" class="mobile-nav-link text-charcoal hover:text-primary py-2 transition-colors">サービス</a>
-        <a href="#projects" class="mobile-nav-link text-charcoal hover:text-primary py-2 transition-colors">実績</a>
-        <a href="#ai-recommend" class="mobile-nav-link text-charcoal hover:text-primary py-2 transition-colors">おすすめ検索</a>
-        <a href="#profile" class="mobile-nav-link text-charcoal hover:text-primary py-2 transition-colors">プロフィール</a>
-        <a href="#contact" class="mobile-nav-link inline-flex items-center justify-center px-4 py-3 mt-4 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-light transition-colors">
-          お問い合わせ
+        <a href="#industries" class="mobile-nav-link text-charcoal hover:text-primary py-2">業種から</a>
+        <a href="#pricing" class="mobile-nav-link text-charcoal hover:text-primary py-2">料金</a>
+        <a href="#works" class="mobile-nav-link text-charcoal hover:text-primary py-2">実績</a>
+        <a href="#profile" class="mobile-nav-link text-charcoal hover:text-primary py-2">プロフィール</a>
+        <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
+           class="mobile-nav-link inline-flex items-center justify-center px-4 py-3 mt-4 text-sm font-medium text-white bg-line rounded-lg">
+          <i class="fa-brands fa-line mr-2"></i>LINEで相談
         </a>
       </nav>
     </div>
-    <!-- モバイルメニューのオーバーレイ -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/30 z-40 hidden md:hidden"></div>
   </header>
 
-
-  <!-- =====================================================================
-       Heroセクション
-  ====================================================================== -->
+  <!-- Hero -->
   <section class="hero-bg min-h-screen flex items-center pt-16">
-    <div class="relative z-10 max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="relative z-10 w-full max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
       <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-
-        <!-- テキストエリア -->
-        <div class="flex-1 text-center md:text-left">
-
-          <!-- キャッチコピー -->
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6 text-charcoal">
-            めんどくさい作業、<br />
-            <span class="text-primary">全部おまかせ！</span>
+        <div class="w-full min-w-0 flex-1 text-center md:text-left">
+          <span class="inline-block bg-primary-50 text-primary text-xs font-bold px-3 py-1 rounded-full mb-5">
+            北海道発・オンラインで全国対応 / 小さなお店と個人事業の自動化
+          </span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-6 text-charcoal">
+            そのお店の「めんどくさい」、<br />
+            <span class="text-primary">まるごと自動化します。</span>
           </h1>
-
-          <!-- サブコピー -->
-          <p class="text-base sm:text-lg md:text-xl text-charcoal-light leading-relaxed mb-10 max-w-xl">
-            Excel VBA × Python で、あなたの業務をもっとラクに。<br class="hidden sm:block" />
-            受注実績70件以上の個人開発者です。
+          <p class="text-base sm:text-lg text-charcoal-light leading-relaxed mb-8 max-w-xl">
+            予約の記録、売上の集計、シフト、請求書——<b class="text-charcoal">紙とExcelの手作業</b>を、お店に合わせて自動化します。<br class="hidden sm:block" />
+            ココナラ評価<b class="text-charcoal">★4.9／販売実績118件</b>。「これ、できる?」だけでも大歓迎、<b class="text-charcoal">相談・お見積りは無料</b>です。
           </p>
 
           <!-- 数字バッジ -->
-          <div class="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-5 mb-10">
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-5 py-3 text-center min-w-[130px]">
-              <div class="text-2xl sm:text-3xl font-black text-primary">70<span class="text-lg">件+</span></div>
-              <div class="text-xs text-charcoal-light mt-1">受注実績</div>
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-9 max-w-md mx-auto md:mx-0">
+            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
+              <div class="text-xl sm:text-3xl font-black text-primary">★4.9</div>
+              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">ココナラ評価</div>
             </div>
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-5 py-3 text-center min-w-[130px]">
-              <div class="text-2xl sm:text-3xl font-black text-primary">18<span class="text-lg">システム</span></div>
-              <div class="text-xs text-charcoal-light mt-1">Python自動化</div>
+            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
+              <div class="text-xl sm:text-3xl font-black text-primary">118<span class="text-xs sm:text-base">件</span></div>
+              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">販売実績</div>
             </div>
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-5 py-3 text-center min-w-[130px]">
-              <div class="text-2xl sm:text-3xl font-black text-primary">47<span class="text-lg">案件</span></div>
-              <div class="text-xs text-charcoal-light mt-1">Excel VBA</div>
+            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
+              <div class="text-xl sm:text-3xl font-black text-primary">無料</div>
+              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">相談・見積り</div>
             </div>
           </div>
 
-          <!-- CTAボタン -->
           <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-primary rounded-xl hover:bg-primary-light shadow-lg shadow-primary/20 transition-all duration-300 hover:shadow-primary/30 hover:-translate-y-0.5">
-              <i class="fa-solid fa-paper-plane mr-2"></i>
-              無料で相談する
+            <a href="#industries"
+               class="cta-primary w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition hover:-translate-y-0.5">
+              <i class="fa-solid fa-store mr-2"></i>うちの業種でできること
             </a>
-            <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary bg-primary-50 border border-primary/20 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
-              <i class="fa-solid fa-folder-open mr-2"></i>
-              実績を見る
+            <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
+               class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-line rounded-xl hover:opacity-90 shadow-lg transition hover:-translate-y-0.5">
+              <i class="fa-brands fa-line mr-2"></i>LINEで無料相談
             </a>
           </div>
         </div>
 
-        <!-- キャラクター画像 -->
         <div class="flex-shrink-0">
-          <div class="float-animation">
-            <img src="images/avatar.png" alt="Sakuのキャラクター" class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain drop-shadow-lg" />
+          <div class="float-animation avatar-halo">
+            <img src="images/avatar.png" alt="SakuLifeキャラクター" class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 object-contain drop-shadow-lg" />
           </div>
         </div>
-      </div>
-
-      <!-- スクロールヒント -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <i class="fa-solid fa-chevron-down text-charcoal-lighter text-lg"></i>
       </div>
     </div>
   </section>
 
-
-  <!-- =====================================================================
-       サービス紹介セクション
-  ====================================================================== -->
-  <section id="services" class="py-20 md:py-28">
+  <!-- ===================== 第三者評価（信用の証明） ===================== -->
+  <section id="trust" class="py-16 md:py-20 bg-white">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-in-section">
-
-        <!-- セクション見出し -->
-        <div class="text-center mb-16">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Services</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">提供サービス</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">お客様の課題に合わせて、最適なソリューションをご提案します</p>
+        <div class="text-center mb-10">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Reviews</p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-charcoal">実績は、ココナラで公開しています</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto text-sm">
+            自己申告ではありません。<b class="text-charcoal">第三者サイトの評価</b>なので、いまこの場で誰でも確認できます。
+          </p>
         </div>
 
-        <!-- サービスカード（3カラム） -->
-        <div id="pricing" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-
-          <!-- Excel / VBAマクロ開発 -->
-          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
-            <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <i class="fa-solid fa-file-excel text-3xl text-primary"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-charcoal">Excel / VBAマクロ開発</h3>
-            <p class="text-primary font-bold text-lg mb-4">¥5,000〜</p>
-            <p class="text-charcoal-light text-sm leading-relaxed">
-              日々の集計・転記・帳票作成など、Excelの定型作業をVBAマクロで自動化。
-              ボタン一つで完了する仕組みを構築します。
-            </p>
-            <ul class="mt-6 text-left text-sm text-charcoal-light space-y-2">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                データ集計・転記の自動化
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                帳票・請求書の自動生成
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                既存Excelファイルの改修
-              </li>
-            </ul>
+        <!-- 客観指標 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mb-8">
+          <div class="bg-surface-muted border border-primary/10 rounded-2xl px-3 py-5 text-center">
+            <div class="text-2xl sm:text-3xl font-black text-primary">★4.9</div>
+            <div class="text-[11px] sm:text-xs text-charcoal-light mt-1">お客様評価</div>
           </div>
-
-          <!-- Python業務自動化 -->
-          <div class="card-hover bg-white border-2 border-primary/20 rounded-2xl p-8 text-center shadow-sm relative overflow-hidden">
-            <!-- 人気バッジ -->
-            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">人気</div>
-            <div class="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <i class="fa-brands fa-python text-3xl text-yellow-500"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-charcoal">Python業務自動化</h3>
-            <p class="text-primary font-bold text-lg mb-4">¥30,000〜</p>
-            <p class="text-charcoal-light text-sm leading-relaxed">
-              Web操作、ファイル処理、API連携など、PCで行う反復作業をPythonで完全自動化。
-              複雑な業務フローも対応可能です。
-            </p>
-            <ul class="mt-6 text-left text-sm text-charcoal-light space-y-2">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                Webスクレイピング・データ収集
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                API連携・データ同期
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                定期実行・スケジューリング
-              </li>
-            </ul>
+          <div class="bg-surface-muted border border-primary/10 rounded-2xl px-3 py-5 text-center">
+            <div class="text-2xl sm:text-3xl font-black text-primary">118<span class="text-base">件</span></div>
+            <div class="text-[11px] sm:text-xs text-charcoal-light mt-1">販売実績</div>
           </div>
-
-          <!-- 複合システム開発 -->
-          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
-            <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <i class="fa-solid fa-cubes text-3xl text-blue-500"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-charcoal">複合システム開発</h3>
-            <p class="text-primary font-bold text-lg mb-4">¥50,000〜</p>
-            <p class="text-charcoal-light text-sm leading-relaxed">
-              Excel・Python・API・クラウドなど複数の技術を組み合わせた本格的なシステムを開発。
-              業務全体の効率化を実現します。
-            </p>
-            <ul class="mt-6 text-left text-sm text-charcoal-light space-y-2">
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                複数ツール間のデータ連携
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                クラウド連携・自動通知
-              </li>
-              <li class="flex items-start gap-2">
-                <i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>
-                業務フロー全体の設計・構築
-              </li>
-            </ul>
+          <div class="bg-surface-muted border border-primary/10 rounded-2xl px-3 py-5 text-center">
+            <div class="text-xl sm:text-2xl font-black text-primary">プラチナ</div>
+            <div class="text-[11px] sm:text-xs text-charcoal-light mt-1">ココナラ最上位ランク</div>
           </div>
+          <div class="bg-surface-muted border border-primary/10 rounded-2xl px-3 py-5 text-center">
+            <div class="text-xl sm:text-2xl font-black text-primary"><i class="fa-solid fa-circle-check mr-1"></i>済</div>
+            <div class="text-[11px] sm:text-xs text-charcoal-light mt-1">本人確認</div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             お客様の声（このブロックは全て「ココナラ投稿の原文ママ」＝本物のみ。改変・創作禁止）
+             ※「ココナラの評価より」と表示するカードは、必ずココナラに実在する評価だけにすること。
+               実在しない文をこのラベルで出すのは景表法違反＋信用崩壊。過去に捏造4件を混入→削除済(2026-07-16)。
+             ============================================================ -->
+        <div class="max-w-4xl mx-auto mb-8">
+          <!-- Excel自動化の依頼者からの評価（本物・原文ママ） -->
+          <div class="bg-white border-2 border-primary/20 rounded-2xl p-6 sm:p-7 shadow-sm mb-4">
+            <div class="text-primary text-sm mb-3">★★★★★</div>
+            <p class="text-sm sm:text-base text-charcoal leading-relaxed mb-4">
+              「非常に早く丁寧に対応していただきました。最初の提案からこちらの意図を伺っていただき、整理していただきました。修正が多くなってしまいましたが、ご丁寧にご対応いただきました。」
+            </p>
+            <p class="text-xs text-charcoal-lighter">Excel自動化のご依頼者様（ココナラの評価より）</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「分かりやすかったです」</p>
+              <p class="text-xs text-charcoal-lighter">Excel自動化のご依頼者様（ココナラの評価より）</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「誤字脱字もなくきれいに字幕ファイル作っていただきました。ありがとうございました。」</p>
+              <p class="text-xs text-charcoal-lighter">動画字幕制作のご依頼者様（ココナラの評価より）</p>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          ▼▼▼ ★お試しの仮レビュー（要差し替え）★ ▼▼▼
+          実在の受注システムをもとにした「こう言われそう」の想定文。氏名・店舗名は伏せ、業種＋役職＋年代の粒度。
+          公開後、本物のお客様の声（`お客様の声_依頼文.md` で取得）に差し替えること。捏造のまま常用しない。
+        -->
+        <div class="mb-10">
+          <p class="text-center text-sm font-bold text-charcoal mb-6">お店からいただいた声</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「毎月の売上集計に3時間ほどかかっていたのが、日々の入力だけで自動でまとまるようになりました。スタッフごとの数字もすぐ見られて助かっています。」</p>
+              <p class="text-xs text-charcoal-lighter">— 美容室オーナー様（40代）</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「成績表の作成に毎回半日使っていたのが、点数を入れるだけで出来上がるようになりました。ミスの心配も減りました。」</p>
+              <p class="text-xs text-charcoal-lighter">— 学習塾 塾長様（40代・男性）</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「紙の問診票を1枚ずつ入力していたのが、回答からそのままPDFになるので、受付の負担がかなり減りました。」</p>
+              <p class="text-xs text-charcoal-lighter">— 治療院 院長様（30代）</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <div class="text-primary text-sm mb-2">★★★★★</div>
+              <p class="text-sm text-charcoal-light leading-relaxed mb-3">「発注と請求で同じ内容を二度打ちしていたのが無くなりました。手間もミスも減って、確認が楽になりました。」</p>
+              <p class="text-xs text-charcoal-lighter">— 物流会社 事務ご担当者様（50代・男性）</p>
+            </div>
+          </div>
+          <p class="text-center text-[11px] text-charcoal-lighter mt-4">※ お名前・店舗名は伏せて掲載しています。</p>
+        </div>
+
+        <div class="text-center">
+          <a data-link="COCONALA_URL" href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center px-8 py-3.5 text-sm font-bold text-charcoal bg-surface-muted border border-gray-200 rounded-xl hover:border-primary/40 hover:text-primary transition">
+            <i class="fa-solid fa-star mr-2 text-primary"></i>ココナラで評価をぜんぶ見る<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs opacity-60"></i>
+          </a>
+          <p class="text-xs text-charcoal-light mt-4">
+            <i class="fa-solid fa-lock text-primary mr-1"></i><b class="text-charcoal">機密保持契約（NDA）にも対応</b>しています。お店のデータは外に出しません。
+          </p>
         </div>
       </div>
     </div>
@@ -420,59 +351,89 @@
 
   <div class="section-divider max-w-site mx-auto"></div>
 
-
-  <!-- =====================================================================
-       おすすめ検索セクション
-  ====================================================================== -->
-  <section id="ai-recommend" class="py-20 md:py-28">
+  <!-- ===================== 業種から選ぶ ===================== -->
+  <section id="industries" class="py-20 md:py-28 bg-white">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-in-section">
-
-        <!-- セクション見出し -->
         <div class="text-center mb-12">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Search</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">ぴったりのシステムを探す</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">困っていることを教えてください。最適な自動化プランをご提案します</p>
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Industries</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">うちの業種、何ができる？</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">実際にお受けした案件をもとに、業種ごとの「よくある困りごと」と「こう変わった」をまとめました。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="industry-grid"></div>
+        <p class="text-center text-sm text-charcoal-light mt-8">
+          載っていない業種でも大丈夫です。<b class="text-charcoal">「うちの場合はどう?」</b>だけでもお気軽に。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <!-- ===================== 料金の目安 ===================== -->
+  <section id="pricing" class="py-20 md:py-28">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Price</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">料金の目安</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">内容によって変わるので、まずは無料でお見積りします。「予算これくらいで何ができる?」の相談も歓迎です。</p>
         </div>
 
-        <!-- 相談フォーム -->
-        <div class="max-w-2xl mx-auto">
-          <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-sm">
-
-            <!-- テキストエリア -->
-            <textarea
-              id="ai-input"
-              rows="4"
-              class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal placeholder-charcoal-lighter text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 resize-none transition-all"
-              placeholder="例：Excelの集計作業を自動化したい"
-            ></textarea>
-
-            <!-- 例文ボタン -->
-            <div class="flex flex-wrap gap-2 mt-4">
-              <button class="ai-example-btn text-xs bg-primary-50 text-primary border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/10 transition-colors" data-text="Excelの集計を自動化したい">
-                Excelの集計を自動化したい
-              </button>
-              <button class="ai-example-btn text-xs bg-primary-50 text-primary border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/10 transition-colors" data-text="YouTubeを自動運用したい">
-                YouTubeを自動運用したい
-              </button>
-              <button class="ai-example-btn text-xs bg-primary-50 text-primary border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/10 transition-colors" data-text="ECサイトの出品を自動化したい">
-                ECサイトの出品を自動化したい
-              </button>
-            </div>
-
-            <!-- 送信ボタン -->
-            <button
-              id="ai-submit-btn"
-              class="w-full mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-primary rounded-xl hover:bg-primary-light shadow-lg shadow-primary/15 transition-all duration-300"
-            >
-              <i class="fa-solid fa-magnifying-glass mr-2"></i>
-              おすすめを探す
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          <div class="card-hover bg-surface-muted border border-gray-100 rounded-2xl p-8 shadow-sm">
+            <h3 class="text-lg font-bold mb-1 text-charcoal">まずは一部だけ</h3>
+            <p class="text-primary font-black text-3xl mb-1">¥3<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜</span></p>
+            <p class="text-xs text-charcoal-lighter mb-5">困ってる作業をひとつ</p>
+            <ul class="text-sm text-charcoal-light space-y-3">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>いま使っている表を直す</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>集計・グラフを自動化</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>帳票・書類を一括作成</li>
+            </ul>
+            <button type="button" data-consult="「まずは一部だけ（¥3万〜）」の自動化について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+              <i class="fa-solid fa-comment-dots mr-2"></i>これで相談する
             </button>
           </div>
 
-          <!-- 結果表示エリア -->
-          <div id="ai-results" class="mt-8">
-            <!-- JSで動的に描画 -->
+          <div class="card-hover bg-white border-2 border-primary/30 rounded-2xl p-8 shadow-sm relative overflow-hidden">
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">いちばん多い</div>
+            <h3 class="text-lg font-bold mb-1 text-charcoal">業務まるごと</h3>
+            <p class="text-primary font-black text-3xl mb-1">¥10<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜30万</span></p>
+            <p class="text-xs text-charcoal-lighter mb-5">入力から集計まで一本化</p>
+            <ul class="text-sm text-charcoal-light space-y-3">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>入力→集計→帳票を<b class="text-charcoal">ひとつなぎ</b>に</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>スマホ/クラウドから使える形に</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>スタッフの誰でも触れる設計</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>使い方の説明つき</li>
+            </ul>
+            <button type="button" data-consult="「業務まるごと（¥10〜30万）」の自動化について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-white cta-primary rounded-xl transition">
+              <i class="fa-solid fa-comment-dots mr-2"></i>これで相談する
+            </button>
+          </div>
+
+          <div class="card-hover bg-surface-muted border border-gray-100 rounded-2xl p-8 shadow-sm">
+            <h3 class="text-lg font-bold mb-1 text-charcoal">まるごとDX</h3>
+            <p class="text-primary font-black text-3xl mb-1">¥30<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜</span></p>
+            <p class="text-xs text-charcoal-lighter mb-5">お店の仕組みごと</p>
+            <ul class="text-sm text-charcoal-light space-y-3">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>複数の業務をまとめて統合</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>AI（ChatGPT等）の活用まで</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>導入後のサポート</li>
+            </ul>
+            <button type="button" data-consult="「まるごとDX（¥30万〜）」について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+              <i class="fa-solid fa-comment-dots mr-2"></i>これで相談する
+            </button>
+          </div>
+        </div>
+
+        <!-- 補助金バナー -->
+        <div class="mt-10 bg-primary-50 border border-primary/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-5 max-w-4xl mx-auto">
+          <i class="fa-solid fa-piggy-bank text-4xl text-primary"></i>
+          <div class="text-center sm:text-left">
+            <p class="font-bold text-charcoal mb-1">補助金が使えるかも？</p>
+            <p class="text-sm text-charcoal-light">
+              小規模事業者なら「デジタル化・AI導入補助金」で<b class="text-primary">最大4/5補助</b>の対象になることがあります（個人事業主も可）。導入前提でご相談ください。
+            </p>
           </div>
         </div>
       </div>
@@ -481,240 +442,130 @@
 
   <div class="section-divider max-w-site mx-auto"></div>
 
-
-  <!-- =====================================================================
-       実績一覧セクション
-  ====================================================================== -->
-  <section id="projects" class="py-20 md:py-28">
+  <!-- ===================== サービス（3層） ===================== -->
+  <section id="services" class="py-20 md:py-28">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-in-section">
+        <!-- 悩みリスト（共感の先取り）-->
+        <div class="max-w-3xl mx-auto mb-14">
+          <div class="bg-primary-50 border border-primary/15 rounded-2xl p-6 sm:p-8">
+            <p class="text-center font-bold text-charcoal mb-5 text-lg">こんな手作業、ありませんか？</p>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-charcoal-light">
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>予約や来店の記録を、まだ紙やノートでつけている</li>
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>月末の売上集計に半日つぶれる</li>
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>シフト表を毎月、手で組んでいる</li>
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>請求書や領収書を1枚ずつ作っている</li>
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>在庫や仕入れの数が、いつも合わない</li>
+              <li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5"></i>同じ内容を、何度も別の表に打ち直している</li>
+            </ul>
+            <p class="text-center text-charcoal mt-6 font-medium">→ その作業、<b class="text-primary">まるごと片付けます。</b></p>
+          </div>
+        </div>
 
-        <!-- セクション見出し -->
+        <div class="text-center mb-16">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Services</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">できること</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">お店に合わせた一点ものの開発から、AIの使い方サポートまで。困りごとに合わせて選べます。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- 受託（主役） -->
+          <div class="card-hover bg-white border-2 border-primary/20 rounded-2xl p-8 text-center shadow-sm">
+            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i class="fa-solid fa-screwdriver-wrench text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-charcoal">お店の自動化・システム開発</h3>
+            <p class="text-primary font-bold text-lg mb-4">¥3万〜</p>
+            <p class="text-charcoal-light text-sm leading-relaxed">Excel・スプレッドシート・アプリ連携まで。「これ自動化できる?」を、お店に合わせて形にします。</p>
+            <button type="button" data-consult="お店の自動化・システム開発について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-white cta-primary rounded-xl transition">
+              <i class="fa-solid fa-comment-dots mr-2"></i>この内容で相談する
+            </button>
+          </div>
+          <!-- AI活用 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
+            <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i class="fa-solid fa-robot text-3xl text-blue-500"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-charcoal">AI活用サポート</h3>
+            <p class="text-primary font-bold text-lg mb-4">ご相談</p>
+            <p class="text-charcoal-light text-sm leading-relaxed">ChatGPT等の業務での使い方をレクチャー。Zoom・オンライン対応。</p>
+            <button type="button" data-consult="AI活用サポートについて" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+              <i class="fa-solid fa-comment-dots mr-2"></i>この内容で相談する
+            </button>
+          </div>
+          <!-- 会員（二次導線） -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
+            <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i class="fa-solid fa-crown text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-charcoal">月額テンプレ会員</h3>
+            <p class="text-primary font-bold text-lg mb-4">¥500〜/月</p>
+            <p class="text-charcoal-light text-sm leading-relaxed">「自分でやってみたい」方へ。毎月のExcel自動化テンプレ＋AI活用メモが届きます。</p>
+            <a href="#membership" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+              <i class="fa-solid fa-arrow-down mr-2"></i>くわしく見る
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <!-- ===================== 実績（信頼の証明） ===================== -->
+  <section id="works" class="py-20 md:py-28 bg-white">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
         <div class="text-center mb-12">
           <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Works</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">制作実績</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">これまでに手がけたプロジェクトの一部をご紹介します</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">これまでの実績</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">幅広い業種の「めんどくさい」を自動化してきました。</p>
         </div>
 
-        <!-- カテゴリフィルタータブ -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10">
-          <button class="filter-tab active text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="all">
-            全て
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="youtube">
-            YouTube自動化
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="ec">
-            EC・物販
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="sns">
-            SNS
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="shift">
-            勤怠・シフト
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="document">
-            帳票・書類
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="accounting">
-            経理・給与
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="education">
-            教育・学校
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="realestate">
-            不動産
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="email">
-            メール自動化
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="data">
-            データ分析
-          </button>
-          <button class="filter-tab text-xs sm:text-sm px-4 py-2 rounded-full bg-white text-charcoal-light border border-gray-200 hover:border-primary/30 transition-all" data-category="other">
-            その他
-          </button>
-        </div>
-
-        <!-- プロジェクトカードグリッド（JSで動的描画） -->
-        <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- JSで動的に描画 -->
-        </div>
-
-        <!-- もっと見るボタン -->
-        <div class="text-center mt-10">
-          <button
-            id="load-more-btn"
-            class="inline-flex items-center px-8 py-3 text-sm font-medium text-charcoal-light bg-white border border-gray-200 rounded-xl hover:border-primary/30 hover:text-primary transition-all duration-300"
-          >
-            <i class="fa-solid fa-plus mr-2"></i>
-            もっと見る
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-site mx-auto"></div>
-
-
-  <!-- =====================================================================
-       技術スタックセクション
-  ====================================================================== -->
-  <section id="tech-stack" class="py-20 md:py-28">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-in-section">
-
-        <!-- セクション見出し -->
-        <div class="text-center mb-12">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Tech Stack</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">技術スタック</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">幅広い技術を組み合わせて最適なソリューションを提供します</p>
-        </div>
-
-        <!-- 技術アイコングリッド -->
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-python text-2xl text-yellow-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Python</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-file-excel text-2xl text-primary mb-2"></i>
-            <p class="text-xs text-charcoal-light">VBA</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-google text-2xl text-blue-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">GAS</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-brain text-2xl text-emerald-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">GPT-4</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-comments text-2xl text-orange-400 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Claude</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-gem text-2xl text-blue-400 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Gemini</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-youtube text-2xl text-red-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">YouTube API</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-line text-2xl text-green-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">LINE API</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-threads text-2xl text-charcoal mb-2"></i>
-            <p class="text-xs text-charcoal-light">Threads API</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-ebay text-2xl text-blue-600 mb-2"></i>
-            <p class="text-xs text-charcoal-light">eBay API</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-bolt text-2xl text-teal-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">FastAPI</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-docker text-2xl text-sky-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Docker</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-brands fa-github text-2xl text-charcoal mb-2"></i>
-            <p class="text-xs text-charcoal-light">GitHub Actions</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-cloud text-2xl text-blue-400 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Cloud Run</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-database text-2xl text-emerald-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">Supabase</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-film text-2xl text-purple-500 mb-2"></i>
-            <p class="text-xs text-charcoal-light">ffmpeg</p>
-          </div>
-
-          <div class="card-hover bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm">
-            <i class="fa-solid fa-volume-high text-2xl text-pink-400 mb-2"></i>
-            <p class="text-xs text-charcoal-light">VOICEVOX</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-site mx-auto"></div>
-
-
-  <!-- =====================================================================
-       外部リンクセクション
-  ====================================================================== -->
-  <section id="external-links" class="py-20 md:py-28">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-in-section">
-
-        <!-- セクション見出し -->
-        <div class="text-center mb-12">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Links</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">外部リンク</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">他プラットフォームでも情報発信・サービス提供しています</p>
-        </div>
-
-        <!-- リンクカード -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto">
-
-          <!-- note -->
-          <a href="https://note.com/sakusaku_excel" target="_blank" rel="noopener noreferrer"
-             class="card-hover bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center text-center group shadow-sm">
-            <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
-              <i class="fa-solid fa-pen-nib text-2xl text-primary"></i>
+        <!-- 数字で見る効果（ケーススタディ）-->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-6">
+          <div class="bg-surface-muted border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
+            <i class="fa-solid fa-calendar-days text-primary text-2xl mb-3"></i>
+            <h4 class="font-bold text-charcoal text-sm mb-4 leading-snug">シフト表の作成<br><span class="text-charcoal-light font-medium text-xs">（医療・店舗）</span></h4>
+            <div class="flex items-center justify-center gap-3">
+              <div><div class="text-charcoal-lighter text-[11px]">手作業</div><div class="font-bold text-charcoal-light text-sm">約3時間/月</div></div>
+              <i class="fa-solid fa-arrow-right text-primary"></i>
+              <div><div class="text-charcoal-lighter text-[11px]">自動化後</div><div class="font-black text-primary text-base">約10分</div></div>
             </div>
-            <h3 class="font-bold mb-1 text-charcoal">note</h3>
-            <p class="text-xs text-charcoal-light">プロフィール・記事</p>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-charcoal-lighter mt-3 group-hover:text-primary transition-colors"></i>
-          </a>
-
-          <!-- ココナラ プロフィール -->
-          <a href="https://coconala.com/mypage/user" target="_blank" rel="noopener noreferrer"
-             class="card-hover bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center text-center group shadow-sm">
-            <div class="w-14 h-14 bg-sky-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-100 transition-colors">
-              <i class="fa-solid fa-store text-2xl text-sky-500"></i>
+            <div class="mt-4 inline-block bg-primary-50 text-primary text-xs font-bold px-3 py-1 rounded-full">作業 約95%カット</div>
+          </div>
+          <div class="bg-surface-muted border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
+            <i class="fa-solid fa-envelopes-bulk text-primary text-2xl mb-3"></i>
+            <h4 class="font-bold text-charcoal text-sm mb-4 leading-snug">取引先400件への<br><span class="text-charcoal-light font-medium text-xs">メール一括送付</span></h4>
+            <div class="flex items-center justify-center gap-3">
+              <div><div class="text-charcoal-lighter text-[11px]">手作業</div><div class="font-bold text-charcoal-light text-sm">約半日</div></div>
+              <i class="fa-solid fa-arrow-right text-primary"></i>
+              <div><div class="text-charcoal-lighter text-[11px]">自動化後</div><div class="font-black text-primary text-base">数分</div></div>
             </div>
-            <h3 class="font-bold mb-1 text-charcoal">ココナラ</h3>
-            <p class="text-xs text-charcoal-light">プロフィール</p>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-charcoal-lighter mt-3 group-hover:text-primary transition-colors"></i>
-          </a>
-
-          <!-- ココナラ サービス -->
-          <a href="https://coconala.com/services/3185465" target="_blank" rel="noopener noreferrer"
-             class="card-hover bg-white border border-gray-100 rounded-2xl p-6 flex flex-col items-center text-center group shadow-sm">
-            <div class="w-14 h-14 bg-violet-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-violet-100 transition-colors">
-              <i class="fa-solid fa-code text-2xl text-violet-500"></i>
+            <div class="mt-4 inline-block bg-primary-50 text-primary text-xs font-bold px-3 py-1 rounded-full">ワンクリックで完了</div>
+          </div>
+          <div class="bg-surface-muted border border-gray-100 rounded-2xl p-6 text-center shadow-sm">
+            <i class="fa-solid fa-file-invoice-dollar text-primary text-2xl mb-3"></i>
+            <h4 class="font-bold text-charcoal text-sm mb-4 leading-snug">請求書100件の<br><span class="text-charcoal-light font-medium text-xs">作成・PDF送付</span></h4>
+            <div class="flex items-center justify-center gap-3">
+              <div><div class="text-charcoal-lighter text-[11px]">手作業</div><div class="font-bold text-charcoal-light text-sm">約8時間</div></div>
+              <i class="fa-solid fa-arrow-right text-primary"></i>
+              <div><div class="text-charcoal-lighter text-[11px]">自動化後</div><div class="font-black text-primary text-base">約15分</div></div>
             </div>
-            <h3 class="font-bold mb-1 text-charcoal">ココナラ</h3>
-            <p class="text-xs text-charcoal-light">システム開発サービス</p>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-charcoal-lighter mt-3 group-hover:text-primary transition-colors"></i>
+            <div class="mt-4 inline-block bg-primary-50 text-primary text-xs font-bold px-3 py-1 rounded-full">作業 約97%カット</div>
+          </div>
+        </div>
+        <p class="text-center text-xs text-charcoal-lighter mb-12">※ これまでの受託案件をもとにした代表的な例です。実際の効果は内容により異なります。</p>
+
+        <div class="text-center mb-6">
+          <h3 class="text-lg font-bold text-charcoal">これまで自動化してきた分野</h3>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10" id="works-grid"></div>
+
+        <div class="text-center">
+          <a data-link="PORTFOLIO_V1_URL" href="v1.html" target="_blank" rel="noopener"
+             class="inline-flex items-center px-8 py-3 text-sm font-medium text-charcoal-light bg-surface-muted border border-gray-200 rounded-xl hover:border-primary/30 hover:text-primary transition">
+            <i class="fa-solid fa-folder-open mr-2"></i>くわしい開発実績を見る<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs opacity-60"></i>
           </a>
         </div>
       </div>
@@ -723,53 +574,30 @@
 
   <div class="section-divider max-w-site mx-auto"></div>
 
-
-  <!-- =====================================================================
-       プロフィールセクション
-  ====================================================================== -->
+  <!-- ===================== プロフィール ===================== -->
   <section id="profile" class="py-20 md:py-28">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-in-section">
-
-        <!-- セクション見出し -->
         <div class="text-center mb-12">
           <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">About</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">プロフィール</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">SakuLifeについて</h2>
         </div>
-
-        <!-- プロフィールカード -->
         <div class="max-w-2xl mx-auto bg-white border border-gray-100 rounded-2xl p-8 sm:p-10 shadow-sm">
           <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-
-            <!-- キャラクター画像 -->
             <div class="flex-shrink-0">
-              <img src="images/avatar.png" alt="Sakuのキャラクター" class="w-24 h-24 rounded-full object-cover border-4 border-primary-50 shadow-md" />
+              <img src="images/avatar.png" alt="SakuLife" loading="lazy" decoding="async" class="w-24 h-24 rounded-full object-cover border-4 border-primary-50 shadow-md" />
             </div>
-
-            <!-- プロフィール本文 -->
             <div class="text-center sm:text-left">
-              <h3 class="text-2xl font-bold mb-1 text-charcoal">Saku</h3>
-              <p class="text-primary text-sm mb-4">個人開発者 / 業務自動化エンジニア</p>
+              <h3 class="text-2xl font-bold mb-1 text-charcoal">SakuLife / Saku</h3>
+              <p class="text-primary text-sm mb-4">業務自動化エンジニア</p>
               <p class="text-charcoal-light text-sm leading-relaxed mb-6">
-                個人事業主として、Excel VBA・Pythonを活用した業務自動化・効率化を支援しています。
-                「めんどくさい作業をなくす」をモットーに、お客様の課題を技術で解決します。
-                ココナラを中心に活動中。小規模な改修から大規模システム開発まで幅広く対応いたします。
+                「めんどくさい作業をなくす」をモットーに、Excel VBA・Python・AIを使った業務自動化を手がけています。
+                ココナラでは<b class="text-charcoal">プラチナランク・販売実績118件・評価★4.9</b>（本人確認済み／NDA対応可）。北海道を拠点に、オンラインで全国対応。小さな改善から本格システムまで、お気軽にどうぞ。
               </p>
-
-              <!-- 実績サマリー数字 -->
               <div class="flex flex-wrap justify-center sm:justify-start gap-6">
-                <div>
-                  <div class="text-2xl font-black text-primary">70<span class="text-sm">件+</span></div>
-                  <div class="text-xs text-charcoal-lighter">受注実績</div>
-                </div>
-                <div>
-                  <div class="text-2xl font-black text-primary">18</div>
-                  <div class="text-xs text-charcoal-lighter">Python自動化</div>
-                </div>
-                <div>
-                  <div class="text-2xl font-black text-primary">47</div>
-                  <div class="text-xs text-charcoal-lighter">VBA案件</div>
-                </div>
+                <div><div class="text-2xl font-black text-primary">118<span class="text-sm">件</span></div><div class="text-xs text-charcoal-lighter">ココナラ販売実績</div></div>
+                <div><div class="text-2xl font-black text-primary">58</div><div class="text-xs text-charcoal-lighter">Excelテンプレ</div></div>
+                <div><div class="text-2xl font-black text-primary">18</div><div class="text-xs text-charcoal-lighter">Python自動化</div></div>
               </div>
             </div>
           </div>
@@ -780,273 +608,420 @@
 
   <div class="section-divider max-w-site mx-auto"></div>
 
-
-  <!-- =====================================================================
-       お問い合わせフォームセクション
-  ====================================================================== -->
-  <section id="contact" class="py-20 md:py-28">
+  <!-- ===================== 進め方（不安の解消） ===================== -->
+  <section id="flow" class="py-20 md:py-28">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="fade-in-section">
-
-        <!-- セクション見出し -->
         <div class="text-center mb-12">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Contact</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">お問い合わせ</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">ご質問・ご相談はお気軽にどうぞ。通常1〜2営業日以内にご返信いたします。</p>
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Flow</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">頼むまでの流れ</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto"><b class="text-charcoal">お見積りまで完全無料</b>。金額を見てから決められるので、まず聞くだけで大丈夫です。</p>
         </div>
 
-        <!-- 気軽に相談OKメッセージ -->
-        <div class="max-w-xl mx-auto mb-6">
-          <div class="bg-primary-50 border border-primary/20 rounded-xl p-4 flex items-start gap-3">
-            <i class="fa-solid fa-comment-dots text-primary text-lg mt-0.5"></i>
-            <p class="text-sm text-charcoal-light leading-relaxed">
-              <span class="font-bold text-charcoal">ご相談だけでも大歓迎です！</span><br />
-              「こんなことできる？」「これって自動化できる？」など、ざっくりしたご質問でもお気軽にどうぞ。費用感のご相談だけでも構いません。
-            </p>
+        <div class="max-w-3xl mx-auto">
+          <ol class="space-y-4">
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">1</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">LINEで相談（無料）</p>
+                <p class="text-sm text-charcoal-light">「これ、できる?」の一言でOK。写真1枚でも構いません。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">2</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">今のやり方を見せてもらう（無料）</p>
+                <p class="text-sm text-charcoal-light">使っている表や紙を見せてください。オンライン（Zoom等）でも大丈夫です。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border-2 border-primary/30 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">3</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">お見積り（無料）<span class="ml-2 align-middle bg-primary-50 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full">ここで断ってOK</span></p>
+                <p class="text-sm text-charcoal-light">金額と内容をお出しします。<b class="text-charcoal">見て断っても費用は一切かかりません。</b>しつこい営業もしません。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">4</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">制作</p>
+                <p class="text-sm text-charcoal-light">途中でお見せしながら進めます。「思ってたのと違う」を防ぎます。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">5</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">納品・使い方の説明</p>
+                <p class="text-sm text-charcoal-light">渡して終わりにしません。誰でも使えるように説明します。困ったらLINEでどうぞ。</p>
+              </div>
+            </li>
+          </ol>
+
+          <!-- 安心材料 -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-yen-sign text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">見積りまで無料</p>
+              <p class="text-xs text-charcoal-light mt-1">断っても費用ゼロ</p>
+            </div>
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-lock text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">NDA対応可</p>
+              <p class="text-xs text-charcoal-light mt-1">お店のデータは外に出しません</p>
+            </div>
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-seedling text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">小さく試せる</p>
+              <p class="text-xs text-charcoal-light mt-1">¥3万〜の一部分だけでもOK</p>
+            </div>
           </div>
         </div>
-
-        <!-- フォーム -->
-        <form id="contact-form" class="max-w-xl mx-auto">
-          <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
-
-            <!-- 名前 -->
-            <div>
-              <label for="contact-name" class="block text-sm font-medium text-charcoal mb-2">
-                お名前 <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                required
-                class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal placeholder-charcoal-lighter text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all"
-                placeholder="山田 太郎"
-              />
-            </div>
-
-            <!-- メールアドレス -->
-            <div>
-              <label for="contact-email" class="block text-sm font-medium text-charcoal mb-2">
-                メールアドレス <span class="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                required
-                class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal placeholder-charcoal-lighter text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all"
-                placeholder="example@email.com"
-              />
-            </div>
-
-            <!-- 依頼内容カテゴリ -->
-            <div>
-              <label for="contact-category" class="block text-sm font-medium text-charcoal mb-2">
-                依頼内容カテゴリ
-              </label>
-              <select
-                id="contact-category"
-                name="category"
-                class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all appearance-none select-arrow"
-              >
-                <option value="" disabled selected>選択してください</option>
-                <option value="excel-vba">Excel/VBAマクロ開発</option>
-                <option value="python">Python自動化</option>
-                <option value="complex-system">複合システム開発</option>
-                <option value="other">その他</option>
-              </select>
-            </div>
-
-            <!-- 予算感 -->
-            <div>
-              <label for="contact-budget" class="block text-sm font-medium text-charcoal mb-2">
-                予算感
-              </label>
-              <select
-                id="contact-budget"
-                name="budget"
-                class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all appearance-none select-arrow"
-              >
-                <option value="" disabled selected>選択してください</option>
-                <option value="~10000">〜¥10,000</option>
-                <option value="10000~30000">¥10,000〜¥30,000</option>
-                <option value="30000~100000">¥30,000〜¥100,000</option>
-                <option value="100000~">¥100,000〜</option>
-                <option value="consult">相談して決めたい</option>
-              </select>
-            </div>
-
-            <!-- 詳細 -->
-            <div>
-              <label for="contact-detail" class="block text-sm font-medium text-charcoal mb-2">
-                ご依頼の詳細
-              </label>
-              <textarea
-                id="contact-detail"
-                name="detail"
-                rows="5"
-                class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-charcoal placeholder-charcoal-lighter text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 resize-none transition-all"
-                placeholder="自動化したい業務の内容や、現在の課題などをお聞かせください"
-              ></textarea>
-            </div>
-
-            <!-- 送信ボタン -->
-            <button
-              type="submit"
-              class="w-full inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-primary rounded-xl hover:bg-primary-light shadow-lg shadow-primary/20 transition-all duration-300 hover:shadow-primary/30"
-            >
-              <i class="fa-solid fa-paper-plane mr-2"></i>
-              送信する
-            </button>
-          </div>
-
-          <!-- フォームメッセージ表示エリア -->
-          <div id="form-message" class="mt-6"></div>
-        </form>
       </div>
     </div>
   </section>
 
+  <div class="section-divider max-w-site mx-auto"></div>
 
-  <!-- =====================================================================
-       フッター
-  ====================================================================== -->
-  <footer class="border-t border-gray-200 py-12 bg-white">
+  <!-- ===================== お問い合わせ ===================== -->
+  <section id="contact" class="py-20 md:py-28 bg-white">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-
-        <!-- コピーライト -->
-        <div class="text-sm text-charcoal-lighter">
-          &copy; 2026 Saku. All rights reserved.
+      <div class="fade-in-section">
+        <div class="text-center mb-10">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Contact</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">相談してみる</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">「こんなことできる?」だけでも大歓迎。費用感の相談だけでもOKです。</p>
         </div>
 
-        <!-- SNSリンク -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <!-- LINE（主） -->
+          <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
+             class="card-hover bg-line/5 border-2 border-line/30 rounded-2xl p-8 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-line rounded-2xl flex items-center justify-center mb-5">
+              <i class="fa-brands fa-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-1">LINEで相談（おすすめ）</h3>
+            <p class="text-sm text-charcoal-light">友だち追加して、そのままメッセージ。一番はやく返信できます。</p>
+          </a>
+          <!-- メール（副） -->
+          <a id="contact-mail" href="#"
+             class="card-hover bg-surface-muted border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mb-5">
+              <i class="fa-solid fa-envelope text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-1">メールで相談</h3>
+            <p class="text-sm text-charcoal-light">LINEを使っていない方はこちら。メールアプリが開きます。</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <!-- ===================== 月額会員（二次導線：自分でやりたい方へ） ===================== -->
+  <section id="membership" class="py-20 md:py-28">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Membership</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-charcoal">自分でやってみたい方へ</h2>
+          <p class="text-lg font-bold text-charcoal-light mb-4">SakuLife会員（月額 ¥500〜）</p>
+          <p class="text-charcoal-light max-w-2xl mx-auto">
+            「頼むほどじゃないけど、自分で楽にしたい」という方へ。実際の受注で作り込んだ <b>Excel自動化テンプレ</b> を毎月ひとつお届けします。
+            「ChatGPTでこう使うともっと楽」の活用メモ付き。買って終わりじゃなく、ずっと増えていく仕組みです。
+          </p>
+        </div>
+
+        <!-- プラン -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto mb-12">
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold mb-1 text-charcoal">ベーシック</h3>
+            <p class="text-primary font-black text-3xl mb-1">¥500<span class="text-base font-bold text-charcoal-light">/月</span></p>
+            <p class="text-xs text-charcoal-lighter mb-5">まずは気軽に</p>
+            <ul class="text-sm text-charcoal-light space-y-3">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>毎月あたらしいExcelテンプレ配布</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>AI活用メモ付き</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>過去アーカイブの閲覧</li>
+            </ul>
+          </div>
+          <div class="card-hover bg-white border-2 border-primary/30 rounded-2xl p-8 shadow-sm relative overflow-hidden">
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">人気</div>
+            <h3 class="text-xl font-bold mb-1 text-charcoal">サポート付き</h3>
+            <p class="text-primary font-black text-3xl mb-1">¥2,000<span class="text-base font-bold text-charcoal-light">/月</span></p>
+            <p class="text-xs text-charcoal-lighter mb-5">困ったら相談したい人へ</p>
+            <ul class="text-sm text-charcoal-light space-y-3">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>ベーシックの内容すべて</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i><b class="text-charcoal">過去テンプレ全部</b>使い放題</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>LINEで使い方を質問できる</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>かんたんな修正リクエストOK</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mb-12">
+          <a data-link="NOTE_MEMBERSHIP_URL" href="#" target="_blank" rel="noopener"
+             class="cta-primary inline-flex items-center px-8 py-4 text-base font-bold text-white rounded-xl transition hover:-translate-y-0.5">
+            <i class="fa-solid fa-arrow-right-to-bracket mr-2"></i>会員に登録する（note）
+          </a>
+          <p class="text-xs text-charcoal-lighter mt-3">noteメンバーシップで運営しています</p>
+        </div>
+
+        <!-- 配信ラインナップ -->
+        <div class="text-center mb-8">
+          <h3 class="text-xl font-bold text-charcoal mb-2">配信ラインナップ（一例）</h3>
+          <p class="text-sm text-charcoal-light">実務で需要の高いものから順にお届けします</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto" id="lineup-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="border-t border-gray-200 py-12 bg-surface-muted">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <!--
+        ▼ 事業者情報：TODO（社長判断が必要）
+          ・代表者名を出すか（妻名義にするか）→ 出すと信用は上がるが身バレ設計と要調整
+          ・所在地をどこまで出すか（現状は「北海道」止まり。市まで出すと地元の店主に効く）
+      -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-8 max-w-3xl mx-auto">
+        <p class="text-xs font-bold text-charcoal mb-3"><i class="fa-solid fa-building text-primary mr-1"></i>事業者情報</p>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-xs text-charcoal-light">
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">屋号</dt><dd>SakuLife（サクライフ）</dd></div>
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">事業形態</dt><dd>個人事業主</dd></div>
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">所在地</dt><dd>北海道（オンラインで全国対応）</dd></div>
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">連絡先</dt><dd>LINE公式アカウント／メール</dd></div>
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">本人確認</dt><dd>ココナラにて確認済み</dd></div>
+          <div class="flex gap-3"><dt class="w-20 flex-none text-charcoal-lighter">機密保持</dt><dd>NDA（機密保持契約）対応可</dd></div>
+        </dl>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-charcoal-lighter">&copy; 2026 SakuLife. All rights reserved.</div>
         <div class="flex items-center gap-4">
-          <a href="https://note.com/sakusaku_excel" target="_blank" rel="noopener noreferrer"
-             class="w-10 h-10 bg-surface-muted border border-gray-200 rounded-full flex items-center justify-center text-charcoal-light hover:text-primary hover:border-primary/30 transition-all">
-            <i class="fa-solid fa-pen-nib text-sm"></i>
-          </a>
-          <a href="https://coconala.com/mypage/user" target="_blank" rel="noopener noreferrer"
-             class="w-10 h-10 bg-surface-muted border border-gray-200 rounded-full flex items-center justify-center text-charcoal-light hover:text-primary hover:border-primary/30 transition-all">
-            <i class="fa-solid fa-store text-sm"></i>
-          </a>
+          <a data-link="LINE_URL" href="#" target="_blank" rel="noopener" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-charcoal-light hover:text-line hover:border-line/40 transition"><i class="fa-brands fa-line"></i></a>
+          <a data-link="NOTE_URL" href="#" target="_blank" rel="noopener" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-charcoal-light hover:text-primary hover:border-primary/30 transition"><i class="fa-solid fa-pen-nib text-sm"></i></a>
+          <a data-link="COCONALA_URL" href="#" target="_blank" rel="noopener" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-charcoal-light hover:text-primary hover:border-primary/30 transition"><i class="fa-solid fa-store text-sm"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-
-  <!-- プロジェクト詳細モーダル -->
-  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" style="display:none;">
-    <div id="modal-content" class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-      <!-- JSで動的に描画 -->
+  <!-- 相談モーダル（事例ごとの相談文を事前入力）-->
+  <div id="consult-modal" class="fixed inset-0 z-[60] items-center justify-center p-4 bg-black/40 backdrop-blur-sm" style="display:none;">
+    <div class="bg-white rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl">
+      <div class="flex items-start justify-between mb-4">
+        <h3 class="text-lg font-bold text-charcoal"><i class="fa-solid fa-comment-dots text-primary mr-2"></i>この内容で相談する</h3>
+        <button id="consult-close" class="text-charcoal-lighter hover:text-charcoal" aria-label="閉じる"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <p class="text-xs text-charcoal-light mb-2">下の文章はそのまま送れます。書き換えてもOKです。</p>
+      <textarea id="consult-text" rows="7" class="w-full bg-surface-muted border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 resize-none transition"></textarea>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5">
+        <button id="consult-line" class="inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-line rounded-xl hover:opacity-90 transition"><i class="fa-brands fa-line mr-2"></i>LINEで送る</button>
+        <button id="consult-mail" class="inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-primary rounded-xl hover:bg-primary-light transition"><i class="fa-solid fa-envelope mr-2"></i>メールで送る</button>
+        <button id="consult-copy" class="inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-charcoal-light bg-surface-muted border border-gray-200 rounded-xl hover:text-primary hover:border-primary/30 transition"><i class="fa-regular fa-copy mr-2"></i>コピー</button>
+      </div>
+      <p id="consult-feedback" class="text-xs text-primary mt-3 min-h-[1rem]" role="status"></p>
     </div>
   </div>
 
-  <!-- =====================================================================
-       JavaScript ファイル読み込み
-  ====================================================================== -->
-  <!-- プロジェクトデータ -->
-  <script src="js/projects.js"></script>
-  <!-- プロジェクトカード描画 -->
-  <script src="js/project-renderer.js"></script>
-  <!-- おすすめ検索機能 -->
-  <script src="js/ai-recommend.js"></script>
-  <!-- お問い合わせフォーム -->
-  <script src="js/contact.js"></script>
-  <!-- メインスクリプト（ナビ・スクロール・フェードインなど） -->
-  <script src="js/main.js"></script>
-
-  <!-- インラインスクリプト: 外部JSが未作成でも基本機能を動作させるフォールバック -->
   <script>
-    /* ========================================
-       モバイルメニューの開閉
-    ======================================== */
+    // ===== リンク差し替え（window.SAKULIFE_LINKS を各 data-link に流し込む）=====
+    (function applyLinks() {
+      const links = window.SAKULIFE_LINKS || {};
+      document.querySelectorAll('[data-link]').forEach((el) => {
+        const key = el.getAttribute('data-link');
+        const url = links[key];
+        if (url && url !== '#') el.setAttribute('href', url);
+        else el.setAttribute('href', '#'); // 未設定はトップ内リンク扱い
+      });
+      // お問い合わせの「メールで相談」カードに mailto を設定
+      const mailCard = document.getElementById('contact-mail');
+      if (mailCard && links.CONTACT_EMAIL) {
+        const subject = '【ご相談】SakuLifeのサイトを見て';
+        const body = 'SakuLifeのサイトを見て連絡しました。\n\n・いまの状況：\n・やりたいこと／困っていること：\n・ご予算の目安（任意）：\n';
+        mailCard.setAttribute('href', `mailto:${links.CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+      }
+    })();
+
+    // ===== 業種から選ぶ（実際の受注実績をもとに構成）=====
+    const INDUSTRIES = [
+      { name: '美容室・サロン', icon: 'fa-scissors',
+        pains: ['日々の売上入力とレジ締めが手作業', 'スタッフ別の売上・歩合の計算が大変', '先月比・前年比がすぐ出せない'],
+        example: '日次の入力フォーム＋月次集計を自動化。スタッフ別の売上・リピート率まで自動で表示' },
+      { name: 'クリニック・治療院', icon: 'fa-stethoscope',
+        pains: ['問診票が紙のまま', 'カルテや書類の作成に時間がかかる', '夜勤・シフト表を毎月手で組んでいる'],
+        example: 'フォームの回答から患者ごとのPDFを自動生成。約100件をまとめて出力できる形に' },
+      { name: '薬局・調剤', icon: 'fa-prescription-bottle-medical',
+        pains: ['受注の管理が担当者しか分からない', '発注表を毎回イチから作っている', '必要な情報がバラバラの場所にある'],
+        example: '受注データベース＋薬剤師向けの発注テンプレを配信する仕組みを構築' },
+      { name: '飲食・小売', icon: 'fa-store',
+        pains: ['在庫の数がいつも合わない', '日次の売上集計が手作業', '商品情報があちこちに散らばっている'],
+        example: 'バーコードで在庫を管理し、商品・売上の管理を一元化' },
+      { name: '物流・卸', icon: 'fa-truck',
+        pains: ['発注と請求で同じ内容を二重入力', '帳票を毎回イチから作っている', '取引先ごとに様式がバラバラ'],
+        example: '発注から請求書の発行までを自動化（フォーム＋スプレッドシート連携）' },
+      { name: '士業・事務所', icon: 'fa-file-signature',
+        pains: ['請求書を1枚ずつ手で作成', '大量のメール送付に半日かかる', '案件の進捗が見えない'],
+        example: '請求書100件の作成〜PDF送付を約15分に短縮。400件のメール一括送信も' },
+    ];
+    const industryGrid = document.getElementById('industry-grid');
+    if (industryGrid) {
+      industryGrid.innerHTML = INDUSTRIES.map((d) => `
+        <div class="card-hover bg-surface-muted border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-primary-50 rounded-xl flex items-center justify-center flex-none">
+              <i class="fa-solid ${d.icon} text-lg text-primary"></i>
+            </div>
+            <h3 class="text-base font-bold text-charcoal leading-snug">${d.name}</h3>
+          </div>
+          <ul class="text-sm text-charcoal-light space-y-2 mb-4">
+            ${d.pains.map((p) => `<li class="flex items-start gap-2"><i class="fa-regular fa-square-check text-primary mt-0.5 text-xs"></i>${p}</li>`).join('')}
+          </ul>
+          <div class="bg-white border border-primary/15 rounded-xl p-3 mb-5 mt-auto">
+            <p class="text-[11px] font-bold text-primary mb-1"><i class="fa-solid fa-circle-check mr-1"></i>実際にやった例</p>
+            <p class="text-xs text-charcoal leading-relaxed">${d.example}</p>
+          </div>
+          <button type="button" data-consult="「${d.name}」の自動化について" class="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+            <i class="fa-solid fa-comment-dots mr-2"></i>この業種で相談する
+          </button>
+        </div>`).join('');
+    }
+
+    // ===== 月額会員 ラインナップ =====
+    const LINEUP = [
+      ['請求書・発注書 自動作成', 'fa-file-invoice-dollar'],
+      ['出退勤・勤怠管理', 'fa-clock'],
+      ['シフト表 自動作成', 'fa-calendar-days'],
+      ['売上管理ダッシュボード', 'fa-chart-line'],
+      ['バーコード在庫管理', 'fa-barcode'],
+      ['名簿管理・並び替え', 'fa-address-book'],
+      ['カレンダー自動生成', 'fa-calendar'],
+      ['メール差し込み一括送信', 'fa-envelopes-bulk'],
+      ['帳票PDF化＋自動送信', 'fa-file-pdf'],
+      ['給与・買掛 集計', 'fa-coins'],
+      ['パレート図・分析', 'fa-chart-column'],
+      ['集計ダッシュボード', 'fa-table-cells'],
+    ];
+    const lineupGrid = document.getElementById('lineup-grid');
+    if (lineupGrid) {
+      lineupGrid.innerHTML = LINEUP.map(([t, icon]) => `
+        <button type="button" data-consult="「${t}」のテンプレについて" class="card-hover text-left w-full bg-surface-muted border border-gray-100 rounded-xl p-4 flex items-center gap-3 shadow-sm hover:border-primary/30">
+          <i class="fa-solid ${icon} text-primary text-lg"></i>
+          <span class="text-xs sm:text-sm text-charcoal leading-snug flex-1">${t}</span>
+          <i class="fa-solid fa-comment-dots text-charcoal-lighter text-xs"></i>
+        </button>`).join('');
+    }
+
+    // ===== 実績（業種カテゴリ）=====
+    const WORKS = [
+      ['勤怠・シフト', 'fa-clock'], ['成績・教育', 'fa-graduation-cap'],
+      ['経理・給与・税', 'fa-coins'], ['売上・店舗管理', 'fa-store'],
+      ['在庫・物販', 'fa-boxes-stacked'], ['帳票・書類', 'fa-file-lines'],
+      ['メール自動化', 'fa-envelope'], ['不動産', 'fa-house'],
+      ['データ分析', 'fa-chart-pie'], ['不動産DX', 'fa-building'],
+      ['YouTube自動化', 'fa-youtube', 'brand'], ['EC・物販自動化', 'fa-cart-shopping'],
+    ];
+    const worksGrid = document.getElementById('works-grid');
+    if (worksGrid) {
+      worksGrid.innerHTML = WORKS.map(([t, icon, brand]) => `
+        <button type="button" data-consult="「${t}」のような自動化について" class="card-hover w-full bg-white border border-gray-100 rounded-xl p-4 text-center shadow-sm hover:border-primary/30">
+          <i class="fa-${brand ? 'brands' : 'solid'} ${icon} text-primary text-xl mb-2"></i>
+          <p class="text-xs text-charcoal-light leading-snug">${t}</p>
+        </button>`).join('');
+    }
+
+    // ===== 相談モーダル（事例ごとの相談文を事前入力）=====
+    (function consultModule() {
+      const modal = document.getElementById('consult-modal');
+      const ta = document.getElementById('consult-text');
+      const fb = document.getElementById('consult-feedback');
+      if (!modal || !ta) return;
+      const L = () => window.SAKULIFE_LINKS || {};
+      const setFb = (msg) => { fb.textContent = msg || ''; };
+
+      const buildMessage = (topic) =>
+        `【ご相談】${topic}\n\nSakuLifeのサイトを見て連絡しました。\n\n・いまの状況：\n・やりたいこと／困っていること：\n・ご予算の目安（任意）：\n`;
+
+      function open(topic) {
+        ta.value = buildMessage(topic);
+        setFb('');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      window.openConsult = open;
+
+      // 事例カード/ボタン（data-consult）クリックでモーダルを開く（イベント委譲）
+      document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-consult]');
+        if (trigger) { e.preventDefault(); open(trigger.getAttribute('data-consult')); }
+      });
+
+      document.getElementById('consult-close').addEventListener('click', close);
+      modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.style.display === 'flex') close(); });
+
+      const copyText = (text) => { try { navigator.clipboard && navigator.clipboard.writeText(text); } catch (_) {} };
+
+      // LINEで送る（LINE_OA_IDがあれば本文を事前入力、無ければ友だち追加リンク＋コピー）
+      document.getElementById('consult-line').addEventListener('click', () => {
+        const text = ta.value, links = L();
+        copyText(text);
+        let url = null;
+        if (links.LINE_OA_ID) url = `https://line.me/R/oaMessage/${links.LINE_OA_ID}/?${encodeURIComponent(text)}`;
+        else if (links.LINE_URL && links.LINE_URL !== '#') url = links.LINE_URL;
+        if (url) { window.open(url, '_blank', 'noopener'); setFb('LINEを開きました。本文が入っていなければ貼り付け（コピー済み）。'); }
+        else setFb('LINEリンクは準備中です。「コピー」して別途お送りください。');
+      });
+
+      // メールで送る（mailto で件名・本文を事前入力。LINEを使わない方向け）
+      document.getElementById('consult-mail').addEventListener('click', () => {
+        const text = ta.value, links = L();
+        const email = links.CONTACT_EMAIL;
+        if (email) {
+          copyText(text);
+          const subject = text.split('\n')[0] || '【ご相談】SakuLifeへ';
+          window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+          setFb('メールアプリを開きました（件名・本文を入力済み）。');
+        } else setFb('メール相談先は準備中です。「コピー」して別途お送りください。');
+      });
+
+      // コピー
+      document.getElementById('consult-copy').addEventListener('click', () => {
+        const text = ta.value;
+        if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => setFb('コピーしました。')).catch(() => setFb('コピーできませんでした。手動で選択してください。'));
+        else { ta.select(); document.execCommand('copy'); setFb('コピーしました。'); }
+      });
+    })();
+
+    // ===== モバイルメニュー & フェードイン =====
     document.addEventListener('DOMContentLoaded', () => {
       const menuBtn = document.getElementById('mobile-menu-btn');
       const menuClose = document.getElementById('mobile-menu-close');
       const menu = document.getElementById('mobile-menu');
       const overlay = document.getElementById('mobile-menu-overlay');
       const navLinks = menu.querySelectorAll('.mobile-nav-link');
+      const open = () => { menu.classList.add('open'); overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; };
+      const close = () => { menu.classList.remove('open'); overlay.classList.add('hidden'); document.body.style.overflow = ''; };
+      menuBtn.addEventListener('click', open);
+      menuClose.addEventListener('click', close);
+      overlay.addEventListener('click', close);
+      navLinks.forEach((l) => l.addEventListener('click', close));
 
-      function openMenu() {
-        menu.classList.add('open');
-        overlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeMenu() {
-        menu.classList.remove('open');
-        overlay.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+      document.querySelectorAll('.fade-in-section').forEach((s) => obs.observe(s));
 
-      menuBtn.addEventListener('click', openMenu);
-      menuClose.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
-      navLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-      /* ========================================
-         スクロール連動フェードイン
-      ======================================== */
-      const fadeInSections = document.querySelectorAll('.fade-in-section');
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -80px 0px',
-        threshold: 0.1,
-      };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-      fadeInSections.forEach(section => observer.observe(section));
-
-      /* ========================================
-         ヘッダーのスクロール時背景変化
-      ======================================== */
       const header = document.getElementById('header');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('shadow-md');
-        } else {
-          header.classList.remove('shadow-md');
-        }
-      });
-
-      /* ========================================
-         例文ボタンの入力補助
-      ======================================== */
-      const aiInput = document.getElementById('ai-input');
-      const exampleBtns = document.querySelectorAll('.ai-example-btn');
-      exampleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (aiInput) {
-            aiInput.value = btn.dataset.text;
-            aiInput.focus();
-          }
-        });
-      });
-
-      /* ========================================
-         フィルタータブの切り替え
-      ======================================== */
-      const filterTabs = document.querySelectorAll('.filter-tab');
-      filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          // 外部JSのfilterProjects関数があれば呼び出す
-          if (typeof filterProjects === 'function') {
-            filterProjects(tab.dataset.category);
-          }
-        });
+        header.classList.toggle('shadow-md', window.scrollY > 50);
       });
     });
   </script>
-
 </body>
 </html>

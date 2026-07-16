@@ -18,9 +18,9 @@ const PROJECT_CATALOG = `
 ## 提供サービスカタログ
 
 ### YouTube自動化システム
-1. 2chまとめ動画全自動生成（GPT-4/DALL-E/TTS/MoviePy）¥150,000〜
+1. 2chまとめ動画全自動生成（GPT/DALL-E/TTS/MoviePy）¥150,000〜
 2. 漢字クイズ動画Bot（Gemini/VOICEVOX/YouTube API）¥150,000〜
-3. 偉人名言AI動画（Claude/GPT-4/DALL-E/VOICEVOX）¥200,000〜
+3. 偉人名言AI動画（Claude/GPT/DALL-E/VOICEVOX）¥200,000〜
 4. YouTube切り抜きショート自動化（faster-whisper/Gemini/ffmpeg/FastAPI）¥200,000〜
 5. 睡眠音楽チャンネル自動運用（Suno AI/ffmpeg/YouTube API）¥150,000〜
 6. Veo 3 YouTubeショート自動化 ¥100,000〜
@@ -162,7 +162,8 @@ async function handleRecommend(request, env) {
     }
 
     const geminiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      // バージョン直書きは提供終了で404になる（gemini-2.0-flashは停止済み）。-latestは現行世代に自動追従
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

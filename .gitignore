@@ -4,3 +4,11 @@ Thumbs.db
 node_modules/
 .env
 .wrangler/
+
+# SakuLife会員の有料テンプレ商品（公開しない）
+_membership-products/
+
+# 機密：取引先名を含む・社内ドキュメント（公開リポジトリに出さない）
+お客様の声_依頼文.md
+CLAUDE.md
+_drive棚卸し/
