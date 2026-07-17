@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SakuLife</title>
+  <!-- 名刺QR専用の中継ページ。アクセスを別パス(/qr.html)として計測してから本サイトへ転送する。 -->
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="2;url=https://sakulife.github.io/saku-portfolio/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    html,body{margin:0;height:100%;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      background:linear-gradient(150deg,#f0faf4,#ffffff 55%,#fff8ee);
+      display:flex;align-items:center;justify-content:center;color:#2d3436}
+    .box{text-align:center;padding:24px}
+    .box img{width:76px;height:76px;border-radius:50%;box-shadow:0 6px 18px rgba(33,115,70,.15)}
+    .brand{font-size:23px;font-weight:800;color:#217346;margin-top:14px;letter-spacing:.5px}
+    .msg{font-size:14px;color:#5b6663;margin-top:10px}
+    .spin{margin:18px auto 0;width:26px;height:26px;border:3px solid rgba(33,115,70,.2);border-top-color:#217346;border-radius:50%;animation:s .9s linear infinite}
+    @keyframes s{to{transform:rotate(360deg)}}
+    a{color:#217346;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="images/avatar.png" alt="SakuLife" />
+    <div class="brand">SakuLife</div>
+    <div class="msg">サイトへ移動しています…</div>
+    <div class="spin"></div>
+    <div class="msg" style="margin-top:16px">切り替わらない場合は <a href="https://sakulife.github.io/saku-portfolio/">こちらをタップ</a></div>
+  </div>
+
+  <!-- Cloudflare Web Analytics（このページ=名刺経由を計測）-->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7de9ffa7a5a34c4190833e9e32ee2beb"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  <script>
+    // ビーコン送信の猶予（約1.2秒）をとってから本サイトへ。計測を確実にするため。
+    setTimeout(function () {
+      location.replace("https://sakulife.github.io/saku-portfolio/");
+    }, 1200);
+  </script>
+</body>
+</html>
