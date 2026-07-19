@@ -70,7 +70,15 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;       /* iOSの勝手な文字サイズ拡大を止める（ズレ防止）*/
+      text-size-adjust: 100%;
+    }
+    html, body {
+      overflow-x: hidden;                    /* 万一の横はみ出しで横スクロール＝全体ズレを防ぐ保険 */
+      width: 100%;
+    }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       background-color: #fafbf7;
@@ -79,7 +87,11 @@
       letter-spacing: .01em;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      overflow-wrap: break-word;             /* 長い英数字URL等での押し出しを防ぐ */
+      word-break: normal;
     }
+    /* 画像・SVG・埋め込みは器を超えない */
+    img, svg, video { max-width: 100%; height: auto; }
     h1, h2 { letter-spacing: -.02em; }        /* 大見出しは少し締めて力強く */
     /* 固定ヘッダーに隠れないようアンカー位置を補正 */
     section[id] { scroll-margin-top: 5rem; }
