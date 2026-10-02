@@ -71,7 +71,9 @@
       INSTAGRAM_URL: "https://www.instagram.com/sakusaku_excel/",
       TIKTOK_URL: "https://www.tiktok.com/@sakusaku_excel",
       SOUBA_URL: "https://hokkaido-souba.com/",               // 北海道の不動産相場サイト
-      TOOLS_URL: "https://sakutto-tools-bi9.pages.dev/",      // さくっとツール。⚠ 似た名前の sakutto-tools.pages.dev は別人のサイト。取り違えない
+      TOOLS_URL: "https://tools.sakulife-labo.com/",          // さくっとツール（2026-10-02 本番ドメインで200を確認）。⚠ 似た名前の sakutto-tools.pages.dev は別人のサイト。取り違えない
+      GAMES_URL: "https://games.sakulife-labo.com/",          // さくっとゲーム（2026-10-02 に200を確認）
+      BOOTH_SHOP_URL: "https://sakusaku-excel.booth.pm/",     // BOOTH のショップ（Excelテンプレの単品販売）。商品は SHOP_ITEMS（script内）
       NOTE_AI_DAILY_URL: "https://note.com/sakusaku_excel/n/n6df8f894f229", // note「毎朝9時に、AIがこのnoteを1本書いている」
       NOTE_HUB_URL: "https://note.com/sakusaku_excel/n/nf8279e494029",  // note のリンク集記事（2026-09-29 公開・10-01 に200を確認）。入れる＝「noteのリンク集」ボタンが出る
       NOTE_SOUBA_STORY_URL: "https://note.com/sakusaku_excel/n/n476de5848266",  // note「相場サイトを作った話」（2026-09-29 公開・10-01 に200を確認）
@@ -204,6 +206,7 @@
           <a href="#pricing" class="text-sm text-charcoal-light hover:text-primary transition-colors">料金</a>
           <a href="#works" class="text-sm text-charcoal-light hover:text-primary transition-colors">実績</a>
           <a href="#made" class="text-sm text-charcoal-light hover:text-primary transition-colors">作ったもの</a>
+          <a href="#shop" class="hidden lg:inline text-sm text-charcoal-light hover:text-primary transition-colors">テンプレ販売</a>
           <a href="#note" class="text-sm text-charcoal-light hover:text-primary transition-colors">note</a>
           <a href="#profile" class="text-sm text-charcoal-light hover:text-primary transition-colors">プロフィール</a>
           <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
@@ -230,6 +233,7 @@
         <a href="#pricing" class="mobile-nav-link text-charcoal hover:text-primary py-2">料金</a>
         <a href="#works" class="mobile-nav-link text-charcoal hover:text-primary py-2">実績</a>
         <a href="#made" class="mobile-nav-link text-charcoal hover:text-primary py-2">作ったもの</a>
+        <a href="#shop" class="mobile-nav-link text-charcoal hover:text-primary py-2">テンプレ販売</a>
         <a href="#note" class="mobile-nav-link text-charcoal hover:text-primary py-2">note</a>
         <a href="#profile" class="mobile-nav-link text-charcoal hover:text-primary py-2">プロフィール</a>
         <a href="#links" class="mobile-nav-link text-charcoal hover:text-primary py-2">リンク集</a>
@@ -291,6 +295,7 @@
             <span class="text-charcoal-lighter mr-1">自分で作って公開中：</span>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-map-location-dot"></i>北海道の相場サイト</a>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール57本</a>
+            <a href="#shop" class="hero-chip"><i class="fa-solid fa-file-excel"></i>Excelテンプレ販売中</a>
             <a href="#note" class="hero-chip"><i class="fa-solid fa-pen-nib"></i>毎朝AIが書くnote</a>
           </div>
         </div>
@@ -733,6 +738,31 @@
     </div>
   </section>
 
+  <!-- ===================== テンプレ販売（BOOTH）=====================
+       商品は SHOP_ITEMS（下の script）に1行ずつ。決済はBOOTH側＝このサイトは「棚」だけ。 -->
+  <section id="shop" class="py-20 md:py-28 bg-white">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Templates</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">買ってすぐ使える<br class="sm:hidden" />Excelテンプレ</h2>
+          <p class="text-charcoal-light max-w-2xl mx-auto">
+            受託で作ってきた「型」を、誰でも使える形に作り直しました。<b class="text-charcoal">頼むほどではないけれど、手作業はやめたい</b>ときに。
+            BOOTH（ピクシブのショップ）でダウンロード販売しています。
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto mb-10" id="shop-grid"></div>
+        <div class="text-center">
+          <a data-link="BOOTH_SHOP_URL" data-hide-empty href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center px-8 py-3.5 text-sm font-bold text-charcoal bg-surface-muted border border-gray-200 rounded-xl hover:border-primary/40 hover:text-primary transition">
+            <i class="fa-solid fa-store mr-2 text-primary"></i>BOOTHのショップを見る<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs opacity-60"></i>
+          </a>
+          <p class="text-xs text-charcoal-lighter mt-4">「うちの帳票に合わせて直してほしい」は、<button type="button" data-consult="販売中のテンプレを、うちに合わせて直してほしい" class="underline underline-offset-2 text-primary font-bold">こちらから相談</button>できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="section-divider max-w-site mx-auto"></div>
 
   <!-- ===================== プロフィール ===================== -->
@@ -1168,6 +1198,29 @@
         </a>`).join('');
     }
 
+    // ===== テンプレ販売（BOOTH）。商品が増えたら1行足す。値段・題名は BOOTH の商品ページと同じにする（2026-10-02 確認）=====
+    const SHOP_ITEMS = [
+      { title: '確認テスト作成ツール', sub: '問題リストから小テストを自動で作る（生徒用・解答用つき）', price: '¥1,980',
+        img: 'images/shop/kakunin-test.webp', url: 'https://booth.pm/ja/items/8914376',
+        points: ['範囲と問題数を選ぶだけ', 'A4に1枚25問・最大100問', 'Windows版Excel（マクロ入り）'] },
+    ];
+    const shopGrid = document.getElementById('shop-grid');
+    if (shopGrid) {
+      shopGrid.innerHTML = SHOP_ITEMS.map((it) => `
+        <a href="${it.url}" target="_blank" rel="noopener" class="card-hover w-full sm:w-[330px] bg-surface-muted border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col hover:border-primary/30">
+          <img src="${it.img}" alt="${it.title}" loading="lazy" decoding="async" class="w-full aspect-square object-cover bg-white" width="720" height="720" />
+          <div class="p-5 flex flex-col flex-1">
+            <p class="text-base font-bold text-charcoal leading-snug">${it.title}</p>
+            <p class="text-xs text-charcoal-light mt-1 mb-3">${it.sub}</p>
+            <ul class="text-xs text-charcoal-light space-y-1.5 mb-4">${it.points.map((t) => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5"></i>${t}</li>`).join('')}</ul>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-primary font-black text-xl">${it.price}</span>
+              <span class="text-xs font-bold text-primary">BOOTHで見る<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </div>
+          </div>
+        </a>`).join('');
+    }
+
     // ===== リンク集（SAKULIFE_LINKS のキーで引く。URLが空なら出さない）=====
     const LINK_HUB = [
       { key: 'NOTE_URL',       name: 'note',                 sub: 'Excel・AI・自動化の記事',           icon: 'fa-solid fa-pen-nib',        color: '#41c9b4' },
@@ -1176,6 +1229,8 @@
       { key: 'TIKTOK_URL',     name: 'TikTok',               sub: '@sakusaku_excel',                    icon: 'fa-brands fa-tiktok',        color: '#111111' },
       { key: 'SOUBA_URL',      name: '北海道の不動産相場',     sub: '170市町村の成約価格を地図で',        icon: 'fa-solid fa-map-location-dot', color: '#1b5e20' },
       { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール57本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
+      { key: 'BOOTH_SHOP_URL', name: 'Excelテンプレ（BOOTH）', sub: '買ってすぐ使えるテンプレ',          icon: 'fa-solid fa-file-excel',     color: '#fc4d50' },
+      { key: 'GAMES_URL',      name: 'さくっとゲーム',         sub: 'ブラウザで遊べる3Dミニゲーム',       icon: 'fa-solid fa-gamepad',        color: '#e8732a' },
       { key: 'NOTE_HUB_URL',   name: 'noteのリンク集',         sub: '作ったもの一覧（note版）',          icon: 'fa-solid fa-link',           color: '#2d8c4e' },
       { key: 'NOTE_MEMBERSHIP_URL', name: 'SakuLife会員',     sub: '毎月テンプレが届く（note）',        icon: 'fa-solid fa-crown',          color: '#c9a227' },
       { key: 'COCONALA_URL',   name: 'ココナラ',              sub: 'これまでの評価を全部公開',          icon: 'fa-solid fa-store',          color: '#f3a712' },
