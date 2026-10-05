@@ -73,6 +73,8 @@
       SOUBA_URL: "https://hokkaido-souba.com/",               // 北海道の不動産相場サイト
       TOOLS_URL: "https://tools.sakulife-labo.com/",          // さくっとツール（2026-10-02 本番ドメインで200を確認）。⚠ 似た名前の sakutto-tools.pages.dev は別人のサイト。取り違えない
       GAMES_URL: "https://games.sakulife-labo.com/",          // さくっとゲーム（2026-10-02 に200を確認）
+      BLOG_URL: "https://sakulife-labo.com/",                 // ブログ（9番の母屋。子育て・おでかけ・暮らし）。2026-10-05 に200を確認。⚠ tools. games. learn. はこの下のサブドメイン＝**頂点を載せ忘れない**
+      LEARN_URL: "https://learn.sakulife-labo.com/",          // さくっと学習（30番・書いて動かして覚える。プログラミングは /code/）。2026-10-05 に200を確認
       BOOTH_SHOP_URL: "https://sakusaku-excel.booth.pm/",     // BOOTH のショップ（Excelテンプレの単品販売）。商品は SHOP_ITEMS（script内）
       NOTE_AI_DAILY_URL: "https://note.com/sakusaku_excel/n/n6df8f894f229", // note「毎朝9時に、AIがこのnoteを1本書いている」
       NOTE_HUB_URL: "https://note.com/sakusaku_excel/n/nf8279e494029",  // note のリンク集記事（2026-09-29 公開・10-01 に200を確認）。入れる＝「noteのリンク集」ボタンが出る
@@ -965,6 +967,7 @@
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>毎月あたらしいExcelテンプレ配布</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>AI活用メモ付き</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>過去アーカイブの閲覧</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>公開済みの<b class="text-charcoal">有料記事14本</b>（Excel・AI）も読める</li>
             </ul>
           </div>
           <div class="card-hover bg-white border-2 border-primary/30 rounded-2xl p-8 shadow-sm relative overflow-hidden">
@@ -1228,9 +1231,11 @@
       { key: 'INSTAGRAM_URL',  name: 'Instagram',            sub: '@sakusaku_excel',                    icon: 'fa-brands fa-instagram',     color: '#d62976' },
       { key: 'TIKTOK_URL',     name: 'TikTok',               sub: '@sakusaku_excel',                    icon: 'fa-brands fa-tiktok',        color: '#111111' },
       { key: 'SOUBA_URL',      name: '北海道の不動産相場',     sub: '170市町村の成約価格を地図で',        icon: 'fa-solid fa-map-location-dot', color: '#1b5e20' },
-      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール57本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
+      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール65本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
       { key: 'BOOTH_SHOP_URL', name: 'Excelテンプレ（BOOTH）', sub: '買ってすぐ使えるテンプレ',          icon: 'fa-solid fa-file-excel',     color: '#fc4d50' },
       { key: 'GAMES_URL',      name: 'さくっとゲーム',         sub: 'ブラウザで遊べる3Dミニゲーム',       icon: 'fa-solid fa-gamepad',        color: '#e8732a' },
+      { key: 'LEARN_URL',      name: 'さくっと学習',           sub: '書いて動かして覚える（無料）',       icon: 'fa-solid fa-graduation-cap', color: '#3f6fd8' },
+      { key: 'BLOG_URL',       name: 'ブログ',                 sub: '子育て・おでかけ・暮らしの記録',     icon: 'fa-solid fa-seedling',       color: '#3d7a55' },
       { key: 'NOTE_HUB_URL',   name: 'noteのリンク集',         sub: '作ったもの一覧（note版）',          icon: 'fa-solid fa-link',           color: '#2d8c4e' },
       { key: 'NOTE_MEMBERSHIP_URL', name: 'SakuLife会員',     sub: '毎月テンプレが届く（note）',        icon: 'fa-solid fa-crown',          color: '#c9a227' },
       { key: 'COCONALA_URL',   name: 'ココナラ',              sub: 'これまでの評価を全部公開',          icon: 'fa-solid fa-store',          color: '#f3a712' },
