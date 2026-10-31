@@ -205,6 +205,7 @@
         </a>
         <nav class="hidden md:flex items-center space-x-6 lg:space-x-7">
           <a href="#industries" class="text-sm text-charcoal-light hover:text-primary transition-colors">業種から</a>
+          <a href="#samples" class="hidden lg:inline text-sm text-charcoal-light hover:text-primary transition-colors">見本</a>
           <a href="#pricing" class="text-sm text-charcoal-light hover:text-primary transition-colors">料金</a>
           <a href="#works" class="text-sm text-charcoal-light hover:text-primary transition-colors">実績</a>
           <a href="#made" class="text-sm text-charcoal-light hover:text-primary transition-colors">作ったもの</a>
@@ -232,6 +233,7 @@
       </div>
       <nav class="flex flex-col p-4 space-y-4">
         <a href="#industries" class="mobile-nav-link text-charcoal hover:text-primary py-2">業種から</a>
+        <a href="#samples" class="mobile-nav-link text-charcoal hover:text-primary py-2">業種別の見本</a>
         <a href="#pricing" class="mobile-nav-link text-charcoal hover:text-primary py-2">料金</a>
         <a href="#works" class="mobile-nav-link text-charcoal hover:text-primary py-2">実績</a>
         <a href="#made" class="mobile-nav-link text-charcoal hover:text-primary py-2">作ったもの</a>
@@ -449,6 +451,29 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="industry-grid"></div>
         <p class="text-center text-sm text-charcoal-light mt-8">
           載っていない業種でも大丈夫です。<b class="text-charcoal">「うちの場合はどう?」</b>だけでもお気軽に。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <!-- ===================== 業種別の見本（架空の店で作った完成品）===================== -->
+  <section id="samples" class="py-20 md:py-28">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Samples</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">業種別の見本ページ</h2>
+          <p class="text-charcoal-light max-w-2xl mx-auto">
+            「どんな物ができるの？」に、完成品でお答えします。<br class="hidden md:block" />
+            どれも<b class="text-charcoal">架空のお店・物件</b>で作った見本です。開いて、押して、試せます。
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6" id="sample-grid"></div>
+        <p class="text-center text-sm text-charcoal-light mt-8">
+          飲食・美容サロン・教室・職人（リフォーム）の見本も準備中です。<br class="hidden sm:block" />
+          ご相談の内容から、<b class="text-charcoal">あなたの業種の見本を1枚先に作ってお見せする</b>こともできます。
         </p>
       </div>
     </div>
@@ -1130,6 +1155,29 @@
             <i class="fa-solid fa-comment-dots mr-2"></i>この業種で相談する
           </button>
         </div>`).join('');
+    }
+
+    // ===== 業種別の見本（samples/ の架空の店・物件。増えたら1行足す。サムネは samples/export.py が作る）=====
+    const SAMPLES = [
+      { name: '大家さんの物件紹介ページ', href: 'samples/rental-house.html', img: 'images/samples/rental-house.webp',
+        tags: ['不動産・大家', '初期費用の自動計算', '内見予約'],
+        desc: '北海道の戸建て賃貸を想定。灯油の量や除雪の分担まで載せ、入居日を選ぶと初期費用がその場で出ます。' },
+    ];
+    const sampleGrid = document.getElementById('sample-grid');
+    if (sampleGrid) {
+      sampleGrid.innerHTML = SAMPLES.map((s) => `
+        <a href="${s.href}" target="_blank" rel="noopener" class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+          <div class="relative">
+            <img src="${s.img}" alt="${s.name}（見本）の画面" loading="lazy" decoding="async" width="900" height="563" class="w-full h-auto block border-b border-gray-100" />
+            <span class="absolute left-3 top-3 text-[11px] font-bold text-white bg-orange-700 px-2.5 py-0.5 rounded-full">見本・架空</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-2 mb-3">${s.tags.map((t) => `<span class="text-[11px] font-bold text-primary bg-primary-50 px-2.5 py-0.5 rounded-full">${t}</span>`).join('')}</div>
+            <h3 class="text-lg font-bold text-charcoal mb-2">${s.name}</h3>
+            <p class="text-sm text-charcoal-light leading-relaxed mb-5">${s.desc}</p>
+            <span class="mt-auto inline-flex items-center text-sm font-bold text-primary">見本を開く<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
+          </div>
+        </a>`).join('');
     }
 
     // ===== 月額会員 ラインナップ =====

@@ -17,3 +17,7 @@ _名刺/
 # CLAUDE.md の写し（Codex 用）。社内情報なので公開しない
 AGENTS.md
 作業ログ.md
+
+
+# 見本の書き出し画像（samples/export.py で作り直せる・13番がココナラ用に使う）
+samples/export/

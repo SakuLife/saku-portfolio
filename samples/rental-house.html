@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 見本＝架空の物件。検索に「本物の物件」として出ないよう noindex -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>【見本・架空の物件】ひだまり台の家｜大家さんの物件紹介ページ（SakuLife 制作見本）</title>
+  <meta name="description" content="SakuLife が作った「大家さんの物件紹介ページ」の見本です。物件・住所・大家は架空です。" />
+  <meta name="theme-color" content="#2f4a3a" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #26302b;
+      --ink-2: #56625b;
+      --ink-3: #7d8882;
+      --paper: #fbf8f2;
+      --card: #ffffff;
+      --line: #e6e0d4;
+      --green: #2f4a3a;
+      --green-2: #3f6a52;
+      --wood: #b7793f;
+      --wood-soft: #f3e6d6;
+      --snow: #eaf1f6;
+      --sample: #c2410c;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+    html, body { margin: 0; overflow-x: hidden; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-feature-settings: "palt" 1;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+
+    /* ===== 見本の帯（常に見える）===== */
+    .sample-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--sample); color: #fff;
+      font-size: 13px; font-weight: 700; text-align: center;
+      padding: 7px 12px; line-height: 1.5;
+    }
+    .sample-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+
+    /* ===== ヘッダー ===== */
+    .site-head { background: var(--card); border-bottom: 1px solid var(--line); }
+    .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: .02em; text-decoration: none; }
+    .logo-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--green); display: grid; place-items: center; flex: none; }
+    .logo small { display: block; font-size: 10px; font-weight: 500; color: var(--ink-3); letter-spacing: .08em; line-height: 1.2; }
+    .head-nav { display: none; gap: 22px; font-size: 14px; color: var(--ink-2); }
+    .head-nav a { text-decoration: none; }
+    .head-nav a:hover { color: var(--green); }
+    @media (min-width: 900px) { .head-nav { display: flex; } }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font: inherit; font-weight: 700; border: 0; cursor: pointer; text-decoration: none;
+      border-radius: 12px; padding: 12px 22px; transition: transform .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-main { background: var(--green); color: #fff; }
+    .btn-main:hover { background: var(--green-2); }
+    .btn-sub { background: var(--card); color: var(--green); border: 1.5px solid var(--green); }
+    .btn-sm { padding: 8px 14px; font-size: 14px; border-radius: 10px; }
+
+    /* ===== ヒーロー ===== */
+    .hero { padding: 28px 0 8px; }
+    .hero-grid { display: grid; gap: 24px; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; } .hero { padding: 48px 0 16px; } }
+    .hero-art { border-radius: 20px; overflow: hidden; background: linear-gradient(#cfe3ef, #eef5f9 62%); box-shadow: 0 10px 30px rgba(38,48,43,.12); position: relative; }
+    .art-badge { position: absolute; left: 12px; top: 12px; background: rgba(255,255,255,.92); color: var(--ink-2); font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; }
+    .chip { font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 999px; background: var(--wood-soft); color: #8a5427; }
+    .chip.green { background: #e3eee7; color: var(--green); }
+    .hero h1 { font-size: 28px; line-height: 1.35; margin: 0 0 10px; font-weight: 900; letter-spacing: .01em; }
+    @media (min-width: 768px) { .hero h1 { font-size: 38px; } }
+    .hero .lead { color: var(--ink-2); margin: 0 0 18px; }
+    .addr { font-size: 13px; color: var(--ink-3); margin: 0 0 6px; }
+    .price-box { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin-bottom: 18px; }
+    .price { font-size: 36px; font-weight: 900; color: var(--green); line-height: 1.1; }
+    .price span { font-size: 16px; }
+    .price-note { font-size: 13px; color: var(--ink-2); }
+    .hero-cta { display: grid; gap: 10px; }
+    @media (min-width: 480px) { .hero-cta { grid-template-columns: 1fr 1fr; } }
+
+    /* ===== 共通の節 ===== */
+    section { padding: 44px 0; }
+    @media (min-width: 768px) { section { padding: 64px 0; } }
+    .sec-label { font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--wood); margin: 0 0 4px; }
+    .sec-title { font-size: 24px; font-weight: 900; margin: 0 0 8px; line-height: 1.4; }
+    @media (min-width: 768px) { .sec-title { font-size: 30px; } }
+    .sec-lead { color: var(--ink-2); margin: 0 0 24px; max-width: 46em; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+    @media (min-width: 768px) { .card { padding: 26px; } }
+
+    /* ===== ポイント ===== */
+    .points { display: grid; gap: 14px; }
+    @media (min-width: 768px) { .points { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+    .point-ico { width: 44px; height: 44px; border-radius: 12px; background: #e3eee7; display: grid; place-items: center; margin-bottom: 12px; }
+    .point h3 { font-size: 17px; margin: 0 0 6px; }
+    .point p { margin: 0; font-size: 14px; color: var(--ink-2); }
+
+    /* ===== 写真（差し込み枠）===== */
+    .gallery { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    @media (min-width: 768px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+    .shot { border-radius: 14px; overflow: hidden; background: var(--card); border: 1px solid var(--line); }
+    .shot-art { aspect-ratio: 4 / 3; display: grid; place-items: center; }
+    .shot figcaption { font-size: 13px; padding: 8px 12px; color: var(--ink-2); }
+    .shot figcaption b { color: var(--ink); display: block; font-size: 14px; }
+    .note-s { font-size: 12px; color: var(--ink-3); margin-top: 10px; }
+
+    /* ===== 間取り ===== */
+    .plan-grid { display: grid; gap: 18px; }
+    @media (min-width: 900px) { .plan-grid { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+    .tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+    .tab { font: inherit; font-size: 14px; font-weight: 700; padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink-2); cursor: pointer; }
+    .tab[aria-selected="true"] { background: var(--green); border-color: var(--green); color: #fff; }
+    .plan-svg text { font-family: 'Noto Sans JP', sans-serif; }
+    table.spec { width: 100%; border-collapse: collapse; font-size: 14px; }
+    table.spec th, table.spec td { text-align: left; padding: 10px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    table.spec th { width: 7.5em; color: var(--ink-3); font-weight: 500; white-space: nowrap; }
+
+    /* ===== 冬の暮らし ===== */
+    .winter { background: var(--snow); }
+    .winter-grid { display: grid; gap: 14px; }
+    @media (min-width: 768px) { .winter-grid { grid-template-columns: 1fr 1fr; gap: 18px; } }
+    .winter h3 { font-size: 17px; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+    .winter ul { margin: 0; padding-left: 1.2em; font-size: 14px; color: var(--ink-2); }
+    .winter li + li { margin-top: 4px; }
+    .who { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14px; margin: 0; }
+    .who dt { font-weight: 700; }
+    .who dd { margin: 0; color: var(--ink-2); }
+    .tag-me { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 6px; background: var(--wood-soft); color: #8a5427; }
+    .tag-owner { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 6px; background: #e3eee7; color: var(--green); }
+
+    /* ===== 初期費用 ===== */
+    .calc-grid { display: grid; gap: 18px; }
+    @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
+    .field { margin-bottom: 16px; }
+    .field label, .field .lbl { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .field input[type="date"], .field input[type="text"], .field input[type="tel"], .field select, .field textarea {
+      width: 100%; font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; color: var(--ink);
+    }
+    .field textarea { resize: vertical; min-height: 84px; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green-2); box-shadow: 0 0 0 3px rgba(63,106,82,.15); }
+    .check { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+    .check input { width: 18px; height: 18px; accent-color: var(--green); }
+    .cost-list { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    .cost-list li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+    .cost-list li span:last-child { font-weight: 700; white-space: nowrap; }
+    .cost-list li.zero span:last-child { color: var(--green-2); }
+    .cost-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding-top: 12px; border-top: 2px solid var(--ink); }
+    .cost-total b { font-size: 28px; color: var(--green); }
+    .hint { font-size: 12px; color: var(--ink-3); margin: 8px 0 0; }
+
+    /* ===== 周辺 ===== */
+    .near { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+    @media (min-width: 768px) { .near { grid-template-columns: repeat(4, 1fr); } }
+    .near-item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    .near-item .k { font-size: 12px; color: var(--ink-3); }
+    .near-item .v { font-weight: 700; }
+    .near-item .t { font-size: 22px; font-weight: 900; color: var(--green); }
+    .near-item .t span { font-size: 13px; }
+
+    /* ===== 内見予約 ===== */
+    .slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    @media (min-width: 600px) { .slots { grid-template-columns: repeat(3, 1fr); } }
+    .slot { font: inherit; font-size: 14px; padding: 10px 6px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; line-height: 1.4; }
+    .slot small { display: block; color: var(--ink-3); font-size: 12px; }
+    .slot[aria-pressed="true"] { border-color: var(--green); background: #e3eee7; color: var(--green); font-weight: 700; }
+    .form-msg { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #fff4ec; border: 1px solid #f3c9a8; color: #8a3b0c; font-size: 14px; display: none; }
+    .form-msg.show { display: block; }
+    .form-err { color: #b42318; font-size: 13px; margin-top: 8px; min-height: 1.2em; }
+
+    /* ===== FAQ ===== */
+    details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 0 18px; }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 700; padding: 15px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "＋"; color: var(--wood); flex: none; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0 0 16px; color: var(--ink-2); font-size: 14px; }
+
+    /* ===== 大家から ===== */
+    .owner { display: grid; gap: 16px; align-items: center; }
+    @media (min-width: 768px) { .owner { grid-template-columns: auto 1fr; gap: 26px; } }
+    .owner-face { width: 88px; height: 88px; border-radius: 50%; background: var(--wood-soft); display: grid; place-items: center; }
+
+    /* ===== 見本の説明（フッター上）===== */
+    .about-sample { background: #fff4ec; border-top: 3px solid var(--sample); }
+    .about-sample h2 { font-size: 20px; margin: 0 0 10px; color: #8a3b0c; }
+    .about-sample ul { margin: 0 0 18px; padding-left: 1.2em; font-size: 14px; color: var(--ink-2); }
+    .about-sample .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { background: var(--green); color: rgba(255,255,255,.8); font-size: 13px; padding: 26px 0 96px; }
+    @media (min-width: 900px) { footer { padding-bottom: 26px; } }
+
+    /* ===== スマホの下に固定する予約ボタン ===== */
+    .fixed-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: rgba(255,255,255,.96); border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); display: flex; gap: 10px; align-items: center; }
+    .fixed-cta .p { font-weight: 900; color: var(--green); line-height: 1.2; white-space: nowrap; }
+    .fixed-cta .p small { display: block; font-size: 11px; color: var(--ink-3); font-weight: 500; }
+    .fixed-cta .btn { flex: 1; padding: 12px 10px; }
+    @media (min-width: 900px) { .fixed-cta { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="sample-bar" role="note">
+    これは <b>見本</b> です。物件・住所・大家はすべて<b>架空</b>です。
+    <a href="../index.html#samples">SakuLife の制作見本一覧へ</a>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="ひだまり台の家（見本）">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+        </span>
+        <span>ひだまり台の家<small>大家が直接お貸しする戸建て（見本）</small></span>
+      </a>
+      <nav class="head-nav" aria-label="ページ内">
+        <a href="#plan">間取り</a><a href="#winter">冬の暮らし</a><a href="#cost">初期費用</a><a href="#faq">よくある質問</a>
+      </nav>
+      <a class="btn btn-main btn-sm" href="#visit">内見を予約</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== ヒーロー ===== -->
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-art">
+          <span class="art-badge">イラスト（実際のページでは写真）</span>
+          <svg viewBox="0 0 640 440" role="img" aria-label="2階建ての戸建てと雪の積もった駐車場のイラスト">
+            <circle cx="540" cy="80" r="34" fill="#fff7d6"/>
+            <path d="M0 300 Q160 250 320 290 T640 270 V440 H0Z" fill="#dbe8f0"/>
+            <path d="M0 340 Q200 310 400 336 T640 330 V440 H0Z" fill="#fff"/>
+            <!-- 木 -->
+            <rect x="74" y="240" width="10" height="70" fill="#8a6a4a"/>
+            <path d="M79 150 L40 250 H118Z" fill="#3f6a52"/><path d="M79 178 L48 236 H110Z" fill="#fff" opacity=".85"/>
+            <!-- 家 -->
+            <rect x="200" y="190" width="250" height="150" fill="#f3e6d6"/>
+            <path d="M184 196 L325 98 L466 196Z" fill="#2f4a3a"/>
+            <path d="M200 186 L325 104 L450 186" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+            <rect x="230" y="214" width="56" height="44" rx="3" fill="#cfe3ef" stroke="#b7793f" stroke-width="4"/>
+            <rect x="364" y="214" width="56" height="44" rx="3" fill="#cfe3ef" stroke="#b7793f" stroke-width="4"/>
+            <rect x="230" y="282" width="80" height="44" rx="3" fill="#cfe3ef" stroke="#b7793f" stroke-width="4"/>
+            <rect x="350" y="276" width="44" height="64" rx="3" fill="#b7793f"/>
+            <circle cx="386" cy="310" r="3" fill="#f3e6d6"/>
+            <!-- 風除室 -->
+            <rect x="340" y="268" width="64" height="8" fill="#2f4a3a"/>
+            <!-- 灯油タンク -->
+            <rect x="460" y="292" width="34" height="44" rx="6" fill="#d36b2c"/>
+            <rect x="456" y="334" width="42" height="6" fill="#8a6a4a"/>
+            <!-- 煙突 -->
+            <rect x="398" y="118" width="18" height="44" fill="#56625b"/>
+            <!-- 車 -->
+            <rect x="500" y="318" width="96" height="30" rx="10" fill="#3f6a52"/>
+            <rect x="516" y="300" width="58" height="24" rx="8" fill="#3f6a52"/>
+            <rect x="522" y="304" width="22" height="14" rx="3" fill="#cfe3ef"/><rect x="548" y="304" width="22" height="14" rx="3" fill="#cfe3ef"/>
+            <circle cx="522" cy="350" r="9" fill="#26302b"/><circle cx="576" cy="350" r="9" fill="#26302b"/>
+            <path d="M494 302 Q548 286 602 300" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+            <!-- 雪 -->
+            <g fill="#fff"><circle cx="140" cy="60" r="4"/><circle cx="260" cy="40" r="3"/><circle cx="460" cy="50" r="4"/><circle cx="600" cy="150" r="3"/><circle cx="40" cy="110" r="3"/><circle cx="170" cy="140" r="3"/><circle cx="500" cy="200" r="3"/></g>
+          </svg>
+        </div>
+
+        <div>
+          <ul class="chip-row">
+            <li class="chip">戸建て・3LDK</li><li class="chip">駐車2台 無料</li><li class="chip green">仲介手数料 0円</li><li class="chip green">小型犬・猫 相談可</li>
+          </ul>
+          <p class="addr">北海道 ひだまり市 ひだまり台3丁目（架空の住所）</p>
+          <h1>雪の日も、ちゃんと暖かい。<br />内窓つきの2階建て</h1>
+          <p class="lead">2025年に水まわりと内装を新しくしました。灯油の量や除雪の分担まで、住む前に知りたいことを全部書いています。</p>
+          <div class="price-box">
+            <div class="price">68,000<span>円／月</span></div>
+            <div class="price-note">管理費なし・敷金1か月・礼金なし<br />入居 2026年12月下旬から</div>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-main" href="#visit">内見を予約する</a>
+            <a class="btn btn-sub" href="#cost">初期費用を計算する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ポイント ===== -->
+    <section aria-labelledby="points-title">
+      <div class="wrap">
+        <p class="sec-label">POINT</p>
+        <h2 class="sec-title" id="points-title">この家の3つのいいところ</h2>
+        <div class="points">
+          <div class="card point">
+            <div class="point-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg></div>
+            <h3>全部の窓に内窓</h3>
+            <p>二重のサッシで、窓ぎわの冷えと結露が減ります。暖房の効きも変わります。</p>
+          </div>
+          <div class="card point">
+            <div class="point-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
+            <h3>水まわりは2025年に新品</h3>
+            <p>キッチン・お風呂・トイレ・洗面台を入れ替えました。給湯は灯油ボイラーです。</p>
+          </div>
+          <div class="card point">
+            <div class="point-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+            <h3>大家に直接つながる</h3>
+            <p>仲介会社を通さないので手数料0円。困りごとはLINEで大家に直接どうぞ。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 写真 ===== -->
+    <section aria-labelledby="photo-title" style="padding-top:0">
+      <div class="wrap">
+        <p class="sec-label">PHOTO</p>
+        <h2 class="sec-title" id="photo-title">お部屋の様子</h2>
+        <div class="gallery">
+          <figure class="shot" style="margin:0">
+            <div class="shot-art" style="background:#f3e6d6"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#b7793f" stroke-width="1.4"><rect x="2" y="12" width="20" height="6" rx="2"/><path d="M5 12V8h14v4M4 18v2M20 18v2"/></svg></div>
+            <figcaption><b>リビング 16畳</b>南向き・FF式ストーブ</figcaption>
+          </figure>
+          <figure class="shot" style="margin:0">
+            <div class="shot-art" style="background:#e3eee7"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#3f6a52" stroke-width="1.4"><rect x="3" y="9" width="18" height="11" rx="1"/><path d="M3 13h18M8 9V5h8v4"/><circle cx="8" cy="16.5" r="1"/></svg></div>
+            <figcaption><b>キッチン</b>3口コンロ・食洗機つき</figcaption>
+          </figure>
+          <figure class="shot" style="margin:0">
+            <div class="shot-art" style="background:#eaf1f6"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#56625b" stroke-width="1.4"><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V5a2 2 0 0 1 4 0"/></svg></div>
+            <figcaption><b>お風呂</b>追いだき・浴室乾燥</figcaption>
+          </figure>
+          <figure class="shot" style="margin:0">
+            <div class="shot-art" style="background:#f6efe4"><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#8a6a4a" stroke-width="1.4"><rect x="3" y="10" width="18" height="9" rx="1"/><path d="M3 14h18M7 10V6h10v4"/></svg></div>
+            <figcaption><b>2階 洋室</b>6畳×2・8畳×1</figcaption>
+          </figure>
+        </div>
+        <p class="note-s">※見本では絵で代用しています。実際のページでは、大家さんが撮った写真を入れます（拡大表示つき）。</p>
+      </div>
+    </section>
+
+    <!-- ===== 間取り ===== -->
+    <section id="plan" aria-labelledby="plan-title" style="background:#fff">
+      <div class="wrap">
+        <p class="sec-label">FLOOR PLAN</p>
+        <h2 class="sec-title" id="plan-title">間取りと設備</h2>
+        <div class="plan-grid">
+          <div class="card">
+            <div class="tabs" role="tablist" aria-label="階を選ぶ">
+              <button class="tab" role="tab" id="tab-1f" aria-selected="true" aria-controls="plan-1f">1階</button>
+              <button class="tab" role="tab" id="tab-2f" aria-selected="false" aria-controls="plan-2f">2階</button>
+            </div>
+            <div id="plan-1f" role="tabpanel" aria-labelledby="tab-1f">
+              <svg class="plan-svg" viewBox="0 0 400 300" role="img" aria-label="1階の間取り図：リビングダイニング16畳、キッチン、浴室、洗面所、トイレ、玄関と風除室">
+                <rect x="10" y="10" width="380" height="280" fill="#fbf8f2" stroke="#26302b" stroke-width="4"/>
+                <rect x="10" y="10" width="230" height="180" fill="#f3e6d6" stroke="#26302b" stroke-width="2"/>
+                <text x="125" y="95" text-anchor="middle" font-size="18" font-weight="700" fill="#26302b">LDK</text>
+                <text x="125" y="118" text-anchor="middle" font-size="13" fill="#56625b">16畳</text>
+                <rect x="240" y="10" width="150" height="90" fill="#e3eee7" stroke="#26302b" stroke-width="2"/>
+                <text x="315" y="60" text-anchor="middle" font-size="14" font-weight="700" fill="#26302b">キッチン</text>
+                <rect x="240" y="100" width="80" height="90" fill="#eaf1f6" stroke="#26302b" stroke-width="2"/>
+                <text x="280" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#26302b">浴室</text>
+                <rect x="320" y="100" width="70" height="90" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="355" y="150" text-anchor="middle" font-size="12" fill="#26302b">洗面</text>
+                <rect x="10" y="190" width="120" height="100" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="70" y="244" text-anchor="middle" font-size="13" fill="#26302b">和室 6畳</text>
+                <rect x="130" y="190" width="70" height="100" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="165" y="244" text-anchor="middle" font-size="12" fill="#26302b">階段</text>
+                <rect x="200" y="190" width="60" height="100" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="230" y="244" text-anchor="middle" font-size="12" fill="#26302b">トイレ</text>
+                <rect x="260" y="190" width="130" height="100" fill="#f6efe4" stroke="#26302b" stroke-width="2"/>
+                <text x="325" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#26302b">玄関</text>
+                <text x="325" y="256" text-anchor="middle" font-size="11" fill="#56625b">風除室つき</text>
+                <path d="M60 10 h60" stroke="#cfe3ef" stroke-width="6"/>
+                <text x="90" y="34" text-anchor="middle" font-size="10" fill="#7d8882">南の窓</text>
+              </svg>
+            </div>
+            <div id="plan-2f" role="tabpanel" aria-labelledby="tab-2f" hidden>
+              <svg class="plan-svg" viewBox="0 0 400 300" role="img" aria-label="2階の間取り図：洋室8畳、洋室6畳が2部屋、収納、トイレ">
+                <rect x="10" y="10" width="380" height="280" fill="#fbf8f2" stroke="#26302b" stroke-width="4"/>
+                <rect x="10" y="10" width="170" height="160" fill="#f3e6d6" stroke="#26302b" stroke-width="2"/>
+                <text x="95" y="90" text-anchor="middle" font-size="16" font-weight="700" fill="#26302b">洋室</text>
+                <text x="95" y="112" text-anchor="middle" font-size="13" fill="#56625b">8畳</text>
+                <rect x="180" y="10" width="210" height="160" fill="#e3eee7" stroke="#26302b" stroke-width="2"/>
+                <line x1="285" y1="10" x2="285" y2="170" stroke="#26302b" stroke-width="2"/>
+                <text x="232" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#26302b">洋室 6畳</text>
+                <text x="338" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#26302b">洋室 6畳</text>
+                <rect x="10" y="170" width="120" height="120" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="70" y="234" text-anchor="middle" font-size="13" fill="#26302b">収納</text>
+                <rect x="130" y="170" width="70" height="120" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="165" y="234" text-anchor="middle" font-size="12" fill="#26302b">階段</text>
+                <rect x="200" y="170" width="190" height="60" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="295" y="205" text-anchor="middle" font-size="12" fill="#26302b">廊下</text>
+                <rect x="200" y="230" width="70" height="60" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="235" y="264" text-anchor="middle" font-size="12" fill="#26302b">トイレ</text>
+                <rect x="270" y="230" width="120" height="60" fill="#fff" stroke="#26302b" stroke-width="2"/>
+                <text x="330" y="264" text-anchor="middle" font-size="12" fill="#26302b">納戸</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="card">
+            <table class="spec">
+              <tbody>
+                <tr><th>種類</th><td>木造2階建ての戸建て（一軒まるごと）</td></tr>
+                <tr><th>間取り</th><td>3LDK＋和室（4LDKとしても使えます）</td></tr>
+                <tr><th>広さ</th><td>建物 約98㎡／敷地 約200㎡</td></tr>
+                <tr><th>築年</th><td>1988年（2025年に水まわり・内装を改装）</td></tr>
+                <tr><th>暖房</th><td>FF式灯油ストーブ 2台（1階・2階）</td></tr>
+                <tr><th>給湯</th><td>灯油ボイラー（灯油タンク 490L・屋外）</td></tr>
+                <tr><th>窓</th><td>全室 内窓（二重サッシ）</td></tr>
+                <tr><th>駐車場</th><td>2台（無料・縦列）</td></tr>
+                <tr><th>ペット</th><td>小型犬または猫 1匹まで相談可（敷金＋1か月）</td></tr>
+                <tr><th>ネット</th><td>光回線の工事済み（契約は入居者）</td></tr>
+                <tr><th>その他</th><td>物置・水抜き栓・ロードヒーティングなし</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 冬の暮らし ===== -->
+    <section id="winter" class="winter" aria-labelledby="winter-title">
+      <div class="wrap">
+        <p class="sec-label">WINTER</p>
+        <h2 class="sec-title" id="winter-title">冬の暮らし、先にお伝えします</h2>
+        <p class="sec-lead">北海道の戸建ては、冬の手間とお金が住み心地を決めます。あとで「聞いてない」にならないよう、先に書いておきます。</p>
+        <div class="winter-grid">
+          <div class="card">
+            <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d36b2c" stroke-width="2" stroke-linecap="round"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M6 9h12"/></svg>灯油の量の目安</h3>
+            <ul>
+              <li>12〜3月：ひと月 およそ 200〜300L（暖房＋お湯）</li>
+              <li>4〜11月：ひと月 およそ 40〜80L（ほぼお湯だけ）</li>
+              <li>定期配送の灯油屋さんを入居時にご紹介します</li>
+            </ul>
+            <p class="hint">※前の入居者（4人家族）の実績から出した目安です。住む人数と設定温度で変わります。</p>
+          </div>
+          <div class="card">
+            <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f6a52" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 6.9l14.2 10.2M4.9 17.1l14.2-10.2"/></svg>除雪はだれがやる？</h3>
+            <dl class="who">
+              <dt><span class="tag-me">入居者</span></dt><dd>玄関まわり・駐車場の雪かき（スノーダンプをお貸しします）</dd>
+              <dt><span class="tag-owner">大家</span></dt><dd>屋根の雪下ろしが要る年は大家が手配・費用も大家</dd>
+              <dt><span class="tag-owner">市</span></dt><dd>前の道路の除雪（朝の除雪車のあと、入口に雪が残ることがあります）</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#56625b" stroke-width="2" stroke-linecap="round"><path d="M12 3v10"/><circle cx="12" cy="17" r="4"/></svg>水道の凍結を防ぐ</h3>
+            <ul>
+              <li>真冬に家を2日以上空けるときは「水抜き」をお願いします</li>
+              <li>水抜き栓の場所と手順は、入居の日に一緒に確認します</li>
+              <li>もし凍ってしまったら、まず大家へLINEを（修理は大家が手配）</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b7793f" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/></svg>この家で冬に助かるところ</h3>
+            <ul>
+              <li>玄関に風除室があり、ドアを開けても冷気が入りにくい</li>
+              <li>全部の窓に内窓。結露でカーテンが濡れにくい</li>
+              <li>灯油タンクが大きく、真冬でも配送は月1〜2回で足ります</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 初期費用 ===== -->
+    <section id="cost" aria-labelledby="cost-title">
+      <div class="wrap">
+        <p class="sec-label">INITIAL COST</p>
+        <h2 class="sec-title" id="cost-title">初期費用を計算する</h2>
+        <p class="sec-lead">入る日とペットの有無を選ぶと、最初にかかるお金がその場で出ます。仲介会社を通さないので、手数料はかかりません。</p>
+        <div class="calc-grid">
+          <div class="card">
+            <div class="field">
+              <label for="move-date">入居する日</label>
+              <input type="date" id="move-date" value="2026-12-20" min="2026-12-20" max="2027-12-31" />
+              <p class="hint">月の途中から入ると、その月の家賃は日割りになります。</p>
+            </div>
+            <div class="field">
+              <span class="lbl">ペット</span>
+              <label class="check"><input type="checkbox" id="has-pet" /> 小型犬または猫と住む（敷金が1か月ふえます）</label>
+            </div>
+            <div class="field">
+              <span class="lbl">駐車場</span>
+              <label class="check"><input type="checkbox" checked disabled /> 2台まで無料（入力は要りません）</label>
+            </div>
+          </div>
+          <div class="card" aria-live="polite">
+            <ul class="cost-list" id="cost-list"></ul>
+            <div class="cost-total"><span>合計（目安）</span><b id="cost-total">—</b></div>
+            <p class="hint">火災保険は2年分。鍵は入居ごとに新しく交換します。金額は見本の数字です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 周辺 ===== -->
+    <section aria-labelledby="near-title" style="padding-top:0">
+      <div class="wrap">
+        <p class="sec-label">AROUND</p>
+        <h2 class="sec-title" id="near-title">まわりの暮らし（徒歩・車の時間）</h2>
+        <div class="near">
+          <div class="near-item"><div class="k">スーパー</div><div class="v">ひだまりマート</div><div class="t">5<span>分（徒歩）</span></div></div>
+          <div class="near-item"><div class="k">小学校</div><div class="v">ひだまり台小</div><div class="t">8<span>分（徒歩）</span></div></div>
+          <div class="near-item"><div class="k">病院</div><div class="v">ひだまり内科</div><div class="t">4<span>分（車）</span></div></div>
+          <div class="near-item"><div class="k">駅</div><div class="v">ひだまり駅</div><div class="t">7<span>分（車）</span></div></div>
+        </div>
+        <p class="note-s">※見本のため、店名・学校名も架空です。実際のページでは地図を載せます。</p>
+      </div>
+    </section>
+
+    <!-- ===== 内見予約 ===== -->
+    <section id="visit" aria-labelledby="visit-title" style="background:#fff">
+      <div class="wrap">
+        <p class="sec-label">VISIT</p>
+        <h2 class="sec-title" id="visit-title">内見の予約</h2>
+        <p class="sec-lead">ご都合のよい時間を選んでください。大家が鍵を持って伺います（1組30分ほど）。</p>
+        <form class="card" id="visit-form" novalidate>
+          <div class="field">
+            <span class="lbl">希望の日時</span>
+            <div class="slots" id="slots"></div>
+          </div>
+          <div class="field">
+            <label for="v-name">お名前</label>
+            <input type="text" id="v-name" autocomplete="off" placeholder="例：見本 太郎" />
+          </div>
+          <div class="field">
+            <label for="v-contact">連絡先（電話またはメール）</label>
+            <input type="text" id="v-contact" autocomplete="off" placeholder="例：sample@example.com" />
+          </div>
+          <div class="field">
+            <label for="v-note">聞きたいこと（任意）</label>
+            <textarea id="v-note" placeholder="例：駐車場に軽トラックは置けますか？"></textarea>
+          </div>
+          <button class="btn btn-main" type="submit" style="width:100%">この内容で予約する</button>
+          <p class="form-err" id="form-err" role="alert"></p>
+          <p class="form-msg" id="form-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <p class="sec-label">FAQ</p>
+        <h2 class="sec-title" id="faq-title">よくある質問</h2>
+        <details><summary>保証人がいないのですが、借りられますか？</summary><p>家賃保証会社を使えば、保証人なしでお貸しできます。保証料は初回に家賃の半月分ほどかかります（保証会社の審査があります）。</p></details>
+        <details><summary>DIYで棚をつけてもいいですか？</summary><p>壁に小さなビスを打つ程度なら大丈夫です。大きく変えたいときは、先にLINEでご相談ください。退去のときの扱いも一緒に決めます。</p></details>
+        <details><summary>灯油ボイラーが壊れたら？</summary><p>設備の修理・交換は大家の負担です。夜でもLINEをいただければ、翌朝までに業者を手配します。</p></details>
+        <details><summary>契約はどこで、どうやってしますか？</summary><p>大家と直接、書面で契約します。重要なことは契約の前に紙でお渡しして、一緒に読み合わせます。</p></details>
+      </div>
+    </section>
+
+    <!-- ===== 大家から ===== -->
+    <section aria-labelledby="owner-title" style="padding-top:0">
+      <div class="wrap">
+        <div class="card owner">
+          <div class="owner-face" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b7793f" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <div>
+            <p class="sec-label" style="margin-bottom:2px">FROM THE OWNER</p>
+            <h2 class="sec-title" id="owner-title" style="font-size:20px">大家からひとこと</h2>
+            <p style="margin:0;color:var(--ink-2)">自分で住むつもりで直した家です。冬の困りごとは、だいたい経験してきました。わからないことは、内見の前でも気軽に聞いてください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 見本の説明 ===== -->
+    <section class="about-sample" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">このページは SakuLife の制作見本です</h2>
+        <ul>
+          <li>物件・住所・大家・店名・金額は<b>すべて架空</b>です。実在の物件ではありません。予約のボタンを押しても、どこにも送られません。</li>
+          <li>実際に作るときは、写真・地図・内見予約の届け先（LINE やメール）を、大家さんの物件に合わせて入れます。</li>
+          <li>空室が埋まったら「募集終了」に切り替える、空室ごとにページを増やす、なども作れます。</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-main" href="../index.html#contact">こういうページを作りたい（相談する）</a>
+          <a class="btn btn-sub" href="../index.html#samples">ほかの見本を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">ひだまり台の家（架空の物件・制作見本）｜制作 SakuLife</div>
+  </footer>
+
+  <div class="fixed-cta">
+    <div class="p">68,000円<small>／月・見本</small></div>
+    <a class="btn btn-main" href="#visit">内見を予約</a>
+  </div>
+
+  <script>
+    // ===== 間取りのタブ =====
+    document.querySelectorAll('.tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach((t) => {
+          const on = t === tab;
+          t.setAttribute('aria-selected', String(on));
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        });
+      });
+    });
+
+    // ===== 初期費用（金額は見本の数字）=====
+    const RENT = 68000;
+    const COST = { fireInsurance: 15000, keyChange: 16500 };
+    const yen = (n) => n.toLocaleString('ja-JP') + '円';
+
+    function calcCost() {
+      const v = document.getElementById('move-date').value;
+      const hasPet = document.getElementById('has-pet').checked;
+      const list = document.getElementById('cost-list');
+      const total = document.getElementById('cost-total');
+      if (!v) { list.innerHTML = '<li><span>入居する日を選んでください</span><span></span></li>'; total.textContent = '—'; return; }
+      const [y, m, d] = v.split('-').map(Number);
+      const daysInMonth = new Date(y, m, 0).getDate();
+      // 1日入居なら日割りなし。それ以外は入居日から月末までを日割り（円未満切り捨て）
+      const prorated = d === 1 ? 0 : Math.floor(RENT * (daysInMonth - d + 1) / daysInMonth);
+      const nextMonth = m === 12 ? 1 : m + 1;
+      const rows = [
+        ['敷金' + (hasPet ? '（2か月・ペットあり）' : '（1か月）'), RENT * (hasPet ? 2 : 1)],
+        ['礼金', 0],
+        ['仲介手数料（大家と直接契約）', 0],
+      ];
+      if (prorated) rows.push([`${m}月分の家賃（${d}日〜${daysInMonth}日の日割り）`, prorated]);
+      rows.push([`${d === 1 ? m : nextMonth}月分の家賃（前家賃）`, RENT]);
+      rows.push(['火災保険（2年）', COST.fireInsurance]);
+      rows.push(['鍵の交換', COST.keyChange]);
+      list.innerHTML = rows.map(([k, n]) => `<li class="${n === 0 ? 'zero' : ''}"><span>${k}</span><span>${n === 0 ? '0円' : yen(n)}</span></li>`).join('');
+      total.textContent = yen(rows.reduce((s, [, n]) => s + n, 0));
+    }
+    document.getElementById('move-date').addEventListener('input', calcCost);
+    document.getElementById('has-pet').addEventListener('change', calcCost);
+    calcCost();
+
+    // ===== 内見の候補（見本＝固定の日時）=====
+    const SLOTS = [
+      ['12/5（土）', '10:00〜'], ['12/5（土）', '14:00〜'], ['12/6（日）', '10:00〜'],
+      ['12/6（日）', '14:00〜'], ['12/12（土）', '10:00〜'], ['12/13（日）', '14:00〜'],
+    ];
+    const slotBox = document.getElementById('slots');
+    slotBox.innerHTML = SLOTS.map(([day, time], i) => `<button type="button" class="slot" data-i="${i}" aria-pressed="false">${day}<small>${time}</small></button>`).join('');
+    slotBox.addEventListener('click', (e) => {
+      const b = e.target.closest('.slot');
+      if (!b) return;
+      slotBox.querySelectorAll('.slot').forEach((s) => s.setAttribute('aria-pressed', String(s === b)));
+    });
+
+    // ===== 予約（見本なので送らない）=====
+    document.getElementById('visit-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const err = document.getElementById('form-err');
+      const msg = document.getElementById('form-msg');
+      const picked = slotBox.querySelector('[aria-pressed="true"]');
+      const name = document.getElementById('v-name').value.trim();
+      const contact = document.getElementById('v-contact').value.trim();
+      const missing = [];
+      if (!picked) missing.push('希望の日時');
+      if (!name) missing.push('お名前');
+      if (!contact) missing.push('連絡先');
+      msg.classList.remove('show');
+      if (missing.length) { err.textContent = `${missing.join('・')}を入れてください。`; return; }
+      err.textContent = '';
+      const [day, time] = SLOTS[Number(picked.dataset.i)];
+      msg.textContent = `見本なので、どこにも送っていません。実際のページでは「${day} ${time}」の予約が大家さんの LINE かメールに届き、予約した方にも確認の連絡が返ります。`;
+      msg.classList.add('show');
+    });
+  </script>
+</body>
+</html>
