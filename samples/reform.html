@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 見本＝架空の会社。検索に「本物の会社」として出ないよう noindex -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>【見本・架空の会社】ひだまり住まいの工房｜リフォーム・職人のホームページ（SakuLife 制作見本）</title>
+  <meta name="description" content="SakuLife が作った「リフォーム・職人のホームページ」の見本です。会社・施工例・金額は架空です。" />
+  <meta name="theme-color" content="#2b4c6f" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="common.css" />
+  <style>
+    :root { --ink: #1f2933; --paper: #f5f6f7; --line: #dde2e7; --accent: #2b4c6f; --accent-2: #3a6491; --accent-soft: #e3ebf3; }
+    .hero-art { background: linear-gradient(#dce7f1, #f3efe7); }
+    .ba { position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); user-select: none; touch-action: pan-y; }
+    .ba svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .ba .after { clip-path: inset(0 0 0 var(--pos, 50%)); }
+    .ba .bar { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 4px; margin-left: -2px; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.15); pointer-events: none; }
+    .ba .knob { position: absolute; top: 50%; left: var(--pos, 50%); width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: grid; place-items: center; pointer-events: none; font-weight: 900; color: var(--accent); }
+    .ba .lab { position: absolute; top: 10px; font-size: 12px; font-weight: 700; background: rgba(0,0,0,.6); color: #fff; padding: 2px 10px; border-radius: 999px; }
+    .ba input[type="range"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+    .works-tabs { margin-bottom: 12px; }
+    .work-info { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
+    .work-info b { color: var(--ink); }
+    .range-out { font-size: 30px; font-weight: 900; color: var(--accent); line-height: 1.2; }
+    .range-out small { font-size: 14px; color: var(--ink-3); font-weight: 500; }
+    .area-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+    .area-list li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+    .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    @media (min-width: 768px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+    .steps li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-size: 14px; color: var(--ink-2); }
+    .steps li::before { counter-increment: s; content: "STEP " counter(s); display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--accent-2); }
+    .steps b { display: block; color: var(--ink); font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="sample-bar" role="note">これは <b>見本</b> です。会社・施工例・金額はすべて<b>架空</b>です。 <a href="../index.html#samples">SakuLife の制作見本一覧へ</a></div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="ひだまり住まいの工房（見本）">
+        <span class="logo-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span>
+        <span>ひだまり住まいの工房<small>水まわり・内装・外まわり（見本）</small></span>
+      </a>
+      <nav class="head-nav" aria-label="ページ内"><a href="#works">施工例</a><a href="#estimate">かんたん見積り</a><a href="#flow">流れ</a><a href="#ask">見積りの依頼</a></nav>
+      <a class="btn btn-main btn-sm" href="#ask">無料で見積り</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-art">
+          <span class="art-badge">イラスト（実際のページでは写真）</span>
+          <svg viewBox="0 0 640 440" role="img" aria-label="工具箱と新しくなった浴室のイラスト">
+            <rect x="0" y="330" width="640" height="110" fill="#d8cdbd"/>
+            <rect x="80" y="70" width="300" height="260" rx="10" fill="#fff"/>
+            <rect x="80" y="70" width="300" height="260" rx="10" fill="none" stroke="#b9c6d3" stroke-width="6"/>
+            <g stroke="#e3ebf3" stroke-width="3"><path d="M80 130h300M80 190h300M80 250h300M155 70v260M230 70v260M305 70v260"/></g>
+            <rect x="110" y="230" width="240" height="90" rx="40" fill="#f2f6fa" stroke="#9fb3c8" stroke-width="5"/>
+            <path d="M300 110 v40 q0 14 -14 14" fill="none" stroke="#7d8b99" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="280" cy="168" r="10" fill="#7d8b99"/>
+            <rect x="420" y="260" width="170" height="90" rx="10" fill="#c2410c"/>
+            <rect x="420" y="250" width="170" height="20" rx="6" fill="#9a3412"/>
+            <path d="M475 250 v-26 h60 v26" fill="none" stroke="#3b3b3b" stroke-width="8"/>
+            <rect x="450" y="190" width="14" height="70" rx="4" fill="#f2c94c" transform="rotate(-25 457 225)"/>
+            <rect x="540" y="150" width="20" height="110" rx="4" fill="#4b5563" transform="rotate(18 550 205)"/>
+            <rect x="531" y="140" width="38" height="24" rx="4" fill="#9ca3af" transform="rotate(18 550 152)"/>
+          </svg>
+        </div>
+        <div>
+          <ul class="chip-row"><li class="chip">見積り無料</li><li class="chip">職人が直接うかがいます</li><li class="chip">冬の凍結修理も</li></ul>
+          <p class="sub-info">北海道 ひだまり市（架空）とそのまわり</p>
+          <h1>家の「ここ直したい」に、<br />職人が直接うかがいます。</h1>
+          <p class="lead">場所と広さを選ぶと、だいたいの金額がその場で出ます。写真を送るだけで、見積りの依頼もできます。</p>
+          <div class="hero-cta">
+            <a class="btn btn-main" href="#estimate">金額の目安を見る</a>
+            <a class="btn btn-sub" href="#works">施工例を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="works" aria-labelledby="works-title">
+      <div class="wrap">
+        <p class="sec-label">WORKS</p>
+        <h2 class="sec-title" id="works-title">施工例（ビフォー・アフター）</h2>
+        <p class="sec-lead">まん中のつまみを左右に動かすと、工事の前と後を見比べられます。</p>
+        <div class="grid-2">
+          <div>
+            <div class="pills works-tabs" id="work-tabs" role="group" aria-label="施工例"></div>
+            <div class="ba" id="ba">
+              <svg class="before" viewBox="0 0 400 300" aria-hidden="true" id="ba-before"></svg>
+              <svg class="after" viewBox="0 0 400 300" aria-hidden="true" id="ba-after"></svg>
+              <span class="lab" style="left:10px">前</span><span class="lab" style="right:10px">後</span>
+              <div class="bar"></div><div class="knob">⇔</div>
+              <input type="range" min="0" max="100" value="50" id="ba-range" aria-label="前と後の見比べ" />
+            </div>
+          </div>
+          <div class="card" id="work-info" aria-live="polite"></div>
+        </div>
+        <p class="note-s">※見本では絵で代用しています。実際のページでは、工事の前後の写真を入れます。</p>
+      </div>
+    </section>
+
+    <section id="estimate" class="bg-white" aria-labelledby="est-title">
+      <div class="wrap">
+        <p class="sec-label">ESTIMATE</p>
+        <h2 class="sec-title" id="est-title">かんたん見積り（目安）</h2>
+        <p class="sec-lead">家の状態で金額は変わります。ここで出るのは、あくまで目安です。正しい金額は、見に行ってからお出しします。</p>
+        <div class="grid-2">
+          <div class="card">
+            <div class="field"><label for="e-kind">直したい場所</label><select id="e-kind"></select></div>
+            <div class="field" id="e-size-box"><label for="e-size" id="e-size-lbl"></label><input type="number" id="e-size" min="1" max="200" step="1" inputmode="numeric" /></div>
+            <div class="field"><span class="lbl">いっしょにやること</span><div id="e-opts"></div></div>
+          </div>
+          <div class="card" aria-live="polite">
+            <p style="margin:0 0 6px;font-weight:700">工事費の目安（税込）</p>
+            <div class="range-out" id="e-out">—</div>
+            <ul class="cost-list" id="e-list" style="margin-top:12px"></ul>
+            <p class="hint">工期の目安：<b id="e-days">—</b>／金額は見本の数字です。</p>
+            <a class="btn btn-main btn-wide" href="#ask" style="margin-top:14px" id="e-go">この内容で見積りを頼む</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" aria-labelledby="flow-title">
+      <div class="wrap">
+        <p class="sec-label">FLOW</p>
+        <h2 class="sec-title" id="flow-title">工事までの流れ</h2>
+        <ol class="steps">
+          <li><b>ご相談</b>写真を送るか、電話で。ここまで無料です。</li>
+          <li><b>見に行く</b>職人が家を見て、寸法を測ります。</li>
+          <li><b>お見積り</b>内訳つきの見積書を、紙とメールでお渡しします。</li>
+          <li><b>工事</b>決めた日に工事。終わったら一緒に確かめます。</li>
+        </ol>
+        <div class="card" style="margin-top:18px">
+          <h3>うかがえる地域</h3>
+          <ul class="area-list"><li>ひだまり市</li><li>こもれび町</li><li>はるかぜ村</li><li>そよかぜ市</li></ul>
+          <p class="hint">地名も見本の架空の名前です。地域の外も、まずはご相談ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ask" class="bg-white" aria-labelledby="ask-title">
+      <div class="wrap">
+        <p class="sec-label">REQUEST</p>
+        <h2 class="sec-title" id="ask-title">見積りの依頼（無料）</h2>
+        <form class="card" id="ask-form" novalidate>
+          <div class="grid-2">
+            <div class="field"><label for="a-kind">直したい場所</label><select id="a-kind"></select></div>
+            <div class="field"><label for="a-photo">写真（任意・3枚まで）</label><input type="file" id="a-photo" accept="image/*" multiple style="font-size:14px" /><p class="hint" id="a-photo-note">見本なので、選んだ写真はどこにも送りません。</p></div>
+            <div class="field"><label for="a-name">お名前</label><input type="text" id="a-name" autocomplete="off" placeholder="例：見本 次郎" /></div>
+            <div class="field"><label for="a-contact">連絡先（電話またはメール）</label><input type="text" id="a-contact" autocomplete="off" placeholder="例：sample@example.com" /></div>
+          </div>
+          <div class="field"><label for="a-note">困っていること</label><textarea id="a-note" placeholder="例：冬になると浴室の窓が結露して、カビが出ます"></textarea></div>
+          <button class="btn btn-main btn-wide" type="submit">この内容で依頼する</button>
+          <p class="form-err" id="a-err" role="alert"></p>
+          <p class="form-msg" id="a-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section aria-labelledby="faq-title">
+      <div class="wrap">
+        <p class="sec-label">FAQ</p>
+        <h2 class="sec-title" id="faq-title">よくある質問</h2>
+        <details><summary>見積りだけでもいいですか？</summary><p>はい。見積りのあとにお断りいただいても、費用はかかりません。</p></details>
+        <details><summary>冬に水道が凍ってしまいました</summary><p>まず元栓を閉めて、お電話ください。凍結の修理は、冬のあいだ優先してうかがいます。</p></details>
+        <details><summary>住みながら工事できますか？</summary><p>水まわりは、使えない時間を短くする順番で進めます。何日使えないかは、見積りの時にお伝えします。</p></details>
+      </div>
+    </section>
+
+    <section class="about-sample" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">このページは SakuLife の制作見本です</h2>
+        <ul>
+          <li>会社・施工例・金額・地域は<b>すべて架空</b>です。依頼のボタンを押しても、写真も含めてどこにも送られません。</li>
+          <li>実際に作るときは、工事の写真・単価表・届け先（LINE やメール）を、お店に合わせて入れます。</li>
+          <li>現場でスマホから施工例を足す、見積書を自動で作る、なども作れます。</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-main" href="../index.html#contact">こういうページを作りたい（相談する）</a>
+          <a class="btn btn-sub" href="../index.html#samples">ほかの見本を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">ひだまり住まいの工房（架空の会社・制作見本）｜制作 SakuLife</div></footer>
+  <div class="fixed-cta"><div class="p">見積り無料<small>見本</small></div><a class="btn btn-main" href="#ask">見積りを頼む</a></div>
+
+  <script>
+    const yen = (n) => n.toLocaleString('ja-JP') + '円';
+    const man = (n) => (Math.round(n / 1000) / 10).toLocaleString('ja-JP') + '万円';
+
+    // ===== 施工例（絵は SVG。前＝くすんだ色、後＝明るい色）=====
+    const room = (wall, floor, item) => `<rect width="400" height="300" fill="${wall}"/><rect y="210" width="400" height="90" fill="${floor}"/>${item}`;
+    const WORKS = [
+      { name: '浴室', before: room('#cfc6b4', '#9c917c', '<rect x="80" y="150" width="220" height="80" rx="10" fill="#b8ad96"/><rect x="250" y="40" width="90" height="70" fill="#a7b4b8" stroke="#8a7f6a" stroke-width="6"/><circle cx="120" cy="60" r="16" fill="#7d7563" opacity=".5"/><circle cx="160" cy="90" r="10" fill="#7d7563" opacity=".5"/>'),
+        after: room('#f4f7fa', '#dfe6ec', '<rect x="80" y="150" width="220" height="80" rx="34" fill="#fff" stroke="#9fb3c8" stroke-width="4"/><rect x="250" y="40" width="90" height="70" fill="#cfe3ef" stroke="#2b4c6f" stroke-width="6"/><rect x="262" y="52" width="66" height="46" fill="none" stroke="#fff" stroke-width="3"/>'),
+        info: '<b>築40年の浴室を、ユニットバスに。</b><br />タイルの冷えとカビが悩み。窓は内窓を足して、冬の結露を減らしました。<br />工期 5日／費用 約110万円（見本の数字）' },
+      { name: 'キッチン', before: room('#d9d0c0', '#a8957a', '<rect x="40" y="130" width="320" height="80" fill="#c4b49a"/><rect x="40" y="40" width="320" height="50" fill="#b6a68b"/><rect x="200" y="120" width="60" height="10" fill="#8a7f6a"/>'),
+        after: room('#fbf8f2', '#d9c2a3', '<rect x="40" y="130" width="320" height="80" rx="4" fill="#fff" stroke="#c9d2db" stroke-width="3"/><rect x="40" y="40" width="320" height="50" fill="#2b4c6f"/><rect x="200" y="118" width="70" height="12" rx="4" fill="#9fb3c8"/><path d="M90 130v80M170 130v80M290 130v80" stroke="#e3ebf3" stroke-width="3"/>'),
+        info: '<b>壁付けのキッチンを、使いやすい高さに。</b><br />腰を曲げずに使える高さに変え、食洗機を入れました。<br />工期 3日／費用 約95万円（見本の数字）' },
+      { name: '外壁', before: room('#cfd8df', '#b7b0a2', '<rect x="80" y="70" width="240" height="160" fill="#a99f8c"/><path d="M60 80 L200 20 L340 80Z" fill="#6f665a"/><path d="M110 110l20 30M240 170l-15 25M280 100l12 20" stroke="#6f665a" stroke-width="3"/>'),
+        after: room('#dde9f2', '#b7b0a2', '<rect x="80" y="70" width="240" height="160" fill="#f1ebe0"/><path d="M60 80 L200 20 L340 80Z" fill="#2b4c6f"/><rect x="120" y="110" width="50" height="40" fill="#cfe3ef" stroke="#2b4c6f" stroke-width="4"/><rect x="230" y="110" width="50" height="40" fill="#cfe3ef" stroke="#2b4c6f" stroke-width="4"/>'),
+        info: '<b>ひび割れた外壁を、張り替えて断熱も。</b><br />凍害で傷んだ外壁を張り替え、すき間風を止めました。<br />工期 14日／費用 約180万円（見本の数字）' },
+    ];
+    let work = 0;
+    const ba = document.getElementById('ba');
+    function renderWork() {
+      document.getElementById('ba-before').innerHTML = WORKS[work].before;
+      document.getElementById('ba-after').innerHTML = WORKS[work].after;
+      document.getElementById('work-info').innerHTML = `<h3>${WORKS[work].name}</h3><p class="work-info">${WORKS[work].info}</p>`;
+    }
+    const tabs = document.getElementById('work-tabs');
+    tabs.innerHTML = WORKS.map((w, i) => `<button type="button" class="pill" data-i="${i}" aria-pressed="${i === 0}">${w.name}</button>`).join('');
+    tabs.addEventListener('click', (e) => {
+      const b = e.target.closest('.pill'); if (!b) return;
+      work = Number(b.dataset.i);
+      tabs.querySelectorAll('.pill').forEach((p) => p.setAttribute('aria-pressed', String(p === b)));
+      renderWork();
+    });
+    document.getElementById('ba-range').addEventListener('input', (e) => ba.style.setProperty('--pos', e.target.value + '%'));
+    renderWork();
+
+    // ===== かんたん見積り（見本の単価）。base＝基本、per＝1単位あたり =====
+    const KINDS = [
+      { id: 'bath', name: '浴室', unit: '坪', def: 1, base: 900000, per: 150000, days: '4〜6日', opts: [['内窓を足す', 60000], ['浴室暖房乾燥機', 120000]] },
+      { id: 'kitchen', name: 'キッチン', unit: 'mの幅', def: 2.55, base: 700000, per: 100000, days: '2〜4日', opts: [['食洗機', 150000], ['床の張り替え', 80000]] },
+      { id: 'toilet', name: 'トイレ', unit: 'か所', def: 1, base: 0, per: 250000, days: '1日', opts: [['手洗いを付ける', 90000], ['床と壁紙', 60000]] },
+      { id: 'floor', name: '床の張り替え', unit: '畳', def: 8, base: 30000, per: 18000, days: '1〜3日', opts: [['床下の断熱', 6000, true]] },
+      { id: 'wall', name: '外壁', unit: '㎡', def: 120, base: 200000, per: 12000, days: '10〜20日', opts: [['足場（必要な時）', 180000]] },
+    ];
+    const ek = document.getElementById('e-kind'), ak = document.getElementById('a-kind');
+    ek.innerHTML = ak.innerHTML = KINDS.map((k) => `<option value="${k.id}">${k.name}</option>`).join('');
+    const size = document.getElementById('e-size');
+    function setKind() {
+      const k = KINDS.find((x) => x.id === ek.value);
+      document.getElementById('e-size-lbl').textContent = `広さ・数（${k.unit}）`;
+      size.value = k.def;
+      size.step = k.unit === 'mの幅' ? '0.05' : '1';
+      document.getElementById('e-opts').innerHTML = k.opts.map(([n, p, perUnit], i) => `<label class="check" style="margin-bottom:6px"><input type="checkbox" data-i="${i}" /> ${n}（＋${perUnit ? yen(p) + '／' + k.unit : yen(p)}）</label>`).join('');
+      calc();
+    }
+    function calc() {
+      const k = KINDS.find((x) => x.id === ek.value);
+      const n = Number(size.value);
+      const list = document.getElementById('e-list');
+      if (!(n > 0)) { document.getElementById('e-out').textContent = '—'; list.innerHTML = `<li><span>${k.unit}を入れてください</span><span></span></li>`; return; }
+      const rows = [[`${k.name}（${n}${k.unit}）`, k.base + k.per * n]];
+      document.querySelectorAll('#e-opts input:checked').forEach((c) => {
+        const [name, p, perUnit] = k.opts[Number(c.dataset.i)];
+        rows.push([name, perUnit ? p * n : p]);
+      });
+      const mid = rows.reduce((s, [, v]) => s + v, 0);
+      // 目安なので ±15% の幅で出す
+      document.getElementById('e-out').innerHTML = `${man(mid * 0.85)}〜${man(mid * 1.15)}<br /><small>まん中の目安 ${yen(Math.round(mid / 1000) * 1000)}</small>`;
+      list.innerHTML = rows.map(([a, b]) => `<li><span>${a}</span><span>${yen(b)}</span></li>`).join('');
+      document.getElementById('e-days').textContent = k.days;
+    }
+    ek.addEventListener('change', setKind);
+    size.addEventListener('input', calc);
+    document.getElementById('e-opts').addEventListener('change', calc);
+    document.getElementById('e-go').addEventListener('click', () => { ak.value = ek.value; });
+    setKind();
+
+    // ===== 見積りの依頼（見本なので送らない）=====
+    const photo = document.getElementById('a-photo');
+    photo.addEventListener('change', () => {
+      const n = photo.files.length;
+      document.getElementById('a-photo-note').textContent = n > 3 ? '写真は3枚までです。選び直してください。' : (n ? `${n}枚選びました（見本なので送りません）。` : '見本なので、選んだ写真はどこにも送りません。');
+    });
+    document.getElementById('ask-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const err = document.getElementById('a-err'), msg = document.getElementById('a-msg');
+      const name = document.getElementById('a-name').value.trim();
+      const contact = document.getElementById('a-contact').value.trim();
+      const missing = [];
+      if (!name) missing.push('お名前');
+      if (!contact) missing.push('連絡先');
+      msg.classList.remove('show');
+      if (missing.length) { err.textContent = `${missing.join('・')}を入れてください。`; return; }
+      if (photo.files.length > 3) { err.textContent = '写真は3枚までです。'; return; }
+      err.textContent = '';
+      const k = KINDS.find((x) => x.id === ak.value);
+      msg.textContent = `見本なので、どこにも送っていません。実際のページでは「${k.name}」の見積りの依頼が、写真と一緒に職人の LINE かメールに届きます。`;
+      msg.classList.add('show');
+    });
+  </script>
+</body>
+</html>

@@ -21,3 +21,6 @@ AGENTS.md
 
 # 見本の書き出し画像（samples/export.py で作り直せる・13番がココナラ用に使う）
 samples/export/
+
+# 社長への最新の返答（本社の決まり・git では追わない）
+最新の返答.md

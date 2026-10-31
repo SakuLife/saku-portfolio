@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 見本＝架空の店。検索に「本物の店」として出ないよう noindex -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>【見本・架空の店】ひだまり食堂｜飲食店のホームページ（SakuLife 制作見本）</title>
+  <meta name="description" content="SakuLife が作った「飲食店のホームページ」の見本です。店・住所・メニューは架空です。" />
+  <meta name="theme-color" content="#9a3b1f" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="common.css" />
+  <style>
+    :root { --paper: #fbf6ee; --line: #ecdfcc; --accent: #9a3b1f; --accent-2: #b5512f; --accent-soft: #f7e4d8; }
+    .hero-art { background: linear-gradient(#f6d9b8, #fbf0e1); }
+    .today { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin-bottom: 18px; font-size: 14px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    .menu-grid { display: grid; gap: 12px; }
+    @media (min-width: 768px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+    .dish { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+    .dish-art { width: 76px; height: 76px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; flex: none; font-size: 30px; }
+    .dish h3 { font-size: 16px; margin: 0 0 2px; }
+    .dish .price { font-weight: 900; color: var(--accent); }
+    .dish .al { font-size: 11px; color: var(--ink-3); margin-top: 4px; }
+    .dish .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 6px; background: #fff1c9; color: #7a5600; margin-left: 6px; vertical-align: 2px; }
+    .empty { padding: 20px; text-align: center; color: var(--ink-3); background: var(--card); border: 1px dashed var(--line); border-radius: 16px; }
+    .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 13px; }
+    .cal .h { font-weight: 700; color: var(--ink-3); font-size: 12px; }
+    .cal .d { padding: 8px 0; border-radius: 8px; background: #fff; border: 1px solid var(--line); }
+    .cal .off { background: #f1ece5; color: var(--ink-3); text-decoration: line-through; }
+    .cal .now { outline: 2px solid var(--accent); font-weight: 900; }
+    .qty { display: flex; align-items: center; gap: 8px; }
+    .qty button { width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+    .qty output { min-width: 2ch; text-align: center; font-weight: 700; }
+    .to-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="sample-bar" role="note">これは <b>見本</b> です。店・住所・メニューはすべて<b>架空</b>です。 <a href="../index.html#samples">SakuLife の制作見本一覧へ</a></div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="ひだまり食堂（見本）">
+        <span class="logo-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M9 4c0 2 2 2 2 4M14 4c0 2 2 2 2 4"/></svg></span>
+        <span>ひだまり食堂<small>定食と日替わり（見本）</small></span>
+      </a>
+      <nav class="head-nav" aria-label="ページ内"><a href="#menu">メニュー</a><a href="#takeout">テイクアウト</a><a href="#calendar">営業日</a><a href="#info">お店の情報</a></nav>
+      <a class="btn btn-main btn-sm" href="#takeout">持ち帰りを予約</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-art">
+          <span class="art-badge">イラスト（実際のページでは写真）</span>
+          <svg viewBox="0 0 640 440" role="img" aria-label="湯気の立つ定食のイラスト">
+            <rect x="60" y="250" width="520" height="150" rx="20" fill="#c98b56"/>
+            <rect x="60" y="250" width="520" height="22" rx="10" fill="#b0743f"/>
+            <ellipse cx="230" cy="250" rx="110" ry="40" fill="#fff"/>
+            <path d="M120 250 a110 70 0 0 0 220 0z" fill="#f1ece5"/>
+            <ellipse cx="230" cy="245" rx="92" ry="30" fill="#fffdf8"/>
+            <ellipse cx="420" cy="252" rx="80" ry="30" fill="#7a3a1d"/>
+            <path d="M340 252 a80 55 0 0 0 160 0z" fill="#5b2a14"/>
+            <ellipse cx="420" cy="250" rx="66" ry="22" fill="#c47a3a"/>
+            <circle cx="400" cy="246" r="7" fill="#e9d6a6"/><circle cx="430" cy="252" r="6" fill="#4d7a3a"/><circle cx="445" cy="244" r="5" fill="#e9d6a6"/>
+            <ellipse cx="520" cy="320" rx="44" ry="16" fill="#fff"/><ellipse cx="520" cy="316" rx="34" ry="10" fill="#e2b13c"/>
+            <path d="M200 200 q-14-26 0-48 q14-22 0-46" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+            <path d="M250 196 q-14-26 0-48 q14-22 0-46" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+            <path d="M420 206 q-12-22 0-40 q12-18 0-36" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+            <rect x="110" y="330" width="230" height="10" rx="5" fill="#3b2a1e"/>
+          </svg>
+        </div>
+        <div>
+          <ul class="chip-row"><li class="chip">日替わり定食 900円</li><li class="chip">テイクアウト予約</li><li class="chip">駐車場 6台</li></ul>
+          <p class="sub-info">北海道 ひだまり市 ひだまり台1丁目（架空の住所）</p>
+          <h1>毎日食べても、<br />飽きない定食を。</h1>
+          <p class="lead">北海道の野菜と、毎朝炊くご飯。日替わりのおかずはこのページで毎朝お知らせします。</p>
+          <div class="today" id="today" aria-live="polite"></div>
+          <div class="hero-cta">
+            <a class="btn btn-main" href="#menu">メニューを見る</a>
+            <a class="btn btn-sub" href="#takeout">持ち帰りを予約</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="menu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <p class="sec-label">MENU</p>
+        <h2 class="sec-title" id="menu-title">メニュー</h2>
+        <p class="sec-lead">種類で絞り込めます。アレルギーのある方は、外したい食材を選ぶと、それを使っていない物だけが残ります。</p>
+        <div class="pills" id="cat-pills" role="group" aria-label="種類"></div>
+        <div class="field" style="margin-bottom:18px">
+          <span class="lbl">使っていない物だけ表示</span>
+          <div class="pills" id="al-pills" role="group" aria-label="アレルギーの食材" style="margin:0"></div>
+        </div>
+        <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+        <p class="note-s">※見本のため、料理・値段・アレルギーの表示は架空です。実際のページでは、お店が持っている表をもとに入れます。</p>
+      </div>
+    </section>
+
+    <section id="takeout" class="bg-white" aria-labelledby="to-title">
+      <div class="wrap">
+        <p class="sec-label">TAKEOUT</p>
+        <h2 class="sec-title" id="to-title">テイクアウトの予約</h2>
+        <p class="sec-lead">数と受け取る時間を選ぶだけ。お昼の混む時間も、待たずに受け取れます。</p>
+        <form class="grid-2" id="to-form" novalidate>
+          <div class="card">
+            <div id="to-items"></div>
+            <div class="cost-total"><span>合計（税込）</span><b id="to-total">0円</b></div>
+          </div>
+          <div class="card">
+            <div class="field">
+              <span class="lbl">受け取る時間（今日）</span>
+              <div class="slots" id="to-slots"></div>
+              <p class="hint">1枠あたり5食まで。いっぱいの枠は選べません。</p>
+            </div>
+            <div class="field">
+              <label for="to-name">お名前</label>
+              <input type="text" id="to-name" autocomplete="off" placeholder="例：見本 太郎" />
+            </div>
+            <button class="btn btn-main btn-wide" type="submit">この内容で予約する</button>
+            <p class="form-err" id="to-err" role="alert"></p>
+            <p class="form-msg" id="to-msg" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="calendar" aria-labelledby="cal-title">
+      <div class="wrap grid-2">
+        <div>
+          <p class="sec-label">CALENDAR</p>
+          <h2 class="sec-title" id="cal-title">営業日カレンダー</h2>
+          <p class="sec-lead" style="margin-bottom:12px">定休日は日曜と、第3月曜。臨時のお休みも、ここに入れればトップの「今日は営業中？」まで自動で変わります。</p>
+          <div class="card">
+            <p style="margin:0 0 10px;font-weight:700" id="cal-month"></p>
+            <div class="cal" id="cal"></div>
+          </div>
+        </div>
+        <div id="info">
+          <p class="sec-label">INFO</p>
+          <h2 class="sec-title">お店の情報</h2>
+          <div class="card">
+            <table class="spec"><tbody>
+              <tr><th>営業時間</th><td>11:00〜14:30（ラストオーダー 14:00）<br />17:30〜20:00（金・土のみ）</td></tr>
+              <tr><th>定休日</th><td>日曜・第3月曜</td></tr>
+              <tr><th>席</th><td>カウンター6席・小上がり3卓（子ども用の椅子あり）</td></tr>
+              <tr><th>駐車場</th><td>6台（冬も除雪しています）</td></tr>
+              <tr><th>支払い</th><td>現金・カード・QRコード決済</td></tr>
+              <tr><th>住所</th><td>ひだまり市 ひだまり台1丁目（架空）</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white" aria-labelledby="faq-title">
+      <div class="wrap">
+        <p class="sec-label">FAQ</p>
+        <h2 class="sec-title" id="faq-title">よくある質問</h2>
+        <details><summary>ご飯の量は変えられますか？</summary><p>少なめ・大盛り（＋100円）にできます。注文のときにお伝えください。</p></details>
+        <details><summary>子ども連れでも入れますか？</summary><p>小上がりの席があります。お子さま用の取り皿とスプーンもお出しします。</p></details>
+        <details><summary>テイクアウトの予約を取り消したい</summary><p>受け取りの30分前までなら、お電話かLINEで取り消せます。</p></details>
+      </div>
+    </section>
+
+    <section class="about-sample" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">このページは SakuLife の制作見本です</h2>
+        <ul>
+          <li>店・住所・料理・値段は<b>すべて架空</b>です。予約のボタンを押しても、どこにも送られません。</li>
+          <li>実際に作るときは、写真・メニュー表・アレルギーの表・予約の届け先（LINE やメール）を、お店に合わせて入れます。</li>
+          <li>日替わりや臨時休業を、お店の方がスマホから書き換えられる形にもできます。</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-main" href="../index.html#contact">こういうページを作りたい（相談する）</a>
+          <a class="btn btn-sub" href="../index.html#samples">ほかの見本を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">ひだまり食堂（架空の店・制作見本）｜制作 SakuLife</div></footer>
+  <div class="fixed-cta"><div class="p">日替わり 900円<small>見本</small></div><a class="btn btn-main" href="#takeout">持ち帰りを予約</a></div>
+
+  <script>
+    // ===== メニュー（見本の数字）=====
+    const ALLERGENS = ['小麦', '卵', '乳', 'えび', 'そば'];
+    const MENU = [
+      { name: '日替わり定食', cat: '定食', price: 900, icon: '🍱', al: ['小麦', '卵'], badge: '毎日かわる', takeout: true },
+      { name: '豚の生姜焼き定食', cat: '定食', price: 1050, icon: '🍖', al: ['小麦'], takeout: true },
+      { name: '鮭の塩焼き定食', cat: '定食', price: 1100, icon: '🐟', al: [], takeout: true },
+      { name: 'ザンギ定食', cat: '定食', price: 1000, icon: '🍗', al: ['小麦', '卵'], badge: '人気', takeout: true },
+      { name: '野菜たっぷり豚汁', cat: '単品', price: 380, icon: '🥣', al: [], takeout: false },
+      { name: 'えびフライ（2本）', cat: '単品', price: 480, icon: '🍤', al: ['小麦', '卵', 'えび'], takeout: false },
+      { name: 'お子さまプレート', cat: 'お子さま', price: 650, icon: '🍛', al: ['小麦', '乳'], takeout: false },
+      { name: '牛乳プリン', cat: '甘いもの', price: 300, icon: '🍮', al: ['乳'], takeout: false },
+    ];
+    const CATS = ['すべて', '定食', '単品', 'お子さま', '甘いもの'];
+    let curCat = 'すべて';
+    const exclude = new Set();
+    const yen = (n) => n.toLocaleString('ja-JP') + '円';
+
+    const catBox = document.getElementById('cat-pills');
+    catBox.innerHTML = CATS.map((c) => `<button type="button" class="pill" aria-pressed="${c === curCat}" data-c="${c}">${c}</button>`).join('');
+    catBox.addEventListener('click', (e) => {
+      const b = e.target.closest('.pill'); if (!b) return;
+      curCat = b.dataset.c;
+      catBox.querySelectorAll('.pill').forEach((p) => p.setAttribute('aria-pressed', String(p === b)));
+      renderMenu();
+    });
+    const alBox = document.getElementById('al-pills');
+    alBox.innerHTML = ALLERGENS.map((a) => `<button type="button" class="pill" aria-pressed="false" data-a="${a}">${a}なし</button>`).join('');
+    alBox.addEventListener('click', (e) => {
+      const b = e.target.closest('.pill'); if (!b) return;
+      const a = b.dataset.a;
+      if (exclude.has(a)) exclude.delete(a); else exclude.add(a);
+      b.setAttribute('aria-pressed', String(exclude.has(a)));
+      renderMenu();
+    });
+    function renderMenu() {
+      const list = MENU.filter((m) => (curCat === 'すべて' || m.cat === curCat) && !m.al.some((a) => exclude.has(a)));
+      document.getElementById('menu-grid').innerHTML = list.length ? list.map((m) => `
+        <div class="dish">
+          <div class="dish-art" aria-hidden="true">${m.icon}</div>
+          <div>
+            <h3>${m.name}${m.badge ? `<span class="badge">${m.badge}</span>` : ''}</h3>
+            <div class="price">${yen(m.price)}</div>
+            <div class="al">使っている物：${m.al.length ? m.al.join('・') : '表示の5品目なし'}</div>
+          </div>
+        </div>`).join('') : '<div class="empty">条件に合うメニューがありません。条件をゆるめてください。</div>';
+    }
+    renderMenu();
+
+    // ===== 営業日（見本＝日曜と第3月曜が休み）=====
+    const now = new Date();
+    function isClosed(d) {
+      if (d.getDay() === 0) return true;
+      return d.getDay() === 1 && Math.ceil(d.getDate() / 7) === 3;
+    }
+    (function renderCal() {
+      const y = now.getFullYear(), m = now.getMonth();
+      document.getElementById('cal-month').textContent = `${y}年${m + 1}月`;
+      const first = new Date(y, m, 1).getDay();
+      const days = new Date(y, m + 1, 0).getDate();
+      let html = ['日', '月', '火', '水', '木', '金', '土'].map((w) => `<div class="h">${w}</div>`).join('');
+      for (let i = 0; i < first; i++) html += '<div></div>';
+      for (let d = 1; d <= days; d++) {
+        const dt = new Date(y, m, d);
+        const cls = ['d', isClosed(dt) ? 'off' : '', d === now.getDate() ? 'now' : ''].join(' ');
+        html += `<div class="${cls}" ${isClosed(dt) ? 'aria-label="' + d + '日 休み"' : ''}>${d}</div>`;
+      }
+      document.getElementById('cal').innerHTML = html;
+      const closed = isClosed(now);
+      document.getElementById('today').innerHTML = closed
+        ? '<span class="dot" style="background:#9aa0a6"></span><span><b>今日はお休み</b>です。次の営業日にお待ちしています。</span>'
+        : '<span class="dot" style="background:#2e9d5b"></span><span><b>今日は営業日</b>。日替わりは「ザンギと季節の野菜の煮物」（見本）</span>';
+    })();
+
+    // ===== テイクアウト =====
+    const TO = MENU.filter((m) => m.takeout);
+    const qty = TO.map(() => 0);
+    const toItems = document.getElementById('to-items');
+    toItems.innerHTML = TO.map((m, i) => `
+      <div class="to-row"><span>${m.name}<br /><small style="color:var(--ink-3)">${yen(m.price)}</small></span>
+        <span class="qty"><button type="button" data-i="${i}" data-d="-1" aria-label="${m.name}を減らす">−</button><output id="q${i}">0</output><button type="button" data-i="${i}" data-d="1" aria-label="${m.name}を増やす">＋</button></span>
+      </div>`).join('');
+    toItems.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-i]'); if (!b) return;
+      const i = Number(b.dataset.i);
+      qty[i] = Math.max(0, Math.min(5, qty[i] + Number(b.dataset.d)));
+      document.getElementById('q' + i).textContent = qty[i];
+      document.getElementById('to-total').textContent = yen(TO.reduce((s, m, k) => s + m.price * qty[k], 0));
+    });
+    // 見本＝固定の枠。full は満席
+    const SLOTS = [['11:30', false], ['11:45', true], ['12:00', true], ['12:15', false], ['12:30', false], ['13:00', false]];
+    const slotBox = document.getElementById('to-slots');
+    slotBox.innerHTML = SLOTS.map(([t, full], i) => `<button type="button" class="slot" data-i="${i}" aria-pressed="false" ${full ? 'disabled' : ''}>${t}<small>${full ? 'いっぱい' : '空きあり'}</small></button>`).join('');
+    slotBox.addEventListener('click', (e) => {
+      const b = e.target.closest('.slot'); if (!b || b.disabled) return;
+      slotBox.querySelectorAll('.slot').forEach((s) => s.setAttribute('aria-pressed', String(s === b)));
+    });
+    document.getElementById('to-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const err = document.getElementById('to-err'), msg = document.getElementById('to-msg');
+      const picked = slotBox.querySelector('[aria-pressed="true"]');
+      const name = document.getElementById('to-name').value.trim();
+      const count = qty.reduce((s, n) => s + n, 0);
+      const missing = [];
+      if (!count) missing.push('料理の数');
+      if (!picked) missing.push('受け取る時間');
+      if (!name) missing.push('お名前');
+      msg.classList.remove('show');
+      if (missing.length) { err.textContent = `${missing.join('・')}を入れてください。`; return; }
+      err.textContent = '';
+      msg.textContent = `見本なので、どこにも送っていません。実際のページでは「${SLOTS[Number(picked.dataset.i)][0]} 受け取り・${count}食」の注文がお店の LINE かメールに届きます。`;
+      msg.classList.add('show');
+    });
+  </script>
+</body>
+</html>
