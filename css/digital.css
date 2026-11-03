@@ -398,3 +398,30 @@ section[id] [style*="#ffffff"] .text-primary { color: #217346 !important; }
 /* チェックつきの行：中の太字が別の列に割れて「ひとつな／ぎ」と崩れていた（前から）＝ふつうの行にして印だけ左に置く */
 li.flex.items-start.gap-2 { display: block; position: relative; padding-left: 1.35em; }
 li.flex.items-start.gap-2 > i:first-child { position: absolute; left: 0; top: .3em; margin: 0; }
+
+/* ==========================================================================
+   スマホだけ：横スライド（.mc）と「もっと見る」（.mf）。印と点は digital.js が付ける。PC（768px 以上）は今まで通り
+   ========================================================================== */
+.mc-dots, .mf-more { display: none; }
+@media (max-width: 767px) {
+  .mc {
+    display: flex !important; flex-wrap: nowrap !important; gap: 14px !important; justify-content: flex-start !important; /* 中央寄せのままだと、はみ出た左側の札に戻れない */
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-left: 16px;
+    margin-left: -16px !important; margin-right: -16px !important; padding: 6px 16px 16px !important;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .mc::-webkit-scrollbar { display: none; }
+  .mc > * { flex: 0 0 84% !important; width: 84% !important; max-width: none !important; min-width: 0; scroll-snap-align: start; }
+  .mc > *:last-child { margin-right: 2px; }
+  .mc-dots { display: flex; justify-content: center; gap: 7px; margin: 2px 0 6px; }
+  .mc-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 9999px; background: rgba(94,230,160,.28); transition: width .25s ease, background .25s ease; }
+  .mc-dots button.on { width: 22px; background: var(--mint); box-shadow: 0 0 10px rgba(94,230,160,.6); }
+
+  .mf.mf-closed > .mf-x { display: none !important; }
+  .mf-more {
+    display: flex; align-items: center; justify-content: center; margin: 12px auto 0; padding: .65rem 1.2rem;
+    font-size: 13px; font-weight: 700; color: var(--acc); border-radius: .8rem;
+    background: rgba(94,230,160,.08); border: 1px solid var(--line);
+  }
+  #works-grid + .mf-more { margin-bottom: 2.5rem; }
+}

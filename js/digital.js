@@ -102,6 +102,58 @@
     tick();
   }
 
+  // ---------- スマホ：横スライド（カルーセル）と「もっと見る」（11-04 社長「スマホ版はカルーセルとかアコーディオン」）----------
+  // 見た目の切り替えは CSS の @media (max-width: 767px) だけ＝PC は今まで通り。ここは印（class）と点・ボタンを付けるだけ
+  const CAROUSELS = ['#trust .grid.grid-cols-1', '#industry-grid', '#sample-grid', '#pricing .grid.md\\:grid-cols-3',
+    '#services .grid.md\\:grid-cols-3', '#works .grid.md\\:grid-cols-3', '#made .grid.lg\\:grid-cols-3', '#membership .grid.md\\:grid-cols-2'];
+  CAROUSELS.forEach((sel) => document.querySelectorAll(sel).forEach((box) => {
+    const items = Array.from(box.children);
+    if (items.length < 2 || box.classList.contains('mc')) return;
+    box.classList.add('mc');
+    const dots = document.createElement('div');
+    dots.className = 'mc-dots';
+    items.forEach((it, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('aria-label', `${i + 1}枚目`);
+      b.addEventListener('click', () => box.scrollTo({ left: box.scrollLeft + it.getBoundingClientRect().left - box.getBoundingClientRect().left - 16, behavior: reduce ? 'auto' : 'smooth' }));
+      dots.appendChild(b);
+    });
+    box.after(dots);
+    const mark = () => {
+      // 左端に寄せて止まる（scroll-snap が start）＝左から1枚目の中心が見えている札
+      const mid = box.scrollLeft + 16 + (box.clientWidth * .84) / 2;
+      let on = 0, best = Infinity;
+      const bl = box.getBoundingClientRect().left;
+      items.forEach((it, i) => { const r = it.getBoundingClientRect(), c = box.scrollLeft + r.left - bl + r.width / 2, d = Math.abs(c - mid); if (d < best) { best = d; on = i; } });
+      Array.from(dots.children).forEach((d, i) => d.classList.toggle('on', i === on));
+    };
+    box.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
+    mark();
+  }));
+  // 長い一覧は最初の何件かだけ出して「もっと見る」
+  [['#works-grid', 6], ['#lineup-grid', 6], ['#link-grid', 6]].forEach(([sel, keep]) => {
+    const box = document.querySelector(sel);
+    if (!box || box.children.length <= keep + 1) return;
+    const items = Array.from(box.children);
+    items.slice(keep).forEach((it) => it.classList.add('mf-x'));
+    box.classList.add('mf', 'mf-closed');
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'mf-more';
+    btn.setAttribute('aria-expanded', 'false');
+    const label = () => { btn.innerHTML = box.classList.contains('mf-closed')
+      ? `もっと見る（全${items.length}件）<i class="fa-solid fa-chevron-down ml-2 text-xs"></i>`
+      : `閉じる<i class="fa-solid fa-chevron-up ml-2 text-xs"></i>`; };
+    btn.addEventListener('click', () => {
+      box.classList.toggle('mf-closed');
+      btn.setAttribute('aria-expanded', String(!box.classList.contains('mf-closed')));
+      label();
+      if (box.classList.contains('mf-closed')) box.scrollIntoView({ block: 'nearest' });
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+    });
+    label();
+    box.after(btn);
+  });
+
   if (!hasGsap || reduce) return;
   const { gsap, ScrollTrigger } = window;
   gsap.registerPlugin(ScrollTrigger);
