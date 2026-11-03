@@ -430,7 +430,7 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">業種別の見本ページ</h2>
           <p class="text-charcoal-light max-w-2xl mx-auto">
             「どんな物ができるの？」に、完成品でお答えします。<br class="hidden md:block" />
-            どれも<b class="text-charcoal">架空のお店・物件</b>で作った見本です。開いて、押して、試せます。
+            どれも<b class="text-charcoal">架空のお店</b>で作った見本です（10業種）。開いて、押して、試せます。
           </p>
         </div>
         <div class="flex flex-wrap justify-center gap-6" id="sample-grid"></div>
@@ -1089,30 +1089,45 @@
         </div>`).join('');
     }
 
-    // ===== 業種別の見本（samples/ の架空の店・物件。増えたら1行足す。サムネは samples/export.py が作る）=====
+    // ===== 業種別の見本（samples/<型>/ の架空の店。37番の HP 見本の型10種を写した物・2026-11-03。サムネは images/samples/<型>.webp）=====
     const SAMPLES = [
-      { name: '大家さんの物件紹介ページ', href: 'samples/rental-house.html', img: 'images/samples/rental-house.webp',
-        tags: ['不動産・大家', '初期費用の自動計算', '内見予約'],
-        desc: '北海道の戸建て賃貸を想定。灯油の量や除雪の分担まで載せ、入居日を選ぶと初期費用がその場で出ます。' },
-      { name: '飲食店のホームページ', href: 'samples/restaurant.html', img: 'images/samples/restaurant.webp',
-        tags: ['飲食', 'アレルギーで絞り込み', 'テイクアウト予約'],
-        desc: '定食屋を想定。使っていない食材でメニューを絞り込め、持ち帰りは数と受け取る時間を選ぶだけ。営業日も自動で表示。' },
-      { name: '美容サロンのホームページ', href: 'samples/salon.html', img: 'images/samples/salon.webp',
-        tags: ['美容サロン', '料金と時間の自動計算', '空き時間から予約'],
-        desc: 'メニューを組み合わせると料金とかかる時間が出て、その時間が入る空き枠だけを出して予約できます。' },
-      { name: '習い事教室のホームページ', href: 'samples/school.html', img: 'images/samples/school.webp',
-        tags: ['教室・習い事', 'コース診断', '月謝の計算'],
-        desc: 'そろばん教室を想定。3つの質問で合うコースを出し、兄弟割の月謝計算から無料体験の申し込みまでつなぎます。' },
-      { name: 'リフォーム・職人のホームページ', href: 'samples/reform.html', img: 'images/samples/reform.webp',
-        tags: ['職人・リフォーム', 'ビフォー・アフター', 'かんたん見積り'],
-        desc: '施工例を前と後で見比べ、場所と広さを選ぶと金額の目安が出ます。写真つきで見積りの依頼ができます。' },
+      { name: '和菓子屋のホームページ', href: 'samples/01_wagashi/', img: 'images/samples/01_wagashi.webp',
+        tags: ['和菓子・菓子店', '季節のお菓子', '注文・発送'],
+        desc: '上生菓子や焼き菓子を季節ごとに並べ、ご注文と発送の案内まで1ページに。手仕事の店らしい落ち着いた見た目です。' },
+      { name: 'カフェのホームページ', href: 'samples/02_cafe/', img: 'images/samples/02_cafe.webp',
+        tags: ['カフェ', '席・Wi-Fi・電源', 'メニュー'],
+        desc: '自家焙煎のカフェを想定。「長居していい？電源ある？」に先に答え、メニュー・店の話・お知らせはページを分けました。' },
+      { name: 'パン屋のホームページ', href: 'samples/03_bakery/', img: 'images/samples/03_bakery.webp',
+        tags: ['パン屋', '焼き上がり時間割', '取り置き'],
+        desc: '何時に何が焼き上がるかを時間割で見せ、今日のパンから取り置きの依頼まで。営業日と駐車場もすぐ分かります。' },
+      { name: '美容室のホームページ', href: 'samples/04_salon/', img: 'images/samples/04_salon.webp',
+        tags: ['美容室', 'メニューと料金', 'ページ分け'],
+        desc: '美容室を想定。料金・切る人の紹介・空きとご予約・お店の場所をページで分け、スマホで目的の所へすぐ行けます。' },
+      { name: '整体院のホームページ', href: 'samples/05_seitai/', img: 'images/samples/05_seitai.webp',
+        tags: ['整体・治療院', '症状から選ぶ', '初めての日の流れ'],
+        desc: '「どこがつらいか」から入り、コースと料金・初めての日の流れ・よくある質問・予約まで不安を順に消していきます。' },
+      { name: '居酒屋・焼き鳥店のホームページ', href: 'samples/06_izakaya/', img: 'images/samples/06_izakaya.webp',
+        tags: ['飲食・居酒屋', '品書き', 'お知らせ'],
+        desc: '炭火の焼き鳥店を想定。お品書きを読みやすく並べ、営業のお知らせと店への行き方をまとめました。' },
+      { name: '宿のホームページ', href: 'samples/07_yado/', img: 'images/samples/07_yado.webp',
+        tags: ['宿・民宿', 'プランと料金', '空室の確認'],
+        desc: '客室三つの小さな宿を想定。お部屋・季節の過ごし方・宿泊プランから、空室の確認と予約の依頼までつなぎます。' },
+      { name: '工房・作家のホームページ', href: 'samples/08_kobo/', img: 'images/samples/08_kobo.webp',
+        tags: ['工房・ものづくり', '作品一覧', '今月の窯出し'],
+        desc: '陶芸の工房を想定。作品を値段つきで並べ、今月の窯出しは横に引いて見られます。在庫の問い合わせや窯出し市のお知らせも。' },
+      { name: '習い事教室のホームページ', href: 'samples/09_kyoshitsu/', img: 'images/samples/09_kyoshitsu.webp',
+        tags: ['教室・習い事', 'コースと月謝', '体験レッスン'],
+        desc: '音楽教室を想定。コースと月謝・曜日ごとの時間割・先生の紹介から、無料体験の申し込みまで1本道で進めます。' },
+      { name: '士業事務所のホームページ', href: 'samples/10_shigyo/', img: 'images/samples/10_shigyo.webp',
+        tags: ['士業・事務所', '料金のめやす', '相談の予約'],
+        desc: '行政書士事務所を想定。業務の案内と料金のめやす、依頼の流れを先に見せ、相談の予約へつなぎます。' },
     ];
     const sampleGrid = document.getElementById('sample-grid');
     if (sampleGrid) {
       sampleGrid.innerHTML = SAMPLES.map((s) => `
         <a href="${s.href}" target="_blank" rel="noopener" class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
           <div class="relative">
-            <img src="${s.img}" alt="${s.name}（見本）の画面" loading="lazy" decoding="async" width="900" height="563" class="w-full h-auto block border-b border-gray-100" />
+            <img src="${s.img}" alt="${s.name}（見本）の画面" loading="lazy" decoding="async" width="960" height="600" class="w-full h-auto block border-b border-gray-100" />
             <span class="absolute left-3 top-3 text-[11px] font-bold text-white bg-orange-700 px-2.5 py-0.5 rounded-full">見本・架空</span>
           </div>
           <div class="p-6 flex flex-col flex-1">

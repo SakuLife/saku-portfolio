@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1b1512">
+<title>菓子処 丘月庵｜北海道 上富良野町の和菓子・焼き菓子（見本）</title>
+<meta name="description" content="北海道 上富良野町の菓子処。丘のどら焼き・年輪ばうむ・夕映えの茜色羊羹など。営業 火〜土 9:00〜18:00／日・祝 9:00〜17:00・定休 月曜（祝日の時は翌日）。発送も承ります。">
+<meta property="og:title" content="菓子処 丘月庵｜北海道 上富良野町の和菓子・焼き菓子">
+<meta property="og:description" content="北海道 上富良野町の菓子処。ご注文・発送はページのフォームから。">
+<meta property="og:image" content="https://sakulife.github.io/saku-portfolio/samples/01_wagashi/img/hero.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width: 768px)">
+<link rel="preload" as="image" href="img/hero_sp.webp" media="(max-width: 767px)">
+<style>
+:root{
+  --ink:#1b1512; --ink2:#3a302a; --paper:#f4eee4; --paper2:#ebe2d4; --sumi:#1b1512;
+  --beni:#a4372a; --kin:#9c7840; --kin2:#e7c78c; --mute:#6e6156; --line:rgba(27,21,18,.14);
+  --mincho:"Shippori Mincho B1","Yu Mincho","Hiragino Mincho ProN",serif;
+  --goth:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.7,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--goth);font-size:16px;line-height:1.9;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+:focus-visible{outline:2px solid var(--beni);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* 見本の帯 */
+.sample-band{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(20,16,14,.92);color:#efe6d8;font-size:11.5px;letter-spacing:.04em;text-align:center;padding:7px 14px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(6px)}
+.sample-band b{color:var(--kin2);font-weight:500}
+.sample-band .sh{display:none}
+
+.grain{pointer-events:none;position:fixed;inset:-50%;z-index:80;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* ローディング（JS が無い・動きを止めた時は出さない） */
+.loader{position:fixed;inset:0;z-index:100;background:var(--sumi);display:none;place-items:center;color:#efe6d8}
+.js .loader{display:grid}
+.loader .seal{width:78px;height:78px;border:2px solid var(--beni);color:var(--beni);display:grid;place-items:center;font-family:var(--mincho);font-weight:800;font-size:25px;writing-mode:vertical-rl;letter-spacing:.08em;line-height:1.05;border-radius:6px;opacity:0;transform:scale(1.25) rotate(-6deg);margin:0 auto}
+.loader .lname{margin-top:22px;font-family:var(--mincho);font-size:13px;letter-spacing:.5em;opacity:0;text-align:center}
+.loader .bar{position:absolute;left:50%;bottom:18%;width:120px;height:1px;background:rgba(239,230,216,.18);transform:translateX(-50%);overflow:hidden}
+.loader .bar i{position:absolute;inset:0;background:var(--kin2);transform-origin:left;transform:scaleX(0)}
+
+/* ヘッダー */
+.hd{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;gap:18px;padding:18px clamp(18px,4vw,48px);color:#f4eee4;pointer-events:none;transition:background .5s,color .5s,padding .5s}
+.hd.solid{background:rgba(244,238,228,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);padding-top:10px;padding-bottom:10px;box-shadow:0 1px 0 var(--line)}
+.hd.dark{background:rgba(20,16,14,.82);color:#efe6d8;box-shadow:none}
+body.menu-open .hd{background:transparent;color:#efe6d8;box-shadow:none}
+.hd > *{pointer-events:auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--mincho);font-weight:600;letter-spacing:.2em;font-size:15px;white-space:nowrap;min-height:44px}
+.logo .s{width:30px;height:30px;border:1.5px solid currentColor;display:grid;place-items:center;font-size:11px;writing-mode:vertical-rl;line-height:1;border-radius:3px;flex:none}
+.hd .acts{display:flex;align-items:center;gap:10px;margin-left:auto}
+.hd .acts a{display:inline-flex;align-items:center;gap:8px;min-height:42px;font-family:var(--mincho);font-size:13px;letter-spacing:.12em;text-decoration:none;padding:0 16px;border:1px solid currentColor;border-radius:2px;white-space:nowrap;transition:background .3s,color .3s}
+.hd .acts a b{font:500 16px var(--latin);letter-spacing:.06em}
+.hd .acts a.o{background:var(--beni);border-color:var(--beni);color:#fff}
+.hd .hrs{font-size:11.5px;line-height:1.6;letter-spacing:.08em;opacity:.9;white-space:nowrap;text-align:right;margin-right:6px}
+.menu-btn{background:none;border:0;color:inherit;cursor:pointer;display:flex;align-items:center;gap:12px;font:500 11px/1 var(--latin);letter-spacing:.3em;text-transform:uppercase;padding:8px;min-height:44px;min-width:44px}
+.menu-btn .ln{width:30px;height:9px;position:relative}
+.menu-btn .ln::before,.menu-btn .ln::after{content:"";position:absolute;left:0;right:0;height:1px;background:currentColor;transition:transform .5s var(--ease)}
+.menu-btn .ln::before{top:0}.menu-btn .ln::after{bottom:0}
+body.menu-open .menu-btn .ln::before{transform:translateY(4px) rotate(18deg)}
+body.menu-open .menu-btn .ln::after{transform:translateY(-4px) rotate(-18deg)}
+
+/* 全面メニュー */
+.gnav{position:fixed;inset:0;z-index:55;background:var(--sumi);color:#efe6d8;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .9s var(--ease),visibility 0s .9s;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+body.menu-open .gnav{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .9s var(--ease)}
+.gnav .pic{background:url(img/snow.webp) center/cover;opacity:.55;transform:scale(1.15);transition:transform 1.6s var(--ease)}
+body.menu-open .gnav .pic{transform:scale(1)}
+.gnav ul{list-style:none;margin:0;padding:0 clamp(24px,7vw,96px);align-self:center;display:flex;flex-direction:column;gap:8px}
+.gnav li{overflow:hidden}
+.gnav a{display:flex;align-items:baseline;gap:18px;text-decoration:none;font-family:var(--mincho);font-size:clamp(24px,3.4vw,40px);letter-spacing:.14em;transform:translateY(110%);transition:transform .8s var(--ease),color .3s}
+body.menu-open .gnav a{transform:none}
+.gnav li:nth-child(2) a{transition-delay:.06s}.gnav li:nth-child(3) a{transition-delay:.12s}.gnav li:nth-child(4) a{transition-delay:.18s}.gnav li:nth-child(5) a{transition-delay:.24s}
+.gnav a small{font:italic 400 13px var(--latin);letter-spacing:.2em;color:var(--kin2)}
+.gnav a:hover{color:var(--kin2)}
+.gnav .gtel{margin-top:30px;font-family:var(--mincho);font-size:14px;letter-spacing:.14em;color:#cbbfae}
+.gnav .gtel a{display:inline;transform:none;font:500 24px var(--latin);color:#efe6d8}
+
+/* 右端の縦ナビ（PC） */
+.side{position:fixed;right:clamp(14px,2.2vw,30px);top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:20px;color:#fff;text-shadow:0 0 3px rgba(10,8,6,.9),0 0 12px rgba(10,8,6,.7);transition:opacity .5s}
+.side.off,.pager.off{opacity:0;pointer-events:none}
+.side a{writing-mode:vertical-rl;text-decoration:none;font-family:var(--mincho);font-size:12px;letter-spacing:.35em;opacity:.85;transition:opacity .3s;position:relative;padding-right:10px}
+.side a::after{content:"";position:absolute;right:0;top:0;width:1px;height:0;background:currentColor;transition:height .5s var(--ease)}
+.side a.on{opacity:1}.side a.on::after{height:100%}
+.pager{position:fixed;left:clamp(18px,4vw,48px);bottom:52px;z-index:50;font:400 12px var(--latin);letter-spacing:.25em;color:#f4eee4;mix-blend-mode:difference;transition:opacity .5s}
+.pager b{font-weight:500;font-size:20px}
+.pin{position:relative}
+.pbar{position:absolute;left:clamp(20px,5vw,64px);right:clamp(20px,5vw,64px);bottom:34px;display:flex;align-items:center;gap:14px;color:#d9cdbb;font:400 12px var(--goth);letter-spacing:.18em}
+.pbar i{flex:1;height:1px;background:rgba(239,230,216,.28);position:relative}
+.pbar i::after{content:"";position:absolute;left:0;top:-1px;height:3px;width:calc(var(--p,0) * 100%);background:var(--kin2)}
+
+/* ヒーロー */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#f6efe3;background:var(--sumi)}
+.hero .bg{position:absolute;inset:-16% 0 -4%;background:url(img/hero.webp) center 60%/cover}
+.hero .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 0% 100%,rgba(12,8,6,.72),rgba(12,8,6,0) 70%),linear-gradient(180deg,rgba(15,10,8,.4) 0%,rgba(15,10,8,0) 35%,rgba(15,10,8,.55) 100%)}
+.hero .copy{position:absolute;right:clamp(64px,14vw,220px);top:50%;transform:translateY(-54%);margin:0;writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;font-size:clamp(30px,4.4vw,58px);line-height:1.7;letter-spacing:.22em;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+.hero .copy span{display:block;white-space:nowrap}
+.hero .sub{position:absolute;left:clamp(18px,4vw,48px);bottom:clamp(110px,16vh,150px);max-width:440px}
+.hero .sub p{margin:0 0 6px;font-family:var(--mincho);font-size:16px;letter-spacing:.2em;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.hero .sub .ruby{font-size:15px;letter-spacing:.12em;opacity:.95}
+.hero .hrs-sp{display:none}
+.hero .sub .en{font:italic 400 clamp(26px,3vw,40px)/1.1 var(--latin);letter-spacing:.06em;color:#e9d5ad}
+.hero .plate{position:absolute;right:clamp(24px,5vw,72px);bottom:clamp(96px,13vh,130px);width:clamp(120px,13vw,190px);aspect-ratio:1;border-radius:50%;background:#f4eee4 url(img/ink_enso.webp) center/86% no-repeat;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);display:grid;place-items:end center}
+.hero .plate span{transform:translateY(130%);font-family:var(--mincho);font-size:12px;letter-spacing:.3em;color:#f6efe3;white-space:nowrap;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.scroll{position:absolute;left:50%;bottom:58px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font:400 10px var(--latin);letter-spacing:.4em;color:#f6efe3}
+.scroll i{width:1px;height:56px;background:rgba(246,239,227,.25);position:relative;overflow:hidden}
+.scroll i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#f6efe3;animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{to{top:100%}}
+
+/* 共通の節 */
+section{position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.ttl{display:flex;align-items:flex-end;gap:22px;margin-bottom:clamp(36px,6vw,72px)}
+.ttl .no{font:400 clamp(64px,9vw,128px)/.8 var(--latin);color:transparent;-webkit-text-stroke:1px var(--kin)}
+.ttl h2{margin:0;white-space:nowrap;font-family:var(--mincho);font-weight:600;font-size:clamp(24px,2.8vw,36px);letter-spacing:.2em;line-height:1.4}
+.ttl h2 small{display:block;font:italic 400 14px var(--latin);letter-spacing:.3em;color:var(--kin);margin-bottom:6px}
+.split-line{overflow:hidden;display:block}
+
+/* 01 ごあいさつ */
+.greet{padding:clamp(90px,10vw,130px) 0}
+.greet .grid{display:grid;grid-template-columns:auto 1fr 1.1fr;gap:clamp(28px,6vw,90px);align-items:center}
+.greet .vt{margin:0;writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;font-size:clamp(24px,2.6vw,34px);letter-spacing:.32em;line-height:2;height:max-content}
+.greet .body p{margin:0 0 1.6em;font-family:var(--mincho);font-weight:600;font-size:16px;line-height:2.2;letter-spacing:.04em}
+.mask{position:relative;overflow:hidden;border-radius:2px}
+.mask img{width:100%;height:115%;object-fit:cover;transform-origin:center}
+.greet .mask{aspect-ratio:4/5}
+.cap{font-size:12px;color:var(--mute);letter-spacing:.08em;margin-top:10px}
+
+/* 02 お菓子（横に流れる） */
+.items{background:var(--sumi);color:#efe6d8;overflow:hidden}
+.items .head{padding-top:clamp(90px,10vw,130px)}
+.items .ttl h2 small{color:var(--kin2)}
+.items .ttl .no{-webkit-text-stroke-color:var(--kin2)}
+.items .lead{max-width:560px;font-family:var(--mincho);line-height:2.2;color:#cbbfae;margin:-30px 0 0}
+.pin{height:100vh;display:flex;align-items:center;padding-top:40px}
+.track{display:flex;gap:clamp(18px,2.4vw,34px);padding:0 clamp(20px,5vw,64px);width:max-content;margin:0;list-style:none}
+.card{position:relative;width:min(clamp(250px,24vw,340px),calc((100vh - 340px) * .75));flex:none;color:#efe6d8;text-decoration:none;display:block}
+.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:2px;background:#f2ebdf;color:var(--ink)}
+.card .ph::before{content:"";position:absolute;inset:0;background:var(--img) center 46%/86% no-repeat;mix-blend-mode:multiply;transition:transform 1.2s var(--ease)}
+.card .ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--c1)}
+.card .kanji{position:absolute;left:18px;top:18px;font-family:var(--mincho);font-weight:800;font-size:15px;line-height:1;color:#fff;background:var(--c1);width:34px;height:34px;display:grid;place-items:center;border-radius:3px}
+.card .nm{position:absolute;right:16px;top:18px;bottom:46px;margin:0;writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;font-size:19px;letter-spacing:.2em;line-height:1.55;white-space:nowrap;color:var(--ink)}
+.card .nm.long{font-size:16px;letter-spacing:.12em}
+.card .nm.xlong{font-size:13.5px;letter-spacing:.06em}
+.card .imgn{position:absolute;right:10px;bottom:12px;font-size:10.5px;letter-spacing:.06em;color:var(--mute);background:rgba(255,255,255,.7);padding:1px 6px;border-radius:2px}
+.imgnote{margin:14px 0 0;font-size:12.5px;color:#a99c8a;letter-spacing:.06em}
+.card .tag{position:absolute;left:18px;bottom:16px;font-size:11px;letter-spacing:.1em;color:#fff;background:var(--c1);padding:2px 9px;border-radius:2px}
+.card .price{position:absolute;left:0;bottom:5px;right:0;display:none}
+.card .row1{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px;padding-bottom:8px;border-bottom:1px solid rgba(239,230,216,.18)}
+.card .num{font:italic 400 14px var(--latin);letter-spacing:.24em;color:var(--kin2)}
+.card .yen{font:500 22px var(--latin);letter-spacing:.04em;color:#f6efe3}
+.card .yen small{font:400 11px var(--goth);color:#d9cdbb;margin-left:4px;letter-spacing:.06em}
+.card .desc{display:block;margin-top:10px;font-family:var(--mincho);font-size:14px;line-height:1.9;color:#ddd1c0;letter-spacing:.04em}
+.card .spec{display:block;margin-top:4px;font-size:13.5px;color:#d9cdbb;letter-spacing:.06em}
+.card .go{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.16em;color:var(--kin2);border-bottom:1px solid currentColor}
+.card:hover .ph::before{transform:scale(1.06)}
+
+/* 03 つくり（全面写真） */
+.craft{height:130vh;min-height:760px;overflow:hidden;color:#f6efe3;background:var(--sumi)}
+.craft .bg{position:absolute;inset:-12% 0;background-size:cover;background-position:center}
+.craft .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,10,8,.8) 0%,rgba(15,10,8,.4) 55%,rgba(15,10,8,.12) 100%)}
+.craft .inner{position:sticky;top:0;height:100vh;display:flex;align-items:center}
+.craft .txt{max-width:560px}
+.craft .big{font-family:var(--mincho);font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.8;letter-spacing:.16em;margin:0 0 30px}
+.craft p{font-family:var(--mincho);line-height:2.3;color:#e2d7c7;margin:0}
+.craft .ttl h2 small{color:var(--kin2)}
+.craft .ttl .no{-webkit-text-stroke-color:var(--kin2)}
+
+/* 素材の2枚 */
+.mat{padding:clamp(110px,14vw,180px) 0}
+.mat .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
+.mat .a{aspect-ratio:4/3}.mat .b{aspect-ratio:3/4;margin-bottom:-14vw}
+.mat .note{grid-column:1/2;max-width:460px;margin:0;font-family:var(--mincho);line-height:2.3;color:var(--ink2)}
+
+/* 04 景色 */
+.land{height:150vh;background:#efe8dc;color:var(--ink)}
+.land .stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.land .ph{position:absolute;inset:0;background-size:cover;background-position:center 62%;background-repeat:no-repeat;background-color:#efe8dc;background-blend-mode:multiply}
+.land .ph + .ph{clip-path:inset(100% 0 0 0)}
+.land .w{position:absolute;right:clamp(70px,13vw,200px);top:max(120px,18%);margin:0;writing-mode:vertical-rl;font-family:var(--mincho);font-weight:600;font-size:clamp(34px,4.6vw,64px);letter-spacing:.3em;line-height:1.5}
+.land .w small{display:block;writing-mode:horizontal-tb;font:italic 400 clamp(13px,1.2vw,16px) var(--latin);letter-spacing:.3em;color:var(--beni);margin:0 14px 0 0}
+.land .w + .w{opacity:0}
+.land .foot{position:absolute;left:0;right:0;bottom:70px;margin:0;text-align:center;font-family:var(--mincho);font-size:14px;letter-spacing:.2em;color:var(--ink2)}
+
+/* 05 ご注文 */
+.order{padding:clamp(110px,14vw,180px) 0;background:var(--paper2)}
+.order .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,96px);align-items:start}
+.order .grid > div:first-child{position:sticky;top:110px}
+.order .lead{font-family:var(--mincho);line-height:2.3;color:var(--ink2)}
+.flow{list-style:none;padding:0;margin:34px 0 0;counter-reset:f}
+.flow li{counter-increment:f;display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--line);font-size:15px}
+.flow li::before{content:"0" counter(f);font:italic 400 20px/1.2 var(--latin);color:var(--kin);min-width:34px}
+form.of{background:var(--paper);padding:clamp(22px,4vw,48px);border-radius:3px;box-shadow:0 30px 60px -40px rgba(27,21,18,.35)}
+.of label,.of .lb{display:block;font-size:13px;letter-spacing:.12em;color:var(--mute);margin:0 0 8px}
+.of .f{margin-bottom:22px}
+.of fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+.of legend{padding:0;font-size:13px;letter-spacing:.12em;color:var(--mute);margin-bottom:8px}
+.of select,.of input{width:100%;min-height:46px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid rgba(27,21,18,.22);padding:10px 12px;border-radius:2px;outline:none;transition:border-color .3s}
+.of select:focus,.of input:focus{border-color:var(--beni)}
+.qlist .qi{display:grid;grid-template-columns:1fr auto 76px;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);font-size:15px;transition:background .4s}
+.qlist .qi > span{line-height:1.5}
+.qlist .qi small{color:var(--ink2);font:500 15px var(--latin);letter-spacing:.04em;white-space:nowrap}
+.qlist .qi input{text-align:right;padding:6px 4px;border:1px solid rgba(27,21,18,.2);border-radius:2px;background:#fff}
+.qlist .qi.hit{background:rgba(164,55,42,.08)}
+.of .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.of textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid rgba(27,21,18,.22);padding:10px;border-radius:2px;outline:none;min-height:84px;resize:vertical}
+.of .req{color:var(--beni);font-size:11px;margin-left:6px}
+.of .ship{margin:10px 0 0;font-size:14px;line-height:1.7}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:14px;width:100%;margin-top:8px;padding:20px 24px;border:1px solid var(--beni);background:var(--beni);color:#fff;font:500 16px var(--mincho);letter-spacing:.24em;cursor:pointer;border-radius:2px;isolation:isolate;transition:color .5s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--sumi);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease);z-index:-1}
+.btn:hover{color:#fff;border-color:var(--sumi)}.btn:hover::before{transform:scaleY(1)}
+.btn .arr{width:26px;height:1px;background:currentColor;position:relative;transition:width .5s var(--ease)}
+.btn .arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .arr{width:40px}
+.of .ok,.of .err{display:none;margin-top:14px;font-size:14px;color:var(--beni)}
+.tel{display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:14px 22px;border:1px solid var(--ink);text-decoration:none;font-family:var(--mincho);letter-spacing:.14em;min-height:44px}
+.tel b{font:500 22px var(--latin);letter-spacing:.08em}
+.map{display:block;margin-top:26px;aspect-ratio:16/10;border:0;width:100%;filter:grayscale(.85) sepia(.15) contrast(.95)}
+.spbar{display:none}
+
+/* 06 お知らせ・お店 */
+.info{padding:clamp(110px,14vw,170px) 0 clamp(80px,10vw,120px)}
+.info .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,96px)}
+.news{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:baseline;padding:20px 0;border-top:1px solid var(--line)}
+.news li:last-child{border-bottom:1px solid var(--line)}
+.news time{font:italic 400 16px var(--latin);letter-spacing:.14em;color:var(--kin)}
+.news span{font-size:15px}
+dl.shop{margin:0}
+dl.shop div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:15px}
+dl.shop div:last-child{border-bottom:1px solid var(--line)}
+dl.shop dt{color:var(--mute);letter-spacing:.12em}
+dl.shop dd{margin:0}
+
+/* フッター */
+.ft{background:var(--sumi);color:#cfc3b3;padding:clamp(90px,12vw,150px) 0 110px;overflow:hidden;font-family:var(--mincho)}
+.ft .huge{font-family:var(--mincho);font-weight:800;font-size:min(clamp(46px,10.5vw,150px),calc((min(100vw, 1180px) - 2 * clamp(20px, 5vw, 64px) - 8px) / 4.9));line-height:1.12;letter-spacing:.06em;color:#efe6d8}
+.ft .huge .r{display:block;white-space:nowrap}
+.ft .huge .r + .r{padding-left:1.5em}
+.ft .huge span span{display:inline-block}
+.ft .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(239,230,216,.15);font-size:14px;line-height:2.1;letter-spacing:.08em}
+.ft .cols h3{margin:0 0 8px;font:italic 400 14px var(--latin);letter-spacing:.3em;color:var(--kin2)}
+.ft .cols a{text-decoration:none}
+.ft .cols ul{list-style:none;margin:0;padding:0}
+.ft .tel2{font:500 24px var(--latin);letter-spacing:.06em;color:#efe6d8}
+.ft .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;margin-top:50px;font-size:12.5px;letter-spacing:.1em}
+.ft .note{max-width:620px;line-height:2;margin:0}
+.ft .row p{margin:0}
+
+/* カーソル（PC） */
+.cur{position:fixed;left:0;top:0;z-index:95;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:rgba(27,21,18,.85);pointer-events:none;display:grid;place-items:center;font:500 9px var(--latin);letter-spacing:.2em;color:#f4eee4;opacity:0;transition:width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),opacity .3s,background .3s}
+.cur.live{opacity:1}
+.cur.big{width:78px;height:78px;margin:-39px 0 0 -39px;background:rgba(164,55,42,.88)}
+.cur span{opacity:0;transition:opacity .3s}.cur.big span{opacity:1}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+
+/* ページ分けの時だけ使う物（見出し帯・ヘッダーのナビ・入口・もっと見る） */
+.pnav{display:none;list-style:none;margin:0 0 0 clamp(8px,2vw,34px);padding:0;gap:clamp(4px,1vw,14px)}
+.pnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 clamp(8px,1vw,14px);font-family:var(--mincho);font-size:13.5px;letter-spacing:.16em;text-decoration:none;position:relative;white-space:nowrap}
+.pnav a::after{content:"";position:absolute;left:clamp(8px,1vw,14px);right:clamp(8px,1vw,14px);bottom:7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.pnav a:hover::after,.pnav a[aria-current="page"]::after{transform:scaleX(1)}
+@media (min-width:1024px){.pnav{display:flex}.pg .hd .hrs{display:none}}
+.gnav a[aria-current="page"]{color:var(--kin2)}
+.pgband{position:relative;background:var(--sumi);color:#efe6d8;padding:clamp(130px,15vw,190px) 0 clamp(44px,6vw,80px);overflow:hidden}
+.pgband::before{content:"";position:absolute;right:-4%;top:0;bottom:0;width:46%;background:url(img/snow.webp) center/cover;opacity:.18;-webkit-mask-image:linear-gradient(270deg,#000,transparent);mask-image:linear-gradient(270deg,#000,transparent)}
+.pgband .wrap{position:relative}
+.pgband h1{margin:0;font-family:var(--mincho);font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:.24em;line-height:1.4}
+.pgband h1 small{display:block;font:italic 400 14px var(--latin);letter-spacing:.34em;color:var(--kin2);margin-bottom:10px}
+.pgband p{margin:14px 0 0;max-width:560px;font-family:var(--mincho);line-height:2.1;color:#cbbfae;font-size:15px}
+.pgband p.crumb{margin:0 0 18px;font:400 12px var(--goth);letter-spacing:.14em;color:#a99c8a}
+.crumb a{text-decoration:none;border-bottom:1px solid rgba(239,230,216,.3)}
+.more{display:inline-flex;align-items:center;gap:14px;min-height:44px;margin-top:6px;font-family:var(--mincho);font-size:15px;letter-spacing:.2em;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+.more::after{content:"";width:26px;height:1px;background:currentColor;transition:width .5s var(--ease)}
+.more:hover::after{width:44px}
+.items .more{color:var(--kin2);margin:0 clamp(20px,5vw,64px) clamp(70px,9vw,120px)}
+.gate{padding:clamp(90px,11vw,150px) 0 0}
+.gate ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,34px)}
+.gate a{display:block;text-decoration:none;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--paper2);height:100%}
+.gate .th{aspect-ratio:16/10;overflow:hidden;background:#e5dccb}
+.gate .th img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gate .tx{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;padding:22px 24px 26px}
+.gate .tx b{display:block;font-family:var(--mincho);font-weight:600;font-size:clamp(20px,2vw,26px);letter-spacing:.2em}
+.gate .tx small{display:block;font:italic 400 14px var(--latin);letter-spacing:.3em;color:var(--kin);margin-bottom:4px}
+.gate .tx em{font-style:normal;font-size:13.5px;line-height:1.8;color:var(--mute);display:block;margin-top:8px;letter-spacing:.06em}
+.gate .tx i{flex:none;width:34px;height:1px;background:var(--beni);position:relative;margin-bottom:10px;transition:width .5s var(--ease)}
+.gate .tx i::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--beni);border-right:1px solid var(--beni);transform:rotate(45deg)}
+.gate a:hover .th img{transform:scale(1.06)}.gate a:hover .tx i{width:52px}
+.greet .more{margin-top:8px}
+.pg .info .grid > div:first-child{display:flex;flex-direction:column}
+.pg .info .map{flex:1;aspect-ratio:auto;min-height:340px}
+.pg-contact .order{padding-bottom:clamp(50px,6vw,80px)}
+.pg-contact .info{padding-top:clamp(50px,6vw,80px)}
+.pg .land{height:90vh}
+.pg .land .stage{height:50vh;top:25vh}
+.pg .land .w{top:max(36px,8%);font-size:clamp(30px,3.6vw,50px)}
+.pg .land .foot{bottom:22px}
+@media (max-width:767px){.gate ul{grid-template-columns:1fr}.gate .th{aspect-ratio:16/8}}
+
+@media (max-width:1100px){.hd .hrs{display:none}}
+/* スマホ */
+@media (max-width:767px){
+  .hero .bg{background-image:url(img/hero_sp.webp);background-position:center 40%}
+  .hero .copy{right:22px;top:40%;font-size:31px;letter-spacing:.18em;text-shadow:0 2px 18px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.4)}
+  .hero .bg::before{content:"";position:absolute;right:0;top:0;bottom:0;width:60%;background:linear-gradient(270deg,rgba(15,10,8,.45),transparent);z-index:1}
+  .hero .plate{width:96px;right:20px;bottom:150px}
+  .hero .plate span{display:none}
+  .hero .sub{left:22px;bottom:150px;max-width:62%}
+  .hero .hrs-sp{display:block;position:absolute;left:0;right:0;bottom:calc(84px + env(safe-area-inset-bottom));margin:0;padding:9px 16px;background:rgba(20,16,14,.78);color:#f1e8da;font-size:12.5px;line-height:1.55;letter-spacing:0;text-align:center}
+  .hero .hrs-sp b{color:var(--kin2);font-weight:500;margin-right:6px}
+  .hero .sub p{font-size:15px;letter-spacing:.1em}
+  .hero .sub .ruby{font-size:13px;letter-spacing:.02em}
+  .side,.hd .acts,.scroll,.pager{display:none}
+  .hd .logo{margin-right:auto}
+  body{padding-bottom:calc(100px + env(safe-area-inset-bottom));padding-top:0}
+  .order .grid > div:first-child{position:static}
+  .gnav{grid-template-columns:1fr}
+  .gnav .pic{position:absolute;inset:0;opacity:.28}
+  .gnav ul{position:relative}
+  .greet .grid{grid-template-columns:1fr;gap:34px}
+  .greet .vt{order:-1;margin-left:auto;font-size:24px}
+  .greet .mask{aspect-ratio:4/3}
+  .items .lead{margin-top:-12px}
+  .track{width:auto;flex-direction:column;padding-top:50px;gap:44px}
+  .card{width:100%}
+  .card .ph{aspect-ratio:5/4}
+  .card .ph::before{background-size:auto 80%;background-position:42% 50%}
+  .pin{height:auto;display:block;padding-bottom:110px}
+  .land .w{right:26px}
+  .of .two{grid-template-columns:1fr}
+  .sample-band{bottom:auto;top:0;padding:0 10px;height:24px;line-height:24px;font-size:11px;background:rgba(20,16,14,.96);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sample-band .lg{display:none}.sample-band .sh{display:inline}
+  .hd{top:28px}
+  .pbar{display:none}
+  .spbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;padding-bottom:env(safe-area-inset-bottom);z-index:85;background:var(--sumi);border-top:1px solid rgba(255,255,255,.1)}
+  .spbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;text-decoration:none;color:#efe6d8;font-family:var(--mincho);font-size:15px;letter-spacing:.14em}
+  .spbar a + a{background:var(--beni)}
+  .ft{padding-bottom:160px}
+  .craft{height:auto;min-height:0}
+  .craft .inner{position:relative;height:auto;padding:120px 0}
+  .craft .bg::after{background:linear-gradient(180deg,rgba(15,10,8,.6),rgba(15,10,8,.8))}
+  .mat .grid{grid-template-columns:1fr}
+  .mat .b{margin:0 0 0 30%;width:70%}
+  .land{height:135vh}
+  .order .grid,.info .grid{grid-template-columns:1fr}
+  .news li{grid-template-columns:64px 1fr;gap:12px}
+  dl.shop div{grid-template-columns:80px 1fr}
+  .ttl{gap:14px}
+  .ft .cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.scroll i::after{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.remove('js');</script>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true">
+  <div>
+    <div class="seal">丘月</div>
+    <div class="lname">菓子処 丘月庵</div>
+  </div>
+  <div class="bar"><i></i></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"><span>ORDER</span></div>
+
+<header class="hd">
+  <a class="logo" href="#top"><span class="s" aria-hidden="true">丘月</span>菓子処 丘月庵</a>
+  <nav class="acts" aria-label="お電話とご注文">
+    <span class="hrs">火〜土 9:00〜18:00／日・祝 9:00〜17:00<br>定休　月曜（祝日の時は翌日）</span>
+    <a href="tel:0123000000">お電話 <b>0123-00-0000</b></a>
+    <a class="o" href="#order">ご注文</a>
+  </nav>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false" aria-controls="gnav"><span class="txt">Menu</span><span class="ln"></span></button>
+</header>
+
+<nav class="gnav" id="gnav" aria-label="メニュー" data-overflow-ok>
+  <ul>
+    <li><a href="#greet">ごあいさつ<small>Greeting</small></a></li>
+    <li><a href="#items">いつものお菓子<small>Sweets</small></a></li>
+    <li><a href="#craft">つくり<small>Craft</small></a></li>
+    <li><a href="#order">ご注文・発送<small>Order</small></a></li>
+    <li><a href="#info">お知らせ・お店<small>Information</small></a></li>
+    <li class="gtel">お電話　<a href="tel:0123000000">0123-00-0000</a></li>
+  </ul>
+  <div class="pic" aria-hidden="true"></div>
+</nav>
+
+<nav class="side" aria-label="ページ内の位置">
+  <a href="#greet" data-s="greet">ごあいさつ</a>
+  <a href="#items" data-s="items">お菓子</a>
+  <a href="#craft" data-s="craft">つくり</a>
+  <a href="#order" data-s="order">ご注文</a>
+  <a href="#info" data-s="info">お店</a>
+</nav>
+<div class="pager" aria-hidden="true"><b class="pn">01</b> / 05</div>
+
+<main id="top">
+  <section class="hero" data-s="greet" data-overflow-ok>
+    <div class="bg" role="img" aria-label="北海道 上富良野町の丘の景色（イメージ）"></div>
+    <h1 class="copy" aria-label="丘の町の季節をひと口に。"><span class="hl" style="padding-top:0.0em" aria-hidden="true">丘の町の</span><span class="hl" style="padding-top:1.2em" aria-hidden="true">季節を</span><span class="hl" style="padding-top:2.4em" aria-hidden="true">ひと口に。</span></h1>
+    <div class="sub">
+      <p>北海道 上富良野町の菓子処</p>
+      <p class="ruby">昭和四十八年から　十勝岳のふもとで</p>
+      <div class="en">Kyugetsuan</div>
+    </div>
+    <div class="pw"><div class="plate" aria-hidden="true"><span>和菓子・焼き菓子</span></div></div>
+    <p class="hrs-sp"><b>営業</b>火〜土 9:00〜18:00ほか　<b>定休</b>月曜（祝日の時は翌日）</p>
+    <div class="scroll" aria-hidden="true">SCROLL<i></i></div>
+  </section>
+
+
+  <section class="greet" id="greet" data-s="greet">
+    <div class="wrap grid">
+      <p class="vt rv-v" aria-hidden="true">おみやげに<br>お茶うけに</p>
+      <div class="body">
+        <div class="ttl"><span class="no" aria-hidden="true">01</span><h2><small>Greeting</small>ごあいさつ</h2></div>
+<p class="rv">十勝岳のふもと、丘のつづく町で昭和四十八年からお菓子をつくっています。</p>
+<p class="rv">あんこは毎朝、町内の畑の小豆を炊くところから。手みやげにも、ご自宅のお茶うけにも。道外への発送も承ります。</p>
+<a class="more" href="#greet">松風庵のこと</a>      </div>
+      <div>
+        <div class="mask reveal"><img class="par" src="img/pine.webp" alt="霧の中の松の枝（イメージ）" loading="lazy" width="1100" height="1473"></div>
+        <p class="cap">店の裏の防風林。写真はイメージです</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="items" id="items" data-s="items">
+    <div class="wrap head">
+      <div class="ttl"><span class="no" aria-hidden="true">02</span><h2><small>Sweets</small>いつものお菓子</h2></div>
+      <p class="lead rv">丘の景色から名前をいただいたお菓子です。<br>値段は税込み、日持ちは常温の目安です。</p>
+<p class="imgnote">※ 墨絵・写真はイメージです（お店の写真に差し替えます）</p>    </div>
+    <div class="pin">
+      <div class="pbar" aria-hidden="true"><span>品書き　横へ流れます</span><i></i><span>→</span></div>
+      <ul class="track">
+        <li class="card" style="--c1:#6e3b26;--img:url(img/ink_enso.webp)">
+          <a href="#order" data-i="0" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">丘</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">丘のどら焼き</h3>
+            </div>
+            <span class="row1"><span class="num">No.01</span><span class="yen">¥230<small>税込</small></span></span>
+            <span class="desc">ふんわり焼いた皮に、粒あんをたっぷり。</span>
+            <span class="spec">1個・日持ち4日</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#8a6a3f;--img:url(img/ink_ring.webp)">
+          <a href="#order" data-i="1" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">輪</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">年輪ばうむ</h3>
+            </div>
+            <span class="row1"><span class="num">No.02</span><span class="yen">¥1,450<small>税込</small></span></span>
+            <span class="desc">上富良野の卵で、一層ずつ焼き重ねます。</span>
+            <span class="spec">1台（直径12cm）・日持ち14日</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#a5482f;--img:url(img/ink_sun.webp)">
+          <a href="#order" data-i="2" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">茜</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">夕映えの<br>茜色羊羹</h3>
+            </div>
+            <span class="row1"><span class="num">No.03</span><span class="yen">¥1,300<small>税込</small></span></span>
+            <span class="desc">赤しその色を移した、さっぱりした羊羹。</span>
+            <span class="spec">1棹・日持ち60日</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#6b6340;--img:url(img/ink_plain.webp)">
+          <a href="#order" data-i="3" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">畑</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">畑のうねり最中</h3>
+            </div>
+            <span class="row1"><span class="num">No.04</span><span class="yen">¥190<small>税込</small></span></span>
+            <span class="desc">皮とあんを別に包みます。食べる直前に挟んで。</span>
+            <span class="spec">1個・日持ち10日</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#5b6773;--img:url(img/ink_snow.webp)">
+          <a href="#order" data-i="4" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">雪</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">初雪大福</h3>
+<span class="tag">11月〜3月</span>            </div>
+            <span class="row1"><span class="num">No.05</span><span class="yen">¥210<small>税込</small></span></span>
+            <span class="desc">冬だけの白あん大福。店頭のみのお品です。</span>
+            <span class="spec">1個・その日のうちに</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#7d6a4b;--img:url(img/ink_potato.webp)">
+          <a href="#order" data-i="5" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">芋</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">男爵いもの<br>焼きまんじゅう</h3>
+            </div>
+            <span class="row1"><span class="num">No.06</span><span class="yen">¥160<small>税込</small></span></span>
+            <span class="desc">町の男爵いもを白あんに練り込みました。</span>
+            <span class="spec">1個・日持ち5日</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+        <li class="card" style="--c1:#4f5b3e;--img:url(img/ink_plate.webp)">
+          <a href="#order" data-i="6" data-cursor style="text-decoration:none;display:block">
+            <div class="ph"><span class="kanji" aria-hidden="true">季</span><span class="imgn" aria-hidden="true">絵はイメージ</span>              <h3 class="nm">季節の上生菓子</h3>
+            </div>
+            <span class="row1"><span class="num">No.07</span><span class="yen">¥380<small>税込</small></span></span>
+            <span class="desc">月ごとに三種。ご予約は前日の15時まで。</span>
+            <span class="spec">1個・その日のうちに</span>
+            <span class="go">注文に入れる</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+<a class="more" href="#items">お品書きをすべて見る（全7品）</a>  </section>
+
+  <section class="craft" id="craft" data-s="craft" data-overflow-ok>
+    <div class="bg" style="background-image:url(img/pot.webp)" role="img" aria-label="工房の鍋（イメージ）"></div>
+    <div class="inner"><div class="wrap" style="width:100%"><div class="txt">
+      <div class="ttl"><span class="no" aria-hidden="true">03</span><h2 style="color:#f6efe3"><small>Craft</small>つくり</h2></div>
+      <p class="big rv">毎朝、小豆を炊く<br>ところから。</p>
+      <p class="rv">朝5時に火を入れ、つぶあん・こしあん・白あんを炊き分けます。<br>砂糖は控えめ。豆の香りが残るところで火を止めます。</p>
+<p class="cap" style="color:#d9cdbb;font-size:12.5px">写真はイメージです</p>    </div></div></div>
+  </section>
+
+  <section class="mat" aria-label="素材と道具">
+    <div class="wrap grid">
+      <div class="mask reveal a"><img class="par" src="img/kata.webp" alt="木の菓子型（イメージ）" loading="lazy" width="1600" height="1195"></div>
+      <div class="mask reveal b"><img class="par" src="img/hands.webp" alt="粉をふるう職人の手（イメージ）" loading="lazy" width="1100" height="1473"></div>
+      <p class="note rv">最中の皮は、先代から使っている木型で抜いています。<br>粉は北海道の小麦だけ。</p>
+    </div>
+  </section>
+
+  <section class="land" data-s="craft" aria-label="町の季節">
+    <div class="stage">
+<div class="ph" style="background-image:url(img/ink_sun.webp)"></div>
+<div class="ph" style="background-image:url(img/ink_snow.webp)"></div>
+<p class="w">夕映えの丘<small>Hills at dusk</small></p>
+<p class="w">初雪の朝<small>First snow</small></p>
+      <p class="foot">お菓子の名に、町の季節。</p>
+    </div>
+  </section>
+
+  <section class="order" id="order" data-s="order">
+    <div class="wrap grid">
+      <div>
+        <div class="ttl"><span class="no" aria-hidden="true">04</span><h2><small>Order</small>ご注文・発送</h2></div>
+        <p class="lead rv">フォームでお申し込みいただくと、受付のメールがすぐに届きます。店からは発送日と送料込みの金額をお知らせします。</p>
+        <ol class="flow">
+<li>フォームでお申し込み</li>
+<li>受付のメールが自動で届きます</li>
+<li>店から発送日と金額のご連絡</li>
+<li>ヤマト運輸でお届け（冷蔵品はクール便）</li>
+        </ol>
+        <a class="tel" href="tel:0123000000">お電話でも　<b>0123-00-0000</b></a>
+        <p class="cap">火〜土 9:00〜18:00／日・祝 9:00〜17:00（月曜（祝日の時は翌日）休み）</p>
+      </div>
+      <form class="of" action="#" method="post" novalidate>
+        <fieldset><legend>お菓子と個数（税込）</legend>
+          <div class="qlist">
+            <div class="qi" data-i="0"><span>丘のどら焼き</span><small>¥230</small><input type="number" name="qty_1" min="0" max="99" value="0" inputmode="numeric" aria-label="丘のどら焼きの個数"></div>
+            <div class="qi" data-i="1"><span>年輪ばうむ</span><small>¥1,450</small><input type="number" name="qty_2" min="0" max="99" value="0" inputmode="numeric" aria-label="年輪ばうむの個数"></div>
+            <div class="qi" data-i="2"><span>夕映えの茜色羊羹</span><small>¥1,300</small><input type="number" name="qty_3" min="0" max="99" value="0" inputmode="numeric" aria-label="夕映えの茜色羊羹の個数"></div>
+            <div class="qi" data-i="3"><span>畑のうねり最中</span><small>¥190</small><input type="number" name="qty_4" min="0" max="99" value="0" inputmode="numeric" aria-label="畑のうねり最中の個数"></div>
+            <div class="qi" data-i="4"><span>初雪大福</span><small>¥210</small><input type="number" name="qty_5" min="0" max="99" value="0" inputmode="numeric" aria-label="初雪大福の個数"></div>
+            <div class="qi" data-i="5"><span>男爵いもの焼きまんじゅう</span><small>¥160</small><input type="number" name="qty_6" min="0" max="99" value="0" inputmode="numeric" aria-label="男爵いもの焼きまんじゅうの個数"></div>
+            <div class="qi" data-i="6"><span>季節の上生菓子</span><small>¥380</small><input type="number" name="qty_7" min="0" max="99" value="0" inputmode="numeric" aria-label="季節の上生菓子の個数"></div>
+            <div class="qi"><span>おまかせ詰め合わせ（12個）</span><small>¥2,800</small><input type="number" name="qty_x1" min="0" max="99" value="0" inputmode="numeric" aria-label="おまかせ詰め合わせ（12個）の個数"></div>
+          </div></fieldset>
+        <div class="f two"><div><label for="d">ご希望のお届け日</label><input id="d" name="date" type="date"></div>
+          <div><span class="lb">送料</span><p class="ship">北海道内 ¥800／本州 ¥1,200（5,000円以上で無料）</p></div></div>
+        <div class="f two"><div><label for="nm">お名前<span class="req">必須</span></label><input id="nm" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="tl">お電話<span class="req">必須</span></label><input id="tl" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div></div>
+        <div class="f"><label for="em">メール（受付のメールが届きます）<span class="req">必須</span></label><input id="em" name="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="ad">お届け先のご住所</label><input id="ad" name="address" type="text" autocomplete="street-address" placeholder="〒・都道府県から"></div>
+        <div class="f two"><div><label for="ns">のし</label><select id="ns" name="noshi"><option>なし</option><option>御歳暮</option><option>御年賀</option><option>内祝</option><option>御礼</option><option>その他（備考へ）</option></select></div>
+          <div><label for="pay">お支払い</label><select id="pay" name="pay"><option>代金引換</option><option>クレジットカード</option><option>銀行振込</option></select></div></div>
+        <div class="f"><label for="bk">備考</label><textarea id="bk" name="note" placeholder="贈り先が複数の時など"></textarea></div>
+        <button class="btn" type="submit" data-cursor>この内容で申し込む<span class="arr"></span></button>
+        <p class="err" role="alert"></p>
+        <p class="ok" role="status">見本のため、お申し込みは送られません。</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="info" id="info" data-s="info">
+    <div class="wrap grid">
+      <div>
+        <div class="ttl"><span class="no" aria-hidden="true">05</span><h2><small>News</small>お知らせ</h2></div>
+        <ul class="news">
+<li><time>11.20</time><span>年内の発送は12月20日のお申し込みまで</span></li>
+<li><time>11.01</time><span>初雪大福が今年も始まりました（3月まで）</span></li>
+<li><time>10.15</time><span>年末年始の営業は12月31日 15時まで・1月4日から</span></li>
+        </ul>
+        <iframe class="map" style="margin-top:34px" id="map" title="地図（北海道 上富良野町）" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%20%E7%A9%BA%E7%9F%A5%E9%83%A1%E4%B8%8A%E5%AF%8C%E8%89%AF%E9%87%8E%E7%94%BA&amp;hl=ja&amp;z=14&amp;output=embed"></iframe>
+      </div>
+      <div>
+        <div class="ttl"><h2><small>Shop</small>お店の情報</h2></div>
+        <dl class="shop">
+          <div><dt>営業時間</dt><dd>火〜土　9:00〜18:00<br>日・祝　9:00〜17:00</dd></div>
+          <div><dt>定休日</dt><dd>月曜（祝日の時は翌日）</dd></div>
+<div><dt>お支払い</dt><dd>現金・カード・PayPay</dd></div>
+<div><dt>発送</dt><dd>ヤマト運輸（全国）</dd></div>
+          <div><dt>所在地</dt><dd>北海道 空知郡上富良野町（番地が入ります）</dd></div>
+<div><dt>駐車場</dt><dd>店の前に6台</dd></div>        </dl>
+        <a class="tel" href="tel:0123000000">お電話　<b>0123-00-0000</b></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gate" aria-label="ほかのページ">
+    <div class="wrap">
+      <ul>
+<li><a href="#menu"><div class="th"><img src="img/ink_plate.webp" alt="" loading="lazy" width="800" height="500"></div><div class="tx"><span><small>Sweets</small><b>お品書き</b><em>いつものお菓子と、季節のお菓子。</em></span><i aria-hidden="true"></i></div></a></li>
+<li><a href="#about"><div class="th"><img src="img/pine.webp" alt="" loading="lazy" width="800" height="500"></div><div class="tx"><span><small>About</small><b>お店のこと</b><em>ごあいさつと、お菓子づくり。</em></span><i aria-hidden="true"></i></div></a></li>
+<li><a href="#contact"><div class="th"><img src="img/hands.webp" alt="" loading="lazy" width="800" height="500"></div><div class="tx"><span><small>Order</small><b>ご注文</b><em>発送のお申し込み・お店の情報。</em></span><i aria-hidden="true"></i></div></a></li>
+      </ul>
+    </div>
+  </section>
+  <div style="height:clamp(80px,10vw,130px)"></div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <p class="huge" aria-label="菓子処 丘月庵" style="margin:0"><span class="r" aria-hidden="true"><span>菓</span><span>子</span><span>処</span></span><span class="r" aria-hidden="true"><span>丘</span><span>月</span><span>庵</span></span></p>
+    <div class="cols">
+      <div><h3>Contact</h3><a class="tel2" href="tel:0123000000">0123-00-0000</a><br>火〜土　9:00〜18:00<br>日・祝　9:00〜17:00<br>定休日　月曜（祝日の時は翌日）</div>
+      <div><h3>Access</h3>北海道 空知郡上富良野町（番地が入ります）<br>駐車場　店の前に6台<br><a href="#map">地図を見る →</a></div>
+      <div><h3>Menu</h3><ul><li><a href="#greet">ごあいさつ</a></li><li><a href="#items">いつものお菓子</a></li><li><a href="#craft">つくり</a></li><li><a href="#order">ご注文・発送</a></li><li><a href="#info">お知らせ・お店</a></li></ul></div>
+    </div>
+    <div class="row">
+<p class="note">架空のお店の見本です（ホームページの型・SakuLife）。店名・電話・品物はすべて架空です。写真は AI で作ったイメージです。</p>      <p>© 菓子処 丘月庵</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="spbar" aria-label="ご連絡"><a href="tel:0123000000">電話する</a><a href="#order">ご注文する</a></nav>
+<div class="sample-band"><b>見本です</b>　<span class="lg">架空のお店の見本です（ホームページの型・SakuLife）</span><span class="sh">架空のお店の見本です（ホームページの型・SakuLife）</span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isPC = matchMedia('(min-width: 768px)').matches;
+  const body = document.body;
+  const loader = document.querySelector('.loader');
+
+  // 注文フォーム（見本：送らない）
+  const form = document.querySelector('form.of');
+  if (form) form.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = [...form.querySelectorAll('.qi input')].reduce((a, i) => a + (+i.value || 0), 0);
+    const miss = [...form.querySelectorAll('[required]')].filter(i => !i.value.trim());
+    const err = form.querySelector('.err'), ok = form.querySelector('.ok');
+    const msg = !n ? 'お菓子の個数を1つ以上お入れください。' : miss.length ? 'お名前・お電話・メールをお入れください。' : '';
+    err.textContent = msg; err.style.display = msg ? 'block' : 'none'; ok.style.display = msg ? 'none' : 'block';
+    if (miss.length && n) miss[0].focus();
+  });
+  // 品の札を押したら、その行を1個にして注文へ（ページが分かれている時は覚えておいて、ご注文のページで入れる）
+  const pick = (k) => {
+    const row = document.querySelector('.qi[data-i="' + k + '"]');
+    if (row) { const i = row.querySelector('input'); if (+i.value < 1) i.value = 1; row.classList.add('hit'); }
+  };
+  document.querySelectorAll('.card a[data-i]').forEach(a => a.addEventListener('click', () => {
+    try { const l = JSON.parse(sessionStorage.getItem('wg-pick') || '[]'); l.push(a.dataset.i); sessionStorage.setItem('wg-pick', JSON.stringify(l)); } catch (e) {}
+    pick(a.dataset.i);
+  }));
+  if (form) { try { JSON.parse(sessionStorage.getItem('wg-pick') || '[]').forEach(pick); sessionStorage.removeItem('wg-pick'); } catch (e) {} }
+
+  // メニュー
+  const mb = document.querySelector('.menu-btn');
+  const toggle = (open) => { body.classList.toggle('menu-open', open); mb.setAttribute('aria-expanded', open); mb.querySelector('.txt').textContent = open ? 'Close' : 'Menu'; };
+  mb.addEventListener('click', () => toggle(!body.classList.contains('menu-open')));
+  document.querySelectorAll('.gnav a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+
+  // ヘッダー：ヒーローを過ぎたら生成り（暗い所は墨）の帯
+  const hd = document.querySelector('.hd');
+  const heroEl = document.querySelector('.hero');
+  const darkSecs = [...document.querySelectorAll('.hero,.items,.craft,.ft,.pgband')];
+  const onScroll = (y) => {
+    const overDark = darkSecs.some(sec => { const r = sec.getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; });
+    const inHero = heroEl ? y < (isPC ? heroEl.offsetHeight - hd.offsetHeight - 10 : 40) : false;
+    hd.classList.toggle('solid', !inHero); hd.classList.toggle('dark', !inHero && overDark);
+  };
+  addEventListener('scroll', () => onScroll(scrollY), { passive: true });
+
+  if (!window.gsap || !window.ScrollTrigger || reduce) { if (loader) loader.remove(); return; }
+  gsap.registerPlugin(ScrollTrigger);
+  const hasSplit = !!window.SplitText; if (hasSplit) gsap.registerPlugin(SplitText);
+
+  let lenis = null;
+  if (window.Lenis) {
+    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', e => onScroll(e.scroll));
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href')); if (!t) return;
+      e.preventDefault(); lenis.scrollTo(t, { duration: 1.6, offset: a.getAttribute('href') === '#map' ? -120 : 0 });
+    }));
+  }
+
+  // ローディング（2回目は短く）
+  let seen = false; try { seen = sessionStorage.getItem('wg-seen') === '1'; sessionStorage.setItem('wg-seen', '1'); } catch (e) {}
+  const hasHero = !!document.querySelector('.hero');
+  if (!hasHero) seen = true;
+  const heroChars = !hasHero ? [] : hasSplit ? new SplitText('.hero .copy .hl', { type: 'chars' }).chars : gsap.utils.toArray('.hero .copy .hl');
+  if (hasHero) {
+    gsap.set(heroChars, { yPercent: 110, opacity: 0 });
+    gsap.set('.hero .sub > *, .scroll', { opacity: 0, y: 16 });
+    gsap.set('.hero .bg', { scale: 1.18 });
+  }
+  const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+  if (lenis) lenis.stop();
+  if (!seen) {
+    tl.to('.loader .seal', { opacity: 1, scale: 1, rotate: 0, duration: .6, ease: 'back.out(1.6)' })
+      .to('.loader .lname', { opacity: 1, duration: .4 }, '-=.35')
+      .to('.loader .bar i', { scaleX: 1, duration: .5, ease: 'power2.inOut' }, '-=.4');
+  }
+  gsap.set('.loader', { clipPath: 'inset(0 0 0% 0)' });
+  tl.to('.loader', { clipPath: 'inset(0 0 100% 0)', duration: seen ? .5 : .9, ease: 'expo.inOut' }, seen ? 0 : '+=.05');
+  if (hasHero) {
+    tl.to('.hero .bg', { scale: 1.06, duration: 2.6, ease: 'power3.out' }, '<.2')
+      .to(heroChars, { yPercent: 0, opacity: 1, duration: 1.3, stagger: .07 }, '<.4')
+      .to('.hero .sub > *, .scroll', { opacity: 1, y: 0, duration: 1, stagger: .12 }, '<.7')
+      .from('.hero .plate', { scale: .6, opacity: 0, rotate: -20, duration: 1.4 }, '<.2');
+  }
+  tl.add(() => { loader.remove(); if (lenis) lenis.start(); });
+
+  if (hasHero) {
+    gsap.to('.hero .bg', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero .sub, .hero .pw', { opacity: 0, y: -40, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: '35% top', scrub: true } });
+    gsap.to('.hero .copy', { yPercent: -18, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+
+  if (hasSplit) {
+    document.querySelectorAll('.rv').forEach(el => {
+      const sp = new SplitText(el, { type: 'lines', linesClass: 'split-line' });
+      const inner = sp.lines.map(l => { const w = document.createElement('span'); w.style.display = 'block'; while (l.firstChild) w.appendChild(l.firstChild); l.appendChild(w); return w; });
+      gsap.from(inner, { yPercent: 105, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%' } });
+    });
+    document.querySelectorAll('.rv-v').forEach(el => {
+      const sp = new SplitText(el, { type: 'chars' });
+      gsap.from(sp.chars, { opacity: 0, y: -14, filter: 'blur(6px)', duration: 1, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 80%' } });
+    });
+  }
+  gsap.utils.toArray('.ttl').forEach(t => gsap.from(t.children, { opacity: 0, x: -24, duration: 1.1, stagger: .12, ease: 'expo.out', scrollTrigger: { trigger: t, start: 'top 85%' } }));
+
+  gsap.utils.toArray('.reveal').forEach(m => {
+    const img = m.querySelector('img');
+    gsap.fromTo(m, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: { trigger: m, start: 'top 82%' } });
+    gsap.fromTo(img, { scale: 1.3 }, { scale: 1, duration: 1.8, ease: 'expo.out', scrollTrigger: { trigger: m, start: 'top 82%' } });
+    gsap.fromTo(img, { yPercent: -8 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: m, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  // 品書き：PC は横に流れる（ピン留め・品の数で距離が決まる）／スマホは1枚ずつ
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 768px)', () => {
+    const track = document.querySelector('.track');
+    if (!track) return;
+    const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+    if (dist() > 40) {
+      gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.pin', start: 'top top', end: () => '+=' + dist() * 1.4, pin: true, scrub: 1, invalidateOnRefresh: true, onUpdate: self => document.querySelector('.pbar').style.setProperty('--p', self.progress.toFixed(3)) } });
+    }
+    ScrollTrigger.create({ trigger: '.items', start: 'top 70%', end: 'bottom 30%', onToggle: self => document.querySelectorAll('.side,.pager').forEach(e => e.classList.toggle('off', self.isActive)) });
+    gsap.from('.card', { opacity: 0, y: 60, duration: 1.2, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.pin', start: 'top 75%' } });
+  });
+  mm.add('(max-width: 767px)', () => {
+    gsap.utils.toArray('.card').forEach(c => gsap.from(c, { opacity: 0, y: 50, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: c, start: 'top 90%' } }));
+  });
+
+  if (document.querySelector('.craft')) gsap.to('.craft .bg', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.craft', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+  // 景色：1枚目 → 2枚目へ、下から幕が上がる
+  const ph = gsap.utils.toArray('.land .ph'), ws = gsap.utils.toArray('.land .w');
+  const lt = ph.length ? gsap.timeline({ scrollTrigger: { trigger: '.land', start: 'top top', end: 'bottom bottom', scrub: 1 } }) : null;
+  if (lt) lt.fromTo(ph[0], { scale: 1.15 }, { scale: 1, ease: 'none', duration: 1 }, 0);
+  for (let i = 1; lt && i < ph.length; i++) {
+    const at = .35 * i / (ph.length - 1) * (ph.length > 2 ? 1 : 1);
+    lt.to(ws[i - 1], { opacity: 0, y: -40, duration: .3 }, at)
+      .to(ph[i], { clipPath: 'inset(0% 0 0 0)', ease: 'power2.inOut', duration: .45 }, at)
+      .fromTo(ws[i], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .3 }, at + .27);
+  }
+
+  gsap.from('.ft .huge .r > span', { yPercent: 100, opacity: 0, duration: 1.2, stagger: .05, ease: 'expo.out', scrollTrigger: { trigger: '.ft', start: 'top 75%' } });
+
+  const ids = ['greet', 'items', 'craft', 'order', 'info'];
+  document.querySelectorAll('section[data-s]').forEach(sec => {
+    ScrollTrigger.create({ trigger: sec, start: 'top 50%', end: 'bottom 50%', onToggle: self => {
+      if (!self.isActive) return; const k = sec.dataset.s;
+      document.querySelectorAll('.side a').forEach(a => a.classList.toggle('on', a.dataset.s === k));
+      const pn = document.querySelector('.pn'); if (pn) pn.textContent = '0' + (ids.indexOf(k) + 1);
+    } });
+  });
+
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const cur = document.querySelector('.cur');
+    const xTo = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' });
+    const yTo = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
+    const hit = (x, y) => { const el = document.elementFromPoint(x, y); cur.classList.toggle('big', !!(el && el.closest('.card'))); };
+    let mx = -1, my = -1;
+    addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.classList.add('live'); xTo(mx); yTo(my); hit(mx, my); });
+    gsap.ticker.add(() => { if (mx >= 0) hit(mx, my); });
+    document.addEventListener('mouseleave', () => cur.classList.remove('live', 'big'));
+  }
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>

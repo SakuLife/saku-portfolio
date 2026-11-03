@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#0d0d0d">
+<title>hair atelier SOEL｜北海道 江別市の美容室（見本）</title>
+<meta name="description" content="北海道 江別市の美容室 hair atelier SOEL。野幌駅から歩いて6分。席は3つ、スタイリスト2人の小さな美容室です。朝、鏡の前で悩む時間を短くするカットをします。">
+<meta property="og:title" content="hair atelier SOEL｜北海道 江別市の美容室">
+<meta property="og:description" content="野幌駅から歩いて6分。席は3つ、スタイリスト2人の小さな美容室です。朝、鏡の前で悩む時間を短くするカットをします。">
+<meta property="og:image" content="https://sakulife.github.io/saku-portfolio/samples/04_salon/img/hero.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Sans+JP:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "address": "\u5317\u6d77\u9053 \u6c5f\u5225\u5e02\u91ce\u5e4c\u753a\uff08\u756a\u5730\u304c\u5165\u308a\u307e\u3059\uff09", "name": "hair atelier SOEL", "openingHours": ["\u706b\u301c\u91d1 10:00\u301c20:00\uff08\u30ab\u30c3\u30c8\u306e\u6700\u7d42\u53d7\u4ed8 19:00\uff09", "\u571f\u30fb\u65e5\u30fb\u795d 9:00\u301c18:00"], "telephone": "0123-00-0000"}</script>
+<style>
+:root{
+  --main:#0d0d0d; --accent:#b39a6b; --bg:#f6f4f0; --ink:#111111;
+  --sub:#8a7448; --mute:#4d4a45; --line:rgba(17,17,17,.14); --line-d:rgba(255,255,255,.16);
+  --en:"Italiana","Didot","Bodoni 72",serif;
+  --jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --ease:cubic-bezier(.76,0,.24,1);
+  --band:28px;
+  --hd:68px;
+  --mastvw:26vw;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--jp);font-weight:400;font-size:16px;line-height:1.95;letter-spacing:.05em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.en{font-family:var(--en);font-weight:400;letter-spacing:.02em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mline{display:block;overflow:hidden;padding-bottom:.06em}
+.mline > span{display:block}
+
+/* 見本の帯 */
+.band{position:fixed;top:0;left:0;right:0;height:var(--band);z-index:90;background:var(--accent);color:#111;font-size:12px;font-weight:400;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;gap:.8em;white-space:nowrap;overflow:hidden}
+.band b{font-weight:500}
+
+/* ヘッダー */
+.hd{position:fixed;top:var(--band);left:0;right:0;height:var(--hd);z-index:60;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;padding:0 clamp(18px,3.4vw,48px);color:var(--ink);transition:background .5s,color .5s,box-shadow .5s}
+.mbtn{display:none;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 12px;background:none;border:0;color:inherit;font:400 13px var(--en);letter-spacing:.2em;cursor:pointer}
+.mbtn i,.mbtn i::before{display:block;width:24px;height:1px;background:currentColor;position:relative;transition:transform .3s}
+.mbtn i::before{content:"";position:absolute;left:0;top:7px}
+.mbtn[aria-expanded=true] i{transform:translateY(3px) rotate(20deg)}.mbtn[aria-expanded=true] i::before{transform:translateY(-7px) rotate(-40deg);top:7px}
+.mnav{position:fixed;left:0;right:0;top:calc(var(--band) + var(--hd));z-index:59;background:rgba(13,13,13,.97);color:#f2efe9;padding:8px clamp(18px,3.4vw,48px) 24px;display:none;border-top:1px solid var(--line-d)}
+.mnav.open{display:block}
+.mnav a{display:flex;align-items:center;min-height:52px;text-decoration:none;font-size:16px;letter-spacing:.14em;border-bottom:1px solid var(--line-d)}
+.hd.solid{background:rgba(246,244,240,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.hd.dark{background:rgba(13,13,13,.9);color:#f2efe9;box-shadow:0 1px 0 var(--line-d)}
+.logo{text-decoration:none;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.logo .en{font-size:30px;line-height:1;letter-spacing:.08em}
+.logo small{font-size:11px;letter-spacing:.2em;color:inherit;opacity:.7}
+.gn{display:flex;justify-content:center;gap:clamp(14px,2.2vw,34px)}
+.gn a{text-decoration:none;font-size:13px;font-weight:400;letter-spacing:.14em;position:relative;padding:6px 0}
+.gn a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.gn a:hover::after{transform:scaleX(1);transform-origin:left}
+.hd .acts{display:flex;align-items:center;gap:18px}
+.hd .tel{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;line-height:1.2}
+.hd .tel .en{font-size:21px;letter-spacing:.06em}
+.hd .tel small{font-size:10.5px;letter-spacing:.12em;opacity:.75}
+.bk{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:46px;padding:0 24px;background:var(--main);color:#fff;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.18em;position:relative;overflow:hidden;isolation:isolate;border:1px solid var(--main);transition:color .5s var(--ease)}
+.bk::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .55s var(--ease);z-index:-1}
+.bk:hover::before{transform:none}.bk:hover{color:#111}
+.bk i{width:22px;height:1px;background:currentColor;position:relative}
+.bk i::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.hd.dark .bk{background:var(--accent);border-color:var(--accent);color:#111}
+.bk.line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.bk.line:hover{color:#111;border-color:var(--accent)}
+
+/* ヒーロー（誌面の表紙） */
+.hero{position:relative;min-height:100svh;padding:calc(var(--band) + var(--hd) + 18px) clamp(18px,3.4vw,48px) 40px;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;column-gap:clamp(12px,1.6vw,24px);overflow:hidden}
+.hero .meta{grid-column:1/-1;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-top:1px solid var(--ink);padding-top:10px;font-weight:400}
+.hero .meta .en{font-size:13px;letter-spacing:.2em}
+.hero .ph{grid-column:5/13;grid-row:2/3;position:relative;margin-top:18px;overflow:hidden;min-height:440px;background:#222}
+.hero .ph img{position:absolute;inset:0;width:100%;height:112%;object-fit:cover;object-position:30% 50%;filter:grayscale(1) contrast(1.05)}
+.hero .copy{grid-column:1/5;grid-row:2;align-self:center;padding:40px 0 clamp(36px,5vw,72px);position:relative;z-index:2}
+.hero .copy .vol{font-family:var(--en);font-size:15px;letter-spacing:.2em;color:var(--mute);margin:0 0 26px;display:flex;align-items:center;gap:14px}
+.hero .copy .vol::before{content:"";width:40px;height:1px;background:var(--accent)}
+.hero h1{margin:0;font-weight:300;font-size:clamp(26px,2.6vw,40px);line-height:1.7;letter-spacing:.12em}
+.hero .lead{margin:24px 0 0;max-width:30em;font-size:15.5px;line-height:2.05;color:#24221f}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .mast{grid-column:1/-1;grid-row:3;position:relative;z-index:3;margin:.08em 0 -.12em -.04em;font-family:var(--en);font-weight:400;font-size:clamp(90px,var(--mastvw,26vw),400px);line-height:.8;letter-spacing:.01em;white-space:nowrap;color:var(--ink);pointer-events:none}
+.hero .mast .ch{display:inline-block}
+.hero .side{position:absolute;right:clamp(6px,1vw,14px);top:50%;transform:rotate(90deg) translateX(50%);transform-origin:right top;font-family:var(--en);font-size:12px;letter-spacing:.4em;white-space:nowrap;color:var(--mute)}
+.hero .tagline{position:absolute;z-index:3;right:0;top:0;margin:0;background:var(--main);color:#f2efe9;padding:18px 22px 20px;font-family:var(--en);font-size:clamp(24px,2.2vw,34px);line-height:1.1;text-align:left}
+/* 予約の空き（見本） */
+.slots{margin:0 0 40px;padding:22px 24px;background:var(--bg);border:1px solid var(--line)}
+.slots .st{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px;margin:0 0 12px}
+.slots h3{margin:0;font-size:16px;font-weight:500;letter-spacing:.14em}
+.slots .tag{font-size:13px;padding:2px 10px;background:var(--accent);color:#111;letter-spacing:.1em}
+.slots .day{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.slots .day b{font-weight:500;font-size:14.5px}
+.slots .times{display:flex;flex-wrap:wrap;gap:8px}
+.slots .times a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--ink);text-decoration:none;font-family:var(--en);font-size:19px;letter-spacing:.06em;transition:background .3s,color .3s}
+.slots .times a:hover{background:var(--ink);color:#fff}
+.slots .times small{font-family:var(--jp);font-size:14px;margin-left:8px}
+.slots .none{font-size:14px;color:var(--ink)}
+.slots .sn{margin:10px 0 0;font-size:14px;color:var(--mute)}
+.swipe{display:none}
+.hero .tagline::after{content:"";display:block;width:28px;height:1px;background:var(--accent);margin-top:12px}
+
+.hero .cover{grid-column:9/13;grid-row:3;align-self:end;justify-self:end;position:relative;z-index:4;margin:0 0 10px;min-width:280px;font-size:14px;line-height:1.8;border-top:1px solid var(--ink);padding-top:12px}
+.hero .cover dl{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;margin:0}
+.hero .cover dt{font-family:var(--en);font-size:14px;letter-spacing:.16em;color:var(--sub)}
+.hero .cover dd{margin:0}
+/* 共通 */
+section{position:relative}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,3.4vw,48px)}
+.g12{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,1.6vw,24px)}
+.sh{grid-column:1/5;align-self:start;position:sticky;top:calc(var(--band) + var(--hd) + 30px)}
+.sh .kick{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.28em;color:var(--mute);margin:0 0 10px;font-weight:400}
+.sh .kick b{font-family:var(--en);font-weight:400;font-size:14px;color:var(--accent);letter-spacing:.1em}
+.sh .big{font-family:var(--en);font-weight:400;font-size:clamp(60px,7vw,116px);line-height:.9;letter-spacing:0;margin:0;white-space:nowrap}
+.sh h2{margin:18px 0 0;font-size:18px;font-weight:400;letter-spacing:.3em}
+.sh p{font-size:15px;line-height:2.05;color:#33302b;margin:22px 0 0;max-width:24em}
+.body7{grid-column:6/13}
+.dark-sec{background:var(--main);color:#efece6}
+.dark-sec .sh .kick,.dark-sec .sh p{color:#d2cdc4}
+
+/* About */
+.about{padding:clamp(120px,15vw,220px) 0 clamp(90px,10vw,150px)}
+.about .quote{grid-column:1/9;font-weight:300;font-size:clamp(24px,2.7vw,40px);line-height:1.75;letter-spacing:.1em;margin:0 0 clamp(60px,8vw,110px)}
+.about .quote em{font-style:normal;border-bottom:1px solid var(--accent)}
+.about .pic{grid-column:1/6;aspect-ratio:4/5;overflow:hidden;position:relative}
+.about .pic img{width:100%;height:115%;object-fit:cover;filter:grayscale(1)}
+.about .txt{grid-column:7/12;align-self:end}
+.about .txt p{margin:0 0 1.6em;font-size:15.5px;line-height:2.25}
+.feat{list-style:none;margin:48px 0 0;padding:0;counter-reset:f}
+.feat li{counter-increment:f;display:grid;grid-template-columns:52px 1fr;gap:4px 10px;padding:20px 0;border-top:1px solid var(--line)}
+.feat li:last-child{border-bottom:1px solid var(--line)}
+.feat li::before{content:"0" counter(f);font-family:var(--en);font-size:24px;line-height:1.2;color:var(--accent);grid-row:1/3}
+.feat b{font-weight:500;font-size:15.5px;letter-spacing:.1em}
+.feat span{font-size:15px;color:#33302b;line-height:1.9}
+
+/* Price（料金表） */
+.price{padding:clamp(110px,12vw,180px) 0 clamp(60px,6vw,90px)}
+.pgroup{margin:0 0 clamp(56px,6vw,84px)}
+.pgroup:last-of-type{margin-bottom:0}
+.pgroup .gh{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:10px;margin:0}
+.pgroup .gh .en{font-size:clamp(40px,4.4vw,64px);line-height:1}
+.pgroup .gh small{font-size:14px;letter-spacing:.24em;color:#33302b;font-weight:400}
+.prow{display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:baseline;padding:20px 8px 18px 0;border-bottom:1px solid var(--line);position:relative;cursor:default;transition:padding .5s var(--ease)}
+.prow::before{content:"";position:absolute;left:-22px;top:50%;width:12px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.prow:hover{padding-left:14px}
+.prow:hover::before{transform:scaleX(1)}
+.prow .nm{font-size:17px;font-weight:400;letter-spacing:.1em}
+.prow .pr{font-family:var(--en);font-size:28px;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:lining-nums}
+.prow .ds{grid-column:1/-1;font-size:14.5px;color:#33302b;letter-spacing:.06em;line-height:1.7}
+.price .note{margin:36px 0 0;padding:18px 22px;border-left:2px solid var(--accent);background:#efebe4;font-size:14px;line-height:1.9}
+.price .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.float{position:fixed;left:0;top:0;width:220px;aspect-ratio:4/5;z-index:70;pointer-events:none;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.6);will-change:transform}
+.float img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+@media (hover:none),(pointer:coarse){.float{display:none}}
+
+/* Styles（横スクロール） */
+.styles{overflow:hidden}
+.styles .head{padding-top:clamp(110px,12vw,170px)}
+@media (min-width:768px){
+  .styles{height:100vh;min-height:680px;display:flex;flex-direction:column}
+  .styles .head{padding-top:calc(var(--band) + var(--hd) + 26px)}
+  .styles .head .sh .big{font-size:clamp(52px,4.8vw,76px)}
+  .styles .head .hint{font-size:13.5px;line-height:1.8}
+  .styles .head .sh h2{margin-top:10px}
+  .spin{flex:1;min-height:0!important;align-items:flex-start!important;padding:26px 0 56px!important}
+  .scard{width:clamp(220px,calc((100vh - 540px) * .8),420px)!important}
+  .scard:nth-child(even){margin-top:28px!important}
+}
+.styles .head .g12{align-items:end}
+.styles .head .sh{position:static;grid-column:1/7}
+.styles .head .hint{grid-column:9/13;font-size:14px;color:#d2cdc4;line-height:2;margin:0}
+.spin{display:flex;align-items:center;min-height:100vh;padding:40px 0 80px}
+.strack{display:flex;gap:clamp(18px,2vw,32px);padding:0 clamp(20px,3.4vw,48px);width:max-content}
+.scard{flex:none;width:clamp(260px,25vw,380px);margin:0}
+.scard:nth-child(even){margin-top:clamp(40px,8vh,90px)}
+.scard .im{aspect-ratio:4/5;overflow:hidden;position:relative;background:#1b1b1b}
+.scard .im img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transform:scale(1.12)}
+.scard .no{position:absolute;left:14px;top:10px;font-family:var(--en);font-size:44px;line-height:1;color:#fff;mix-blend-mode:difference}
+.scard figcaption{padding-top:16px}
+.scard .nm{font-size:15.5px;font-weight:400;letter-spacing:.08em;line-height:1.7;display:block}
+.scard dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:10px 0 0;font-size:14px;color:#e8e3da}
+.scard dt{letter-spacing:.14em}.scard dd{margin:0;color:#e6e2da}
+.scard .pp{font-family:var(--en);font-size:22px;color:var(--accent)}
+.strack .endcard{flex:none;width:clamp(240px,20vw,300px);align-self:center;display:flex;flex-direction:column;gap:18px;padding-left:20px;border-left:1px solid var(--line-d)}
+.strack .endcard .en{font-size:46px;line-height:1}
+.strack .endcard p{margin:0;font-size:14px;color:#d2cdc4}
+.prog{position:absolute;left:clamp(20px,3.4vw,48px);right:clamp(20px,3.4vw,48px);bottom:40px;height:1px;background:var(--line-d)}
+.prog i{position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left}
+
+/* Stylist */
+.staff{padding:clamp(120px,14vw,200px) 0}
+.slist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(30px,4vw,64px)}
+.person:nth-child(even){margin-top:clamp(0px,10vw,140px)}
+.person .im{aspect-ratio:3/4;overflow:hidden;position:relative;background:#ddd}
+.person .im img{width:100%;height:114%;object-fit:cover;filter:grayscale(1)}
+.person:nth-child(even) .im img{object-position:20% 50%}
+.person .en{display:block;margin-top:20px;font-size:34px;line-height:1.1}
+.person h3{margin:6px 0 0;font-size:15px;font-weight:400;letter-spacing:.2em}
+.person .role{font-size:14px;color:#33302b;letter-spacing:.12em}
+.person .good{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:14px 0 0;padding:0}
+.person .good li{font-size:13.5px;padding:3px 12px;border:1px solid var(--ink);letter-spacing:.1em}
+.person p{margin:16px 0 0;font-size:14.5px;line-height:2.05}
+.person .pick{display:inline-flex;align-items:center;gap:10px;margin-top:18px;min-height:44px;text-decoration:none;font-size:13.5px;letter-spacing:.14em;border-bottom:1px solid var(--accent)}
+
+/* Reserve */
+.reserve{padding:clamp(110px,12vw,180px) 0;background:#ebe7e0}
+.ways{list-style:none;margin:0;padding:0}
+.ways li{display:grid;grid-template-columns:140px 1fr;gap:4px 24px;padding:22px 0;border-top:1px solid var(--line)}
+.ways li:last-child{border-bottom:1px solid var(--line)}
+.ways .en{font-size:30px;line-height:1.1}
+.ways b{font-weight:500;letter-spacing:.12em;font-size:15.5px}
+.ways span{display:block;font-size:14.5px;color:#33302b}
+.rbtns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:34px 0 0}
+.rbtns .bk{min-height:64px;font-size:15px}
+.rbtns .tl{flex-direction:column;gap:0;line-height:1.3}
+.rbtns .tl .en{font-size:24px;letter-spacing:.06em}
+.rbtns .tl small{font-size:11px;letter-spacing:.14em}
+.rnote{font-size:14px;color:#33302b;margin:12px 0 0}
+.busy{margin:56px 0 0}
+.busy h3{font-size:15px;font-weight:400;letter-spacing:.2em;margin:0 0 6px}
+.busy p{font-size:14.5px;color:#33302b;margin:0 0 16px}
+.busy table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}
+.busy th,.busy td{padding:12px 4px;border-bottom:1px solid var(--line)}
+.busy thead th{font-weight:400;font-size:14px;letter-spacing:.1em;border-bottom:1px solid var(--ink)}
+.busy tbody th{text-align:left;font-weight:400;font-size:14px;white-space:nowrap;padding-right:10px}
+.busy td{font-family:var(--jp);font-weight:400;font-size:19px;line-height:1}
+.busy td.o{color:var(--ink)}.busy td.t{color:var(--sub)}.busy td.x{color:#b5b0a6}
+.busy .leg span{white-space:nowrap}
+.busy .leg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:14px;color:#33302b}
+
+/* Salon（店の情報） */
+.info{padding:clamp(110px,12vw,180px) 0}
+dl.shop{margin:0}
+dl.shop div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line);font-size:15px}
+dl.shop div:last-child{border-bottom:1px solid var(--line)}
+dl.shop dt{color:#33302b;letter-spacing:.14em;font-size:14px}
+dl.shop dd{margin:0}
+dl.shop dd a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.map{display:block;width:100%;aspect-ratio:16/9;border:0;margin-top:36px;filter:grayscale(1) contrast(1.05)}
+.faq{margin-top:clamp(70px,8vw,110px)}
+.faq h3{font-family:var(--en);font-weight:400;font-size:44px;margin:0 0 10px;line-height:1}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:12px 0;font-size:15.5px;font-weight:400;letter-spacing:.06em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:14px;height:14px;position:relative}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink);transition:transform .4s var(--ease)}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq details p{margin:0 0 20px;font-size:15px;color:#24221f;line-height:2}
+.news{margin-top:clamp(70px,8vw,110px)}
+.news h3{font-family:var(--en);font-weight:400;font-size:44px;margin:0 0 10px;line-height:1}
+.news ul{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:14.5px}
+.news li:last-child{border-bottom:1px solid var(--line)}
+.news time{font-family:var(--en);font-size:16px;letter-spacing:.08em;color:var(--sub)}
+
+/* フッター */
+.ft{background:var(--main);color:#cfcac1;padding:clamp(90px,10vw,140px) 0 50px;overflow:hidden}
+.ft .huge{font-family:var(--en);font-size:clamp(90px,24vw,360px);line-height:.8;color:#f2efe9;white-space:nowrap;margin:0 0 50px -.04em;display:inline-block}
+.ft .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding-top:36px;border-top:1px solid var(--line-d);font-size:14px;line-height:2.1}
+.ft h3{margin:0 0 8px;font-family:var(--en);font-weight:400;font-size:18px;letter-spacing:.2em;color:var(--accent)}
+.ft a{text-decoration:none}
+.ft .tel2{font-family:var(--en);font-size:30px;letter-spacing:.06em;color:#f2efe9}
+.ft ul{list-style:none;margin:0;padding:0}
+.ft .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:50px;font-size:14px;line-height:1.9;color:#e6e1d8;letter-spacing:.08em}
+.ft .row p{margin:0;max-width:640px}
+.spbar{display:none}
+
+/* スマホ */
+@media (max-width:900px){
+  .gn{display:none}
+  .hd{grid-template-columns:1fr auto}
+  .mbtn{display:inline-flex}
+}
+@media (max-width:767px){
+  :root{--hd:58px}
+  body{font-size:16px}
+  .band{font-size:11px}
+  .band .lg{display:none}
+  .band{justify-content:flex-start;padding:0 12px}.band b{flex:none}.band > span:not(.lg){min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .hd .acts{display:none}
+  .hd{grid-template-columns:1fr auto}
+  .logo .en{font-size:26px}
+  .hero{display:flex;flex-direction:column;padding:calc(var(--band) + var(--hd)) 0 0;min-height:0}
+  .hero .meta{order:0}.hero .ph{order:1}.hero .mast{order:2}.hero .copy{order:3}
+  .hero .meta{margin:0 20px;font-size:10px;letter-spacing:.16em}
+  .hero .meta span:last-child{display:none}
+  .hero .ph{margin:12px 0 0;min-height:0;height:52svh}
+  .hero .ph img{object-position:22% 50%}
+  .hero .mast{position:relative;margin:-.2em 0 0 12px;font-size:34vw}
+  .hero .tagline{font-size:20px;padding:12px 14px 14px}
+  .hero .copy{padding:26px 20px 56px}
+  .hero .copy .vol{margin-bottom:18px}
+  .hero h1{font-size:27px}
+  .hero .btns .bk{flex:1 1 140px}
+  .hero .side{display:none}
+  .hero .cover{order:4;margin:0 20px 40px;min-width:0;align-self:stretch}
+  .g12{display:block}
+  .sh{position:static;margin-bottom:40px}
+  .sh .big{font-size:76px}
+  .about .quote{font-size:23px;margin-bottom:48px}
+  .about .pic{width:78%}
+  .about .txt{margin-top:40px}
+  .prow .nm{font-size:16px}
+  .prow .pr{font-size:25px}
+  .prow:hover{padding-left:0}
+  .styles .head .hint{margin-top:18px}
+  .swipe{display:flex;align-items:center;justify-content:space-between;margin:22px 0 0;font-size:14px;color:#efece6}
+  .swipe b{font-family:var(--en);font-weight:400;font-size:24px;letter-spacing:.08em}
+  .swipe > span{display:flex;align-items:center;gap:10px}
+  .swipe i{display:inline-block;width:34px;height:1px;background:var(--accent);position:relative;animation:nudge 1.6s ease-in-out infinite}
+  .swipe i::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);transform:rotate(45deg)}
+  @keyframes nudge{50%{transform:translateX(6px)}}
+  .scard{width:78vw}
+  .slots .day{grid-template-columns:1fr}
+  .spin{display:block;min-height:0;padding:30px 0 70px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .spin::-webkit-scrollbar{display:none}
+  .strack{padding:0 20px}
+  .scard{width:76vw;scroll-snap-align:center}
+  .scard:nth-child(even){margin-top:0}
+  .strack .endcard{width:64vw;scroll-snap-align:center}
+  .prog{display:none}
+  .person:nth-child(even){margin-top:0}
+  .ways li{grid-template-columns:1fr}
+  .rbtns{grid-template-columns:1fr}
+  .busy table{font-size:14px}
+  .busy tbody th{font-size:14px}
+  .busy td{font-size:19px}
+  dl.shop div,.news li{grid-template-columns:84px 1fr}
+  .ft .cols{grid-template-columns:1fr}
+  .ft{padding-bottom:90px}
+  .spbar{display:grid;grid-template-columns:1fr 1.3fr;position:fixed;left:0;right:0;bottom:0;z-index:85;padding-bottom:env(safe-area-inset-bottom);background:var(--main)}
+  .spbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;text-decoration:none;color:#f2efe9;font-size:14.5px;font-weight:400;letter-spacing:.14em}
+  .spbar a + a{background:var(--accent);color:#0b0b0b;font-weight:700;font-size:16px}
+  .spbar .en{font-size:19px}
+}
+/* ページ分け（下層ページの見出し帯・トップの入口） */
+section[id]{scroll-margin-top:calc(var(--band) + var(--hd) + 10px)}
+.gn a[aria-current=page]::after{transform:scaleX(1);transform-origin:left}
+.mnav a[aria-current=page]{color:var(--accent)}
+.phead{padding:calc(var(--band) + var(--hd) + clamp(40px,6vw,84px)) 0 clamp(36px,5vw,70px);border-bottom:1px solid var(--ink)}
+.phead .crumb{margin:0 0 18px;font-size:12px;letter-spacing:.24em;color:var(--mute)}
+.phead .crumb a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.phead .big{font-family:var(--en);font-weight:400;font-size:clamp(64px,10vw,150px);line-height:.9;margin:0;white-space:nowrap}
+.phead h1{margin:16px 0 0;font-size:18px;font-weight:400;letter-spacing:.3em}
+.phead p.lead{margin:20px 0 0;max-width:36em;font-size:15.5px;line-height:2;color:#33302b}
+.gate{padding:clamp(80px,9vw,140px) 0 clamp(40px,5vw,70px)}
+.gate ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+.gate li{border-left:1px solid var(--line)}
+.gate li:first-child{border-left:0}
+.gate a{display:flex;flex-direction:column;gap:6px;min-height:230px;padding:22px 22px 24px;text-decoration:none;position:relative;transition:background .5s var(--ease),color .5s var(--ease)}
+.gate a:hover{background:var(--main);color:#f2efe9}
+.gate .no{font-family:var(--en);font-size:15px;letter-spacing:.2em;color:var(--accent)}
+.gate .en{font-size:clamp(34px,3.4vw,52px);line-height:1;margin-top:auto}
+.gate b{font-weight:400;font-size:15.5px;letter-spacing:.2em}
+.gate span.ds{font-size:14px;line-height:1.8;color:inherit;opacity:.85}
+.gate .ar{position:absolute;right:20px;top:24px;width:26px;height:1px;background:currentColor}
+.gate .ar::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.intro{padding:clamp(60px,8vw,120px) 0 0}
+.intro .quote{grid-column:1/10;font-weight:300;font-size:clamp(23px,2.5vw,36px);line-height:1.8;letter-spacing:.1em;margin:0}
+.news.top{padding:clamp(60px,8vw,110px) 0 clamp(80px,9vw,130px)}
+.news.top .g12 > div{grid-column:6/13}
+.news.top h3{grid-column:1/5}
+.slist.noimg .person{margin-top:0!important;border-top:1px solid var(--ink);padding-top:16px}
+.slist.noimg .person .en{margin-top:4px}
+.phead + section{padding-top:clamp(50px,6vw,90px)}
+.phead + section .sh .big,.phead + section .sh h2{display:none}
+.phead + section.staff{padding-top:clamp(50px,6vw,90px)}
+@media (max-width:900px){.gate ul{grid-template-columns:repeat(2,1fr)}.gate li:nth-child(3){border-left:0}.gate li:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:767px){.gate a{min-height:170px;padding:18px 16px}.gate .ar{right:14px;top:20px}.phead{padding-top:calc(var(--band) + var(--hd) + 36px)}.phead .big{font-size:22vw}.news.top .g12 > div{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms!important;animation:none!important}
+  .float{display:none}
+}
+</style>
+</head>
+<body>
+<div class="band" role="note"><b>見本です</b><span>架空のお店の見本です（ホームページの型・SakuLife）</span><span class="lg">・公式サイトではありません</span></div>
+
+<header class="hd">
+  <a class="logo" href="index.html#top" aria-label="hair atelier SOEL トップへ"><span class="en">SOEL</span><small>美容室</small></a>
+  <nav class="gn" aria-label="ページの案内">
+<a href="index.html" aria-current="page">トップ</a><a href="menu.html">メニュー</a><a href="about.html">お店について</a><a href="access.html">アクセス</a><a href="contact.html">お問い合わせ</a>  </nav>
+  <button class="mbtn" type="button" aria-expanded="false" aria-controls="mnav"><span>MENU</span><i aria-hidden="true"></i></button>
+  <div class="acts">
+    <a class="tel" href="tel:0123000000"><span class="en">0123-00-0000</span><small>お電話でのご予約</small></a>
+    <a class="bk" href="contact.html#reserve">ネット予約<i></i></a>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="メニュー">
+<a href="index.html" aria-current="page">トップ</a><a href="menu.html">メニュー</a><a href="about.html">お店について</a><a href="access.html">アクセス</a><a href="contact.html">お問い合わせ</a></nav>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="meta"><span class="en">Vol.06 — Autumn / Winter</span><span>北海道 江別市 ／ 美容室</span></div>
+    <div class="copy">
+      <p class="vol">北海道 江別市</p>
+      <h1 id="hero-h"><span class="mline"><span>乾かすだけで、</span></span><span class="mline"><span>まとまる髪に。</span></span></h1>
+      <p class="lead">野幌駅から歩いて6分。席は3つ、スタイリスト2人の小さな美容室です。朝、鏡の前で悩む時間を短くするカットをします。</p>
+      <div class="btns">
+        <a class="bk" href="contact.html#reserve">ネット予約<i></i></a>
+        <a class="bk line" href="menu.html#price">料金を見る</a>
+      </div>
+    </div>
+    <div class="ph"><img src="img/hero.webp" alt="hair atelier SOELの店内（イメージ）" width="1600" height="900" fetchpriority="high"><p class="tagline" aria-hidden="true"><span class="mline"><span>Hair,</span></span><span class="mline"><span>quietly</span></span><span class="mline"><span>made.</span></span></p></div>
+    <div class="mast" aria-hidden="true">SOEL</div>
+    <div class="cover"><dl><dt>Open</dt><dd>火〜金　10:00〜20:00</dd><dt></dt><dd>土・日・祝　9:00〜18:00</dd><dt>Closed</dt><dd>月曜・第3火曜</dd><dt>Tel</dt><dd><a href="tel:0123000000">0123-00-0000</a></dd></dl></div>
+    <div class="side" aria-hidden="true">hair atelier SOEL — 北海道 江別市</div>
+  </section>
+
+  <section class="intro" aria-label="ご紹介">
+    <div class="wrap g12"><p class="quote">札幌の美容室で12年働いて、2021年に地元の野幌で店を開きました。席は3つだけ。ひとりのお客さまを、受付から仕上げまで同じスタイリストが担当します。</p></div>
+  </section>
+  <section class="gate" aria-labelledby="gate-h">
+    <div class="wrap">
+      <h2 id="gate-h" class="sr">各ページの入口</h2>
+      <ul>
+        <li><a href="menu.html"><span class="no">01</span><span class="ar" aria-hidden="true"></span><span class="en">Price</span><b>メニュー</b><span class="ds">カット・カラー・パーマの料金と、仕上がりの写真</span></a></li>
+        <li><a href="about.html"><span class="no">02</span><span class="ar" aria-hidden="true"></span><span class="en">About</span><b>お店について</b><span class="ds">席は3つ。切る人と、大切にしていること</span></a></li>
+        <li><a href="contact.html"><span class="no">03</span><span class="ar" aria-hidden="true"></span><span class="en">Reserve</span><b>お問い合わせ</b><span class="ds">今日・明日の空きと、予約の方法</span></a></li>
+        <li><a href="access.html"><span class="no">04</span><span class="ar" aria-hidden="true"></span><span class="en">Salon</span><b>アクセス</b><span class="ds">住所・駐車場・地図</span></a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="news top" aria-labelledby="news-h">
+    <div class="wrap g12"><h3 id="news-h" class="en" style="font-size:44px;margin:0;line-height:1">News</h3>
+      <div><ul style="list-style:none;margin:0;padding:0"><li style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:14.5px"><time class="en" style="font-size:16px;letter-spacing:.08em;color:var(--sub)">2026.12.01</time><span>年末は12月30日まで営業します。年明けは1月5日から</span></li><li style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:14.5px"><time class="en" style="font-size:16px;letter-spacing:.08em;color:var(--sub)">2026.11.15</time><span>土曜の朝9時の枠を増やしました</span></li><li style="display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:14.5px"><time class="en" style="font-size:16px;letter-spacing:.08em;color:var(--sub)">2026.10.20</time><span>白髪ぼかしハイライトを始めました</span></li></ul></div>
+    </div>
+  </section>
+
+
+
+
+
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="huge" aria-hidden="true">SOEL</div>
+    <div class="cols">
+      <div><h3>Contact</h3><a class="tel2" href="tel:0123000000">0123-00-0000</a><br>火〜金 10:00〜20:00（カットの最終受付 19:00）<br>土・日・祝 9:00〜18:00<br>定休日　月曜・第3火曜</div>
+      <div><h3>Access</h3>hair atelier SOEL<br>北海道 江別市野幌町（番地が入ります）<br><a href="access.html#info">地図を見る →</a></div>
+      <div><h3>Menu</h3><ul><li><a href="index.html">トップ</a></li><li><a href="menu.html">メニュー</a></li><li><a href="about.html">お店について</a></li><li><a href="access.html">アクセス</a></li><li><a href="contact.html">お問い合わせ</a></li><li><a href="contact.html#reserve">ネット予約</a></li></ul></div>
+    </div>
+    <div class="row">
+<p>このページは架空のお店で作ったホームページの見本です。お店・人・電話番号は実在しません。写真は AI で作ったイメージです。</p>      <p>© hair atelier SOEL</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="spbar" aria-label="ご予約">
+  <a href="tel:0123000000">電話する</a>
+  <a href="contact.html#reserve">ネット予約</a>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hd = document.querySelector('.hd');
+  const darkSecs = [...document.querySelectorAll('.dark-sec,.ft')];
+  const bandH = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--band')) || 0;
+  const onScroll = () => {
+    const y = bandH() + 30;
+    const overDark = darkSecs.some(sec => { const r = sec.getBoundingClientRect(); return r.top <= y && r.bottom > y; });
+    hd.classList.toggle('solid', scrollY > 40);
+    hd.classList.toggle('dark', overDark);
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // スマホのメニュー（Esc・外を押す・項目を押すで閉じる）
+  const mbtn = document.querySelector('.mbtn'), mnav = document.getElementById('mnav');
+  const mset = (o) => { mnav.classList.toggle('open', o); mbtn.setAttribute('aria-expanded', o); };
+  mbtn.addEventListener('click', (e) => { e.stopPropagation(); mset(!mnav.classList.contains('open')); });
+  mnav.addEventListener('click', (e) => { if (e.target.closest('a')) mset(false); });
+  document.addEventListener('click', (e) => { if (!e.target.closest('#mnav,.mbtn')) mset(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') { mset(false); mbtn.focus(); } });
+
+  // スマホのスタイル写真：何枚目か
+  const spin = document.querySelector('.spin'), si = document.querySelector('.swipe .si');
+  if (spin && si) spin.addEventListener('scroll', () => {
+    const cards = [...spin.querySelectorAll('.scard')], c = spin.scrollLeft + spin.clientWidth / 2;
+    let k = 0; cards.forEach((el, i) => { if (el.offsetLeft <= c) k = i; });
+    si.textContent = String(k + 1).padStart(2, '0');
+  }, { passive: true });
+
+  // 誌名の大きな欧文は幅に合わせる（長い店名でもはみ出さない）
+  const fit = () => document.querySelectorAll('.hero .mast, .ft .huge, .sh .big, .phead .big').forEach(el => {
+    el.style.fontSize = ''; const pcs = getComputedStyle(el.parentElement), box = el.parentElement.clientWidth - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight), cur = parseFloat(getComputedStyle(el).fontSize);
+    const w = el.scrollWidth;
+    if (el.classList.contains('huge')) { el.style.fontSize = Math.min(cur * box * .98 / w, 520) + 'px'; return; }
+    if (w > box * .98) el.style.fontSize = (cur * box * .98 / w) + 'px';
+  });
+  fit(); addEventListener('resize', fit);
+  if (document.fonts) document.fonts.ready.then(fit);
+
+  if (!window.gsap || reduce) return;
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  let lenis = null;
+  if (window.Lenis) {
+    lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href')); if (!t) return;
+      e.preventDefault(); lenis.scrollTo(t, { offset: -(bandH() + 60), duration: 1.4 });
+    }));
+  }
+
+  const start = () => {
+    // 表紙：写真が下から開き、文字がマスクの下からせり上がる（トップ／1枚ものだけ）
+    if (document.querySelector('.hero')) {
+    const mast = new SplitText('.hero .mast', { type: 'chars', charsClass: 'ch' });
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+    tl.fromTo('.hero .ph', { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.2, ease: 'expo.inOut' })
+      .from('.hero .ph img', { scale: 1.25, duration: 2 }, '<')
+      .from('.hero h1 .mline > span, .hero .tagline .mline > span', { yPercent: 110, duration: 1.1, stagger: .08 }, '-=.9')
+      .from(mast.chars, { yPercent: 100, duration: 1.1, stagger: .05 }, '<')
+      .from('.hero .vol, .hero .lead, .hero .btns, .hero .meta, .hero .cover', { opacity: 0, y: 14, duration: 1, stagger: .08 }, '<.3');
+    gsap.set('.hero .mast', { overflow: 'hidden' });
+    gsap.to('.hero .ph img', { yPercent: -8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    }
+
+    // 大きな欧文の見出し：1字ずつマスクからせり上がる
+    document.querySelectorAll('.mh').forEach(el => {
+      const sp = new SplitText(el, { type: 'chars', mask: 'chars' });
+      gsap.from(sp.chars, { yPercent: 105, duration: 1.2, stagger: .045, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+    });
+    // 本文：行ごとにせり上がる
+    document.querySelectorAll('.rv').forEach(el => {
+      const sp = new SplitText(el, { type: 'lines', mask: 'lines' });
+      gsap.from(sp.lines, { yPercent: 105, duration: 1.1, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+    });
+    // 写真：下から幕が開く
+    gsap.utils.toArray('.reveal').forEach(m => {
+      const img = m.querySelector('img');
+      gsap.fromTo(m, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.4, ease: 'expo.inOut', scrollTrigger: { trigger: m, start: 'top 85%' } });
+      gsap.fromTo(img, { yPercent: -10 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: m, start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+    // 料金の行：線が引かれてから字が出る
+    gsap.utils.toArray('.pgroup').forEach(g => {
+      gsap.from(g.querySelectorAll('.prow'), { opacity: 0, y: 18, duration: .9, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: g, start: 'top 80%' } });
+      if (g.querySelector('.gh')) gsap.from(g.querySelector('.gh'), { '--w': 0, opacity: 0, x: -20, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: g, start: 'top 85%' } });
+    });
+
+    // スタイル：PC はピン留めの横スクロール
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 768px)', () => {
+      const track = document.querySelector('.strack');
+      if (!track) return;
+      const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+      const tw = gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.spin', start: 'top top', end: () => '+=' + dist() * 1.1, pin: '.styles', pinSpacing: true, scrub: 1, invalidateOnRefresh: true,
+        onUpdate: self => gsap.set('.prog i', { scaleX: self.progress }) } });
+      gsap.utils.toArray('.scard .im img').forEach(img => gsap.to(img, { xPercent: -6, ease: 'none', scrollTrigger: { trigger: img.parentElement, containerAnimation: tw, start: 'left right', end: 'right left', scrub: true } }));
+    });
+    mm.add('(max-width: 767px)', () => {
+      gsap.utils.toArray('.scard').forEach(c => gsap.from(c, { opacity: 0, x: 40, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.spin', start: 'top 85%' } }));
+    });
+
+    // 料金の行にマウスを乗せると、写真がカーソルに付いて出る
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches && document.querySelector('.float')) {
+      const fl = document.querySelector('.float'), fim = fl.querySelector('img');
+      const xTo = gsap.quickTo(fl, 'x', { duration: .55, ease: 'power3' }), yTo = gsap.quickTo(fl, 'y', { duration: .55, ease: 'power3' });
+      gsap.set(fl, { xPercent: -50, yPercent: -50 });
+      let rot = 0;
+      document.querySelectorAll('.prow').forEach(r => {
+        r.addEventListener('mouseenter', e => {
+          if (fim.getAttribute('src') !== r.dataset.img) fim.src = r.dataset.img;
+          rot = (Math.random() * 8 - 4);
+          gsap.to(fl, { opacity: 1, scale: 1, rotate: rot, duration: .5, ease: 'expo.out', overwrite: 'auto' });
+        });
+        r.addEventListener('mouseleave', () => gsap.to(fl, { opacity: 0, scale: .6, duration: .4, ease: 'power3.in', overwrite: 'auto' }));
+      });
+      addEventListener('mousemove', e => { xTo(e.clientX + 150); yTo(e.clientY); });
+      // 写真を先に読んでおく
+      [...new Set([...document.querySelectorAll('.prow')].map(r => r.dataset.img))].forEach(src => { const i = new Image(); i.src = src; });
+    }
+    ScrollTrigger.refresh();
+  };
+  if (document.fonts) document.fonts.ready.then(() => { fit(); start(); }); else start();
+})();
+</script>
+</body>
+</html>
