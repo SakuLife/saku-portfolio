@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -167,6 +167,7 @@
     .link-tile:hover { transform: translateY(-3px); border-color: rgba(33,115,70,.3); box-shadow: 0 14px 28px -14px rgba(16,50,32,.25); }
     .link-ico { width: 2.6rem; height: 2.6rem; border-radius: .8rem; display: flex; align-items: center; justify-content: center; flex: none; color: #fff; font-size: 1.15rem; }
   </style>
+  <link rel="stylesheet" href="css/digital.css" />
 
   <noscript>
     <style>
@@ -176,6 +177,7 @@
 </head>
 
 <body class="antialiased">
+  <div id="scroll-bar" aria-hidden="true"></div>
 
   <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,50 +232,55 @@
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/30 z-40 hidden md:hidden"></div>
   </header>
 
-  <section class="hero-bg min-h-screen flex items-center pt-16">
-    <div class="relative z-10 w-full max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+  <section class="hx" id="top">
+    <canvas id="hx-net" class="hx-net" aria-hidden="true"></canvas>
+    <div class="hx-grid" aria-hidden="true"></div>
+    <div class="hx-glow hx-glow-a" aria-hidden="true"></div>
+    <div class="hx-glow hx-glow-b" aria-hidden="true"></div>
+
+    <div class="relative z-10 w-full max-w-site mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 md:pt-36 md:pb-28">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-14">
         <div class="w-full min-w-0 flex-1 text-center md:text-left">
-          <span class="inline-block bg-primary-50 text-primary text-xs font-bold px-3 py-1 rounded-full mb-5">
-            北海道発・オンラインで全国対応 / 小さなお店と個人事業の自動化
+          <span class="hx-kicker" data-hx>
+            <span class="hx-dot" aria-hidden="true"></span>北海道発・オンラインで全国対応 / 小さなお店と個人事業の自動化
           </span>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-6 text-charcoal">
-            そのお店の「めんどくさい」、<br />
-            <span class="text-primary">まるごと自動化します。</span>
+          <h1 class="hx-title" data-hx>
+            <span class="hx-line">そのお店の「めんどくさい」、</span><br />
+            <span class="hx-line hx-grad">まるごと自動化します。</span><span class="hx-caret" aria-hidden="true"></span>
           </h1>
-          <p class="text-base sm:text-lg text-charcoal-light leading-relaxed mb-8 max-w-xl">
-            予約の記録、売上の集計、シフト、請求書——<b class="text-charcoal">紙とExcelの手作業</b>を、お店に合わせて自動化します。<br class="hidden sm:block" />
-            ココナラ評価<b class="text-charcoal">★5.0／販売実績130件以上</b>。「これ、できる?」だけでも大歓迎、<b class="text-charcoal">相談・お見積りは無料</b>です。
+          <p class="hx-lead" data-hx>
+            予約の記録、売上の集計、シフト、請求書——<b>紙とExcelの手作業</b>を、お店に合わせて自動化します。<br class="hidden sm:block" />
+            ココナラ評価<b>★5.0／販売実績130件以上</b>。「これ、できる?」だけでも大歓迎、<b>相談・お見積りは無料</b>です。
           </p>
 
-          <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-9 max-w-md mx-auto md:mx-0">
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
-              <div class="text-xl sm:text-3xl font-black text-primary">★5.0</div>
-              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">ココナラ評価</div>
+          <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-9 max-w-md mx-auto md:mx-0" data-hx>
+            <div class="hx-stat">
+              <div class="hx-stat-num">★<span data-count="5.0" data-dec="1">5.0</span></div>
+              <div class="hx-stat-label">ココナラ評価</div>
             </div>
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
-              <div class="text-xl sm:text-3xl font-black text-primary">130<span class="text-xs sm:text-base">件以上</span></div>
-              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">販売実績</div>
+            <div class="hx-stat">
+              <div class="hx-stat-num"><span data-count="130">130</span><span class="hx-stat-unit">件以上</span></div>
+              <div class="hx-stat-label">販売実績</div>
             </div>
-            <div class="badge-glow bg-white border border-primary/10 rounded-xl px-2 py-3 sm:px-5 text-center">
-              <div class="text-xl sm:text-3xl font-black text-primary">無料</div>
-              <div class="text-[10px] sm:text-xs text-charcoal-light mt-1">相談・見積り</div>
+            <div class="hx-stat">
+              <div class="hx-stat-num">無料</div>
+              <div class="hx-stat-label">相談・見積り</div>
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4" data-hx>
             <a href="#industries"
-               class="cta-primary w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition hover:-translate-y-0.5">
+               class="cta-primary hx-btn w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition">
               <i class="fa-solid fa-store mr-2"></i>うちの業種でできること
             </a>
             <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
-               class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-line rounded-xl hover:opacity-90 shadow-lg transition hover:-translate-y-0.5">
+               class="hx-btn hx-btn-line w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-line rounded-xl transition">
               <i class="fa-brands fa-line mr-2"></i>LINEで無料相談
             </a>
           </div>
 
-          <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs">
-            <span class="text-charcoal-lighter mr-1">自分で作って公開中：</span>
+          <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs" data-hx>
+            <span class="hx-chip-label mr-1">自分で作って公開中：</span>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-map-location-dot"></i>北海道の相場サイト</a>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール57本</a>
             <a href="#shop" class="hero-chip"><i class="fa-solid fa-file-excel"></i>Excelテンプレ販売中</a>
@@ -281,13 +288,29 @@
           </div>
         </div>
 
-        <div class="flex-shrink-0">
-          <div class="float-animation avatar-halo">
-            <img src="images/avatar.png" alt="SakuLifeキャラクター" class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 object-cover rounded-[2.25rem] ring-4 ring-white shadow-2xl rotate-2" />
+        <div class="flex-shrink-0 hx-avatar-wrap" data-hx-avatar>
+          <div class="hx-orbit" aria-hidden="true">
+            <svg viewBox="0 0 400 400" class="hx-ring hx-ring-a"><circle cx="200" cy="200" r="190" /></svg>
+            <svg viewBox="0 0 400 400" class="hx-ring hx-ring-b"><circle cx="200" cy="200" r="168" /></svg>
+            <span class="hx-node hx-node-1"></span>
+            <span class="hx-node hx-node-2"></span>
+            <span class="hx-node hx-node-3"></span>
+          </div>
+          <div class="hx-avatar">
+            <img src="images/avatar.png" alt="SakuLifeキャラクター" width="1024" height="1024" />
+            <span class="hx-scan" aria-hidden="true"></span>
+          </div>
+          <span class="hx-tag hx-tag-1" aria-hidden="true">=SUM(B2:B31)</span>
+          <span class="hx-tag hx-tag-2" aria-hidden="true"><i class="fa-solid fa-robot"></i> AI</span>
+          <span class="hx-tag hx-tag-3" aria-hidden="true"><i class="fa-solid fa-bolt"></i> auto</span>
+          <div class="hx-term" aria-hidden="true">
+            <div class="hx-term-bar"><i></i><i></i><i></i></div>
+            <div class="hx-term-body"><span class="hx-term-p">&gt;</span> <span id="hx-type"></span><span class="hx-term-cur"></span></div>
           </div>
         </div>
       </div>
     </div>
+    <a href="#trust" class="hx-scroll" aria-label="下へ"><span></span></a>
   </section>
 
   <section id="trust" class="py-16 md:py-20 bg-white">
@@ -1354,6 +1377,10 @@
       });
     });
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/digital.js"></script>
 
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7de9ffa7a5a34c4190833e9e32ee2beb"}'></script>
 </body>
