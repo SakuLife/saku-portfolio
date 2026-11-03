@@ -298,3 +298,103 @@ section[id]:not(.hx) .font-black.text-primary { font-family: var(--mono); letter
   .hx-avatar-wrap { order: -1; width: min(64vw, 260px); margin-top: .5rem; }
   .hx .pt-28 { padding-top: 5.5rem; }
 }
+
+/* ==========================================================================
+   11-04 社長「ヘッダーはすごいいい。その感じで下まで」「ハンバーガーメニュー透明で見えない」「カード系も背景と同色で区切り見づらい」
+   ＝ページ全体を深い緑の黒に。カードは背景より一段明るい面＋ミントの縁＋影で、はっきり区切る。文字は変えない（色だけ）。
+   ========================================================================== */
+:root {
+  --bg: #071a11;         /* ページの地 */
+  --bg-alt: #0a2016;     /* 交互の節 */
+  --card: #12301f;       /* カードの面（地より明るく）*/
+  --card-2: #173a27;     /* カードの中の小さな面 */
+  --line: rgba(94,230,160,.24);
+  --txt: #eef6f1;
+  --txt-2: rgba(222,238,229,.76);
+  --txt-3: rgba(222,238,229,.52);
+  --acc: #6fe3a6;        /* 暗い地の上の「緑の文字」（#217346 では読めない）*/
+}
+html, body { background-color: var(--bg) !important; color: var(--txt); }
+body::before {
+  background-image:
+    linear-gradient(rgba(94,230,160,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94,230,160,.05) 1px, transparent 1px);
+}
+
+/* 🔴 ヘッダーに blur を直接かけると、中の「画面に固定」のメニューがヘッダーの高さ（64px）に押し込まれて透けて見える
+   ＝ blur は後ろの層（::before）に移す */
+#header { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: transparent !important; }
+#header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: rgba(6,20,13,.78);
+  -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+}
+#header.is-scrolled::before { background: rgba(6,20,13,.92); }
+#mobile-menu { background: #0b2318 !important; box-shadow: -20px 0 60px rgba(0,0,0,.6) !important; z-index: 60 !important; }
+#mobile-menu-overlay { background: rgba(0,0,0,.6) !important; z-index: 55 !important; }
+
+/* 節の地：白い節と薄い節を、暗い2色の交互に */
+section[id]:not(.hx) { background-color: var(--bg) !important; }
+section.bg-white, #links, footer { background-color: var(--bg-alt) !important; }
+#links, footer { border-color: var(--line) !important; }
+
+/* 文字の色（Tailwind の色クラスを暗い地用に読み替える）*/
+section[id]:not(.hx) .text-charcoal, footer .text-charcoal, #consult-modal .text-charcoal { color: var(--txt) !important; }
+section[id]:not(.hx) .text-charcoal-light, footer .text-charcoal-light, #consult-modal .text-charcoal-light { color: var(--txt-2) !important; }
+section[id]:not(.hx) .text-charcoal-lighter, footer .text-charcoal-lighter, #consult-modal .text-charcoal-lighter { color: var(--txt-3) !important; }
+section[id]:not(.hx) .text-primary, footer .text-primary, #consult-modal .text-primary { color: var(--acc) !important; }
+section[id]:not(.hx) b.text-charcoal, section[id]:not(.hx) h2, section[id]:not(.hx) h3 { color: var(--txt); }
+
+/* カード：地より明るい面＋ミントの縁＋影＝はっきり区切る */
+section[id]:not(.hx):not(#made) .bg-white,
+footer .bg-white, #consult-modal .bg-white {
+  background: linear-gradient(165deg, var(--card-2) 0%, var(--card) 70%) !important;
+  border-color: var(--line) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 18px 40px -22px rgba(0,0,0,.8), 0 0 0 1px var(--line) !important;
+}
+section[id]:not(.hx) .bg-surface-muted, footer .bg-surface-muted, #consult-modal .bg-surface-muted {
+  background: rgba(255,255,255,.045) !important; border-color: var(--line) !important;
+}
+section[id]:not(.hx) .bg-primary-50, footer .bg-primary-50 { background-color: rgba(94,230,160,.12) !important; }
+section[id]:not(.hx) .bg-green-50 { background-color: rgba(94,230,160,.12) !important; }
+section[id]:not(.hx) .bg-blue-50 { background-color: rgba(120,170,255,.12) !important; }
+section[id]:not(.hx) .bg-line\/5 { background-color: rgba(6,199,85,.12) !important; }
+section[id]:not(.hx) [class*="border-gray-"], footer [class*="border-gray-"], #consult-modal [class*="border-gray-"],
+section[id]:not(.hx) [class*="border-primary"] { border-color: var(--line) !important; }
+section[id]:not(.hx) .border-2[class*="border-primary"] { border-color: rgba(94,230,160,.45) !important; }
+#trust .bg-surface-muted { background: linear-gradient(160deg, var(--card-2), var(--card)) !important; }
+section[id]:not(.hx) .text-blue-500 { color: #8fb8ff !important; }
+
+/* 白い地のまま見せる所（「毎朝9時」の図・見本や商品の画像）は文字を元の暗い色に戻す */
+[style*="#ffffff"] .text-charcoal { color: #2d3436 !important; }
+[style*="#ffffff"] .text-primary { color: #217346 !important; }
+
+/* 見出しの札（// 01）を暗い地用に */
+section[id] p.tracking-widest.uppercase { background: rgba(94,230,160,.08); border-color: rgba(94,230,160,.3); color: var(--acc) !important; }
+section[id]:not(.hx) .font-black.text-primary { color: #fff !important; text-shadow: 0 0 18px rgba(94,230,160,.45); }
+
+/* 2つ目のボタン（薄い地の物）を暗い地用に */
+section[id]:not(.hx) a.bg-surface-muted:hover, section[id]:not(.hx) button.bg-surface-muted:hover { border-color: var(--acc) !important; color: var(--acc) !important; }
+.section-divider { background: rgba(94,230,160,.12) !important; }
+
+/* 入力欄（相談の窓）*/
+#consult-modal textarea { color: var(--txt) !important; }
+#consult-modal > div { background: #0d271a !important; }
+
+/* フッターの丸いボタン */
+footer a.rounded-full { background: rgba(255,255,255,.05) !important; border-color: var(--line) !important; color: var(--txt-2) !important; }
+footer a.rounded-full:hover { color: var(--acc) !important; border-color: var(--acc) !important; }
+footer a.underline { color: var(--txt-2); }
+
+/* カードを乗せた時の光（暗い地では少し強く）*/
+.card-hover::after { background: radial-gradient(420px circle at var(--mx) var(--my), rgba(94,230,160,.16), transparent 45%); }
+
+/* 白い地のまま見せる図（「毎朝9時」）は元の暗い文字に（上の読み替えより強く）*/
+section[id] [style*="#ffffff"] .text-charcoal, section[id] [style*="#ffffff"] li { color: #2d3436 !important; }
+section[id] [style*="#ffffff"] .text-primary { color: #217346 !important; }
+/* リンク集のタイル */
+.link-tile { background: linear-gradient(165deg, var(--card-2), var(--card)) !important; border-color: var(--line) !important; }
+.link-tile:hover { border-color: var(--acc) !important; box-shadow: 0 14px 30px -14px rgba(0,0,0,.8), 0 0 20px -6px rgba(94,230,160,.4) !important; }
+/* チェックつきの行：中の太字が別の列に割れて「ひとつな／ぎ」と崩れていた（前から）＝ふつうの行にして印だけ左に置く */
+li.flex.items-start.gap-2 { display: block; position: relative; padding-left: 1.35em; }
+li.flex.items-start.gap-2 > i:first-child { position: absolute; left: 0; top: .3em; margin: 0; }
