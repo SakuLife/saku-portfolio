@@ -190,10 +190,8 @@
           <a href="#industries" class="text-sm text-charcoal-light hover:text-primary transition-colors">業種から</a>
           <a href="#samples" class="hidden lg:inline text-sm text-charcoal-light hover:text-primary transition-colors">見本</a>
           <a href="#pricing" class="text-sm text-charcoal-light hover:text-primary transition-colors">料金</a>
+          <a href="homepage.html" class="text-sm text-charcoal-light hover:text-primary transition-colors">HP制作</a>
           <a href="#works" class="text-sm text-charcoal-light hover:text-primary transition-colors">実績</a>
-          <a href="#made" class="text-sm text-charcoal-light hover:text-primary transition-colors">作ったもの</a>
-          <a href="#shop" class="hidden lg:inline text-sm text-charcoal-light hover:text-primary transition-colors">テンプレ販売</a>
-          <a href="#note" class="text-sm text-charcoal-light hover:text-primary transition-colors">note</a>
           <a href="#profile" class="text-sm text-charcoal-light hover:text-primary transition-colors">プロフィール</a>
           <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-line rounded-lg hover:opacity-90 transition">
@@ -217,6 +215,7 @@
         <a href="#industries" class="mobile-nav-link text-charcoal hover:text-primary py-2">業種から</a>
         <a href="#samples" class="mobile-nav-link text-charcoal hover:text-primary py-2">業種別の見本</a>
         <a href="#pricing" class="mobile-nav-link text-charcoal hover:text-primary py-2">料金</a>
+        <a href="homepage.html" class="mobile-nav-link text-charcoal hover:text-primary py-2">ホームページ制作の料金</a>
         <a href="#works" class="mobile-nav-link text-charcoal hover:text-primary py-2">実績</a>
         <a href="#made" class="mobile-nav-link text-charcoal hover:text-primary py-2">作ったもの</a>
         <a href="#shop" class="mobile-nav-link text-charcoal hover:text-primary py-2">テンプレ販売</a>
@@ -278,11 +277,14 @@
               <i class="fa-brands fa-line mr-2"></i>LINEで無料相談
             </a>
           </div>
+          <a href="homepage.html" class="hx-hp-btn mt-3 w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-sm font-bold rounded-xl" data-hx>
+            <i class="fa-solid fa-globe mr-2"></i>ホームページを作る（19,800円＋月2,980円から・税込）<i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+          </a>
 
           <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs" data-hx>
             <span class="hx-chip-label mr-1">自分で作って公開中：</span>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-map-location-dot"></i>北海道の相場サイト</a>
-            <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール57本</a>
+            <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール70本</a>
             <a href="#shop" class="hero-chip"><i class="fa-solid fa-file-excel"></i>Excelテンプレ販売中</a>
             <a href="#note" class="hero-chip"><i class="fa-solid fa-pen-nib"></i>毎朝AIが書くnote</a>
           </div>
@@ -480,12 +482,16 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">料金の目安</h2>
           <p class="text-charcoal-light max-w-xl mx-auto">内容によって変わるので、まずは無料でお見積りします。「予算これくらいで何ができる?」の相談も歓迎です。</p>
         </div>
+        <div class="price-pick grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl mx-auto mb-8 text-sm">
+          <a href="homepage.html" class="price-pick-a"><i class="fa-solid fa-globe mr-2"></i><span><b>ホームページだけ作りたい</b>　→ 19,800円＋月2,980円から（別のページ）</span></a>
+          <a href="#pricing-auto" class="price-pick-a"><i class="fa-solid fa-gears mr-2"></i><span><b>事務作業を自動化したい</b>　→ 下の3つ</span></a>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div id="pricing-auto" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
           <div class="card-hover bg-surface-muted border border-gray-100 rounded-2xl p-8 shadow-sm">
             <h3 class="text-lg font-bold mb-1 text-charcoal">まずは一部だけ</h3>
             <p class="text-primary font-black text-3xl mb-1">¥3<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜</span></p>
-            <p class="text-xs text-charcoal-lighter mb-5">困ってる作業をひとつ</p>
+            <p class="text-xs text-charcoal-lighter mb-5">困ってる作業をひとつ（例：毎月の売上の集計を自動に）</p>
             <ul class="text-sm text-charcoal-light space-y-3">
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>いま使っている表を直す</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>集計・グラフを自動化</li>
@@ -500,7 +506,7 @@
             <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">いちばん多い</div>
             <h3 class="text-lg font-bold mb-1 text-charcoal">業務まるごと</h3>
             <p class="text-primary font-black text-3xl mb-1">¥10<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜30万</span></p>
-            <p class="text-xs text-charcoal-lighter mb-5">入力から集計まで一本化</p>
+            <p class="text-xs text-charcoal-lighter mb-5">入力から集計まで一本化（例：予約→売上→請求書をつなぐ）</p>
             <ul class="text-sm text-charcoal-light space-y-3">
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>入力→集計→帳票を<b class="text-charcoal">ひとつなぎ</b>に</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>スマホ/クラウドから使える形に</li>
@@ -513,29 +519,137 @@
           </div>
 
           <div class="card-hover bg-surface-muted border border-gray-100 rounded-2xl p-8 shadow-sm">
-            <h3 class="text-lg font-bold mb-1 text-charcoal">まるごとDX</h3>
+            <h3 class="text-lg font-bold mb-1 text-charcoal">お店の仕組みごと</h3>
             <p class="text-primary font-black text-3xl mb-1">¥30<span class="text-lg">万</span><span class="text-base font-bold text-charcoal-light">〜</span></p>
-            <p class="text-xs text-charcoal-lighter mb-5">お店の仕組みごと</p>
+            <p class="text-xs text-charcoal-lighter mb-5">いくつもの作業をまとめて（例：シフト・勤怠・給与の計算）</p>
             <ul class="text-sm text-charcoal-light space-y-3">
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>複数の業務をまとめて統合</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>AI（ChatGPT等）の活用まで</li>
               <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i>導入後のサポート</li>
             </ul>
-            <button type="button" data-consult="「まるごとDX（¥30万〜）」について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
+            <button type="button" data-consult="「お店の仕組みごと（¥30万〜）」について" class="mt-6 inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-primary bg-primary-50 border border-primary/15 rounded-xl hover:bg-primary/10 transition">
               <i class="fa-solid fa-comment-dots mr-2"></i>これで相談する
             </button>
           </div>
         </div>
+
+        <p class="mt-8 text-center text-sm text-charcoal-light"><b class="text-charcoal">お見積りは無料</b>。金額を見てから決められます。見て断っても費用はかかりません。</p>
 
         <div class="mt-10 bg-primary-50 border border-primary/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-5 max-w-4xl mx-auto">
           <i class="fa-solid fa-piggy-bank text-4xl text-primary"></i>
           <div class="text-center sm:text-left">
             <p class="font-bold text-charcoal mb-1">補助金が使えるかも？</p>
             <p class="text-sm text-charcoal-light">
-              小規模事業者なら「デジタル化・AI導入補助金」で<b class="text-primary">最大4/5補助</b>の対象になることがあります（個人事業主も可）。導入前提でご相談ください。
+              内容によっては「デジタル化・AI導入補助金」の対象になる場合があります（個人事業主も可）。使えるかどうかも、ご相談の中で一緒に確かめます。
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <section id="flow" class="py-20 md:py-28">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-12">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Flow</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">頼むまでの流れ</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto"><b class="text-charcoal">お見積りまで完全無料</b>。金額を見てから決められるので、まず聞くだけで大丈夫です。</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <ol class="space-y-4">
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">1</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">LINEで相談（無料）</p>
+                <p class="text-sm text-charcoal-light">「これ、できる?」の一言でOK。写真1枚でも構いません。LINE がいちばん早くお返事できます。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">2</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">今のやり方を見せてもらう（無料）</p>
+                <p class="text-sm text-charcoal-light">使っている表や紙を見せてください。オンライン（Zoom等）でも大丈夫です。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border-2 border-primary/30 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">3</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">お見積り（無料）<span class="ml-2 align-middle bg-primary-50 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full">ここで断ってOK</span></p>
+                <p class="text-sm text-charcoal-light">金額と内容をお出しします。<b class="text-charcoal">見て断っても費用は一切かかりません。</b>しつこい営業もしません。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">4</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">制作</p>
+                <p class="text-sm text-charcoal-light">途中でお見せしながら進めます。「思ってたのと違う」を防ぎます。</p>
+              </div>
+            </li>
+            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">5</span>
+              <div>
+                <p class="font-bold text-charcoal mb-1">納品・使い方の説明</p>
+                <p class="text-sm text-charcoal-light">渡して終わりにしません。誰でも使えるように説明します。困ったらLINEでどうぞ。</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-yen-sign text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">見積りまで無料</p>
+              <p class="text-xs text-charcoal-light mt-1">断っても費用ゼロ</p>
+            </div>
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-lock text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">NDA対応可</p>
+              <p class="text-xs text-charcoal-light mt-1">お店のデータは外に出しません</p>
+            </div>
+            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
+              <i class="fa-solid fa-seedling text-2xl text-primary mb-2"></i>
+              <p class="text-sm font-bold text-charcoal">小さく試せる</p>
+              <p class="text-xs text-charcoal-light mt-1">¥3万〜の一部分だけでもOK</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-site mx-auto"></div>
+
+  <section id="contact" class="py-20 md:py-28 bg-white">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section">
+        <div class="text-center mb-10">
+          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Contact</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">相談してみる</h2>
+          <p class="text-charcoal-light max-w-xl mx-auto">「こんなことできる?」だけでも大歓迎。費用感の相談だけでもOKです。</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
+             class="card-hover bg-line/5 border-2 border-line/30 rounded-2xl p-8 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-line rounded-2xl flex items-center justify-center mb-5">
+              <i class="fa-brands fa-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-1">LINEで相談（おすすめ）</h3>
+            <p class="text-sm text-charcoal-light">友だち追加して、そのままメッセージ。一番はやく返信できます。</p>
+          </a>
+          <a id="contact-mail" href="#"
+             class="card-hover bg-surface-muted border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mb-5">
+              <i class="fa-solid fa-envelope text-3xl text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-1">メールで相談</h3>
+            <p class="text-sm text-charcoal-light">LINEを使っていない方はこちら。メールアプリが開きます。</p>
+          </a>
+        </div>
+        <p class="text-center text-sm text-charcoal-light mt-6">お返事するのは <span class="font-bold text-charcoal">SakuLife（作田）</span> です。</p>
       </div>
     </div>
   </section>
@@ -697,7 +811,7 @@
               <div class="flex flex-wrap gap-2 mb-3"><span class="made-tag">無料ツール集</span><span class="made-tag">広告なし・登録不要</span></div>
               <h3 class="text-xl font-bold mb-2">さくっとツール ─ ファイルを送らない仕事道具</h3>
               <p class="text-sm text-white/75 leading-relaxed mb-5">
-                CSVの文字化け直し、PDFの結合、iPhoneの写真（HEIC）変換、文字起こしなど<b class="text-white">57本</b>（2026年9月時点）。
+                CSVの文字化け直し、PDFの結合、iPhoneの写真（HEIC）変換、文字起こしなど<b class="text-white">70本</b>（2026年11月時点）。
                 処理は全部ブラウザの中で行い、ファイルを外へ送りません。
               </p>
               <span class="mt-auto inline-flex items-center text-sm font-bold text-[#f5c864]">ツールを使ってみる<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
@@ -824,112 +938,6 @@
             <i class="fa-solid fa-link mr-2"></i>noteのリンク集（作ったもの一覧）
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-site mx-auto"></div>
-
-  <section id="flow" class="py-20 md:py-28">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-in-section">
-        <div class="text-center mb-12">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Flow</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">頼むまでの流れ</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto"><b class="text-charcoal">お見積りまで完全無料</b>。金額を見てから決められるので、まず聞くだけで大丈夫です。</p>
-        </div>
-
-        <div class="max-w-3xl mx-auto">
-          <ol class="space-y-4">
-            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">1</span>
-              <div>
-                <p class="font-bold text-charcoal mb-1">LINEで相談（無料）</p>
-                <p class="text-sm text-charcoal-light">「これ、できる?」の一言でOK。写真1枚でも構いません。</p>
-              </div>
-            </li>
-            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">2</span>
-              <div>
-                <p class="font-bold text-charcoal mb-1">今のやり方を見せてもらう（無料）</p>
-                <p class="text-sm text-charcoal-light">使っている表や紙を見せてください。オンライン（Zoom等）でも大丈夫です。</p>
-              </div>
-            </li>
-            <li class="flex gap-4 bg-white border-2 border-primary/30 rounded-2xl p-5 shadow-sm">
-              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">3</span>
-              <div>
-                <p class="font-bold text-charcoal mb-1">お見積り（無料）<span class="ml-2 align-middle bg-primary-50 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full">ここで断ってOK</span></p>
-                <p class="text-sm text-charcoal-light">金額と内容をお出しします。<b class="text-charcoal">見て断っても費用は一切かかりません。</b>しつこい営業もしません。</p>
-              </div>
-            </li>
-            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">4</span>
-              <div>
-                <p class="font-bold text-charcoal mb-1">制作</p>
-                <p class="text-sm text-charcoal-light">途中でお見せしながら進めます。「思ってたのと違う」を防ぎます。</p>
-              </div>
-            </li>
-            <li class="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-              <span class="flex-none w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center">5</span>
-              <div>
-                <p class="font-bold text-charcoal mb-1">納品・使い方の説明</p>
-                <p class="text-sm text-charcoal-light">渡して終わりにしません。誰でも使えるように説明します。困ったらLINEでどうぞ。</p>
-              </div>
-            </li>
-          </ol>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
-              <i class="fa-solid fa-yen-sign text-2xl text-primary mb-2"></i>
-              <p class="text-sm font-bold text-charcoal">見積りまで無料</p>
-              <p class="text-xs text-charcoal-light mt-1">断っても費用ゼロ</p>
-            </div>
-            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
-              <i class="fa-solid fa-lock text-2xl text-primary mb-2"></i>
-              <p class="text-sm font-bold text-charcoal">NDA対応可</p>
-              <p class="text-xs text-charcoal-light mt-1">お店のデータは外に出しません</p>
-            </div>
-            <div class="bg-primary-50 border border-primary/15 rounded-2xl p-5 text-center">
-              <i class="fa-solid fa-seedling text-2xl text-primary mb-2"></i>
-              <p class="text-sm font-bold text-charcoal">小さく試せる</p>
-              <p class="text-xs text-charcoal-light mt-1">¥3万〜の一部分だけでもOK</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider max-w-site mx-auto"></div>
-
-  <section id="contact" class="py-20 md:py-28 bg-white">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-in-section">
-        <div class="text-center mb-10">
-          <p class="text-primary font-medium text-sm tracking-widest uppercase mb-3">Contact</p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-charcoal">相談してみる</h2>
-          <p class="text-charcoal-light max-w-xl mx-auto">「こんなことできる?」だけでも大歓迎。費用感の相談だけでもOKです。</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          <a data-link="LINE_URL" href="#" target="_blank" rel="noopener"
-             class="card-hover bg-line/5 border-2 border-line/30 rounded-2xl p-8 flex flex-col items-center text-center group">
-            <div class="w-16 h-16 bg-line rounded-2xl flex items-center justify-center mb-5">
-              <i class="fa-brands fa-line text-3xl text-white"></i>
-            </div>
-            <h3 class="text-lg font-bold text-charcoal mb-1">LINEで相談（おすすめ）</h3>
-            <p class="text-sm text-charcoal-light">友だち追加して、そのままメッセージ。一番はやく返信できます。</p>
-          </a>
-          <a id="contact-mail" href="#"
-             class="card-hover bg-surface-muted border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center group">
-            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mb-5">
-              <i class="fa-solid fa-envelope text-3xl text-primary"></i>
-            </div>
-            <h3 class="text-lg font-bold text-charcoal mb-1">メールで相談</h3>
-            <p class="text-sm text-charcoal-light">LINEを使っていない方はこちら。メールアプリが開きます。</p>
-          </a>
-        </div>
-        <p class="text-center text-sm text-charcoal-light mt-6">お返事するのは <span class="font-bold text-charcoal">SakuLife（作田）</span> です。</p>
       </div>
     </div>
   </section>
@@ -1262,7 +1270,7 @@
       { key: 'INSTAGRAM_URL',  name: 'Instagram',            sub: '@sakusaku_excel',                    icon: 'fa-brands fa-instagram',     color: '#d62976' },
       { key: 'TIKTOK_URL',     name: 'TikTok',               sub: '@sakusaku_excel',                    icon: 'fa-brands fa-tiktok',        color: '#111111' },
       { key: 'SOUBA_URL',      name: '北海道の不動産相場',     sub: '170市町村の成約価格を地図で',        icon: 'fa-solid fa-map-location-dot', color: '#1b5e20' },
-      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール65本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
+      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール70本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
       { key: 'BOOTH_SHOP_URL', name: 'Excelテンプレ（BOOTH）', sub: '買ってすぐ使えるテンプレ',          icon: 'fa-solid fa-file-excel',     color: '#fc4d50' },
       { key: 'GAMES_URL',      name: 'さくっとゲーム',         sub: 'ブラウザで遊べる3Dミニゲーム',       icon: 'fa-solid fa-gamepad',        color: '#e8732a' },
       { key: 'LEARN_URL',      name: 'さくっと学習',           sub: '書いて動かして覚える（無料）',       icon: 'fa-solid fa-graduation-cap', color: '#3f6fd8' },
