@@ -104,6 +104,7 @@
 
   // ---------- スマホ：横スライド（カルーセル）と「もっと見る」（11-04 社長「スマホ版はカルーセルとかアコーディオン」）----------
   // 見た目の切り替えは CSS の @media (max-width: 767px) だけ＝PC は今まで通り。ここは印（class）と点・ボタンを付けるだけ
+  // 例外＝HP の見本（#sample-grid）は PC でも横スライド（11-05 社長「並べ方工夫しないと・カルーセル的な」）。矢印とドラッグは下の節
   const CAROUSELS = ['#trust .grid.grid-cols-1', '#industry-grid', '#sample-grid', '#pricing .grid.md\\:grid-cols-3',
     '#services .grid.md\\:grid-cols-3', '#works .grid.md\\:grid-cols-3', '#made .grid.lg\\:grid-cols-3', '#membership .grid.md\\:grid-cols-2'];
   CAROUSELS.forEach((sel) => document.querySelectorAll(sel).forEach((box) => {
@@ -115,21 +116,73 @@
     items.forEach((it, i) => {
       const b = document.createElement('button');
       b.type = 'button'; b.setAttribute('aria-label', `${i + 1}枚目`);
-      b.addEventListener('click', () => box.scrollTo({ left: box.scrollLeft + it.getBoundingClientRect().left - box.getBoundingClientRect().left - 16, behavior: reduce ? 'auto' : 'smooth' }));
+      b.addEventListener('click', () => box.scrollTo({ left: box.scrollLeft + it.getBoundingClientRect().left - box.getBoundingClientRect().left - (parseFloat(getComputedStyle(box).paddingLeft) || 0), behavior: reduce ? 'auto' : 'smooth' }));
       dots.appendChild(b);
     });
     box.after(dots);
     const mark = () => {
       // 左端に寄せて止まる（scroll-snap が start）＝左から1枚目の中心が見えている札
-      const mid = box.scrollLeft + 16 + (box.clientWidth * .84) / 2;
+      const mid = box.scrollLeft + (parseFloat(getComputedStyle(box).paddingLeft) || 0) + items[0].offsetWidth / 2;
       let on = 0, best = Infinity;
       const bl = box.getBoundingClientRect().left;
       items.forEach((it, i) => { const r = it.getBoundingClientRect(), c = box.scrollLeft + r.left - bl + r.width / 2, d = Math.abs(c - mid); if (d < best) { best = d; on = i; } });
+      if (box.scrollLeft > 0 && box.scrollLeft + box.clientWidth >= box.scrollWidth - 2) on = items.length - 1; // 右端まで来たら最後の札
       Array.from(dots.children).forEach((d, i) => d.classList.toggle('on', i === on));
     };
     box.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
     mark();
   }));
+  // HP の見本：どの幅でも横スライド。PC は矢印とマウスのドラッグでも動かせる
+  const sampleBox = document.getElementById('sample-grid');
+  if (sampleBox && sampleBox.classList.contains('mc')) {
+    sampleBox.setAttribute('role', 'region');
+    sampleBox.setAttribute('aria-label', '業種別の見本（横にスライドできます）');
+    const wrap = document.createElement('div');
+    wrap.className = 'sc-wrap';
+    sampleBox.before(wrap);
+    wrap.appendChild(sampleBox);
+    const arrow = (dir, label, icon) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = `sc-arrow sc-${dir < 0 ? 'prev' : 'next'}`;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = `<i class="fa-solid ${icon}" aria-hidden="true"></i>`;
+      b.addEventListener('click', () => sampleBox.scrollBy({ left: dir * sampleBox.clientWidth * .9, behavior: reduce ? 'auto' : 'smooth' }));
+      wrap.appendChild(b);
+      return b;
+    };
+    const prev = arrow(-1, '前の見本へ', 'fa-chevron-left');
+    const next = arrow(1, '次の見本へ', 'fa-chevron-right');
+    const syncArrows = () => {
+      prev.disabled = sampleBox.scrollLeft <= 2;
+      next.disabled = sampleBox.scrollLeft + sampleBox.clientWidth >= sampleBox.scrollWidth - 2;
+    };
+    sampleBox.addEventListener('scroll', () => requestAnimationFrame(syncArrows), { passive: true });
+    addEventListener('resize', syncArrows, { passive: true });
+    syncArrows();
+    // ドラッグ（マウスだけ）。動かした時はリンクを開かない
+    let startX = 0, startLeft = 0, down = false, moved = false;
+    sampleBox.addEventListener('dragstart', (e) => e.preventDefault());
+    sampleBox.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      down = true; moved = false; startX = e.clientX; startLeft = sampleBox.scrollLeft;
+    });
+    addEventListener('pointermove', (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) < 6) return;
+      moved = true;
+      sampleBox.classList.add('sc-drag'); // つかんでいる間は吸い付きを止める
+      sampleBox.scrollLeft = startLeft - dx;
+    });
+    addEventListener('pointerup', () => {
+      if (!down) return;
+      down = false;
+      sampleBox.classList.remove('sc-drag');
+    });
+    sampleBox.addEventListener('click', (e) => {
+      if (moved) { e.preventDefault(); moved = false; }
+    }, true);
+  }
   // 長い一覧は最初の何件かだけ出して「もっと見る」
   [['#works-grid', 6], ['#lineup-grid', 6], ['#link-grid', 6]].forEach(([sel, keep]) => {
     const box = document.querySelector(sel);

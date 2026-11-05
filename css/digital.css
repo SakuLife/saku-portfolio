@@ -412,7 +412,7 @@ li.flex.items-start.gap-2 { display: block; position: relative; padding-left: 1.
 li.flex.items-start.gap-2 > i:first-child { position: absolute; left: 0; top: .3em; margin: 0; }
 
 /* ==========================================================================
-   スマホだけ：横スライド（.mc）と「もっと見る」（.mf）。印と点は digital.js が付ける。PC（768px 以上）は今まで通り
+   スマホだけ：横スライド（.mc）と「もっと見る」（.mf）。印と点は digital.js が付ける。PC（768px 以上）は今まで通り（HP の見本だけ PC でも横スライド＝このファイルの最後）
    ========================================================================== */
 .mc-dots, .mf-more { display: none; }
 @media (max-width: 767px) {
@@ -436,4 +436,38 @@ li.flex.items-start.gap-2 > i:first-child { position: absolute; left: 0; top: .3
     background: rgba(94,230,160,.08); border: 1px solid var(--line);
   }
   #works-grid + .mf-more { margin-bottom: 2.5rem; }
+}
+
+/* ==========================================================================
+   HP の見本（#sample-grid）：PC でも横スライド（11-05 社長「カルーセル的な？横にスライドできるような」）
+   次の札が少し見えるように 1画面 2枚強／3枚強。矢印とドラッグは digital.js
+   ========================================================================== */
+.sc-wrap { position: relative; }
+.sc-arrow { display: none; }
+@media (min-width: 768px) {
+  #sample-grid.mc {
+    flex-wrap: nowrap !important; justify-content: flex-start !important; gap: 20px !important;
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-left: 4px;
+    padding: 6px 4px 18px !important; scrollbar-width: none; cursor: grab;
+  }
+  #sample-grid.mc::-webkit-scrollbar { display: none; }
+  #sample-grid.mc > * { flex: 0 0 44% !important; width: 44% !important; min-width: 0; scroll-snap-align: start; }
+  #sample-grid.mc.sc-drag { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+  #sample-grid.mc.sc-drag > * { pointer-events: none; }
+  .sc-arrow {
+    display: flex; align-items: center; justify-content: center; position: absolute; top: 38%; z-index: 3;
+    width: 46px; height: 46px; border-radius: 9999px; color: var(--mint); background: var(--bg);
+    border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(0,0,0,.45); transition: opacity .2s ease, transform .2s ease;
+  }
+  .sc-arrow:hover:not(:disabled) { transform: scale(1.08); }
+  .sc-arrow:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+  .sc-arrow:disabled { opacity: 0; pointer-events: none; }
+  .sc-prev { left: -10px; }
+  .sc-next { right: -10px; }
+  #samples .mc-dots { display: flex; justify-content: center; gap: 7px; margin: 2px 0 6px; }
+  #samples .mc-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 9999px; background: rgba(94,230,160,.28); transition: width .25s ease, background .25s ease; }
+  #samples .mc-dots button.on { width: 22px; background: var(--mint); box-shadow: 0 0 10px rgba(94,230,160,.6); }
+}
+@media (min-width: 1024px) {
+  #sample-grid.mc > * { flex-basis: 30.5% !important; width: 30.5% !important; }
 }
