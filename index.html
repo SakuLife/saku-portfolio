@@ -48,6 +48,7 @@
       CONTACT_EMAIL: "sktknsk5509@gmail.com", // メール相談先（LINEが使えない方向け）
       NOTE_URL: "https://note.com/sakusaku_excel",
       COCONALA_URL: "https://coconala.com/users/2497162", // ココナラ プロフィール
+      COCONALA_CONSULT_URL: "https://tools.sakulife-labo.com/go/work/profile?from=portfolio-sp", // スマホの下の固定ボタン（ココナラのプロフィール＝見積り相談の入口）。14番の /go/ を通して押された数を数える（2026-11-10）
       PORTFOLIO_V1_URL: "v1.html",
       // ▼ 2026-09-29 追加（作ったもの・リンク集）。どれも同日に開けることを確認済み。空文字にすると、そのリンクは自動で非表示になる
       YOUTUBE_URL: "https://www.youtube.com/@sakusaku_excel",
@@ -284,7 +285,7 @@
           <div class="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs" data-hx>
             <span class="hx-chip-label mr-1">自分で作って公開中：</span>
             <a href="#made" class="hero-chip"><i class="fa-solid fa-map-location-dot"></i>北海道の相場サイト</a>
-            <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール70本</a>
+            <a href="#made" class="hero-chip"><i class="fa-solid fa-toolbox"></i>無料ツール72本</a>
             <a href="#shop" class="hero-chip"><i class="fa-solid fa-file-excel"></i>Excelテンプレ販売中</a>
             <a href="#note" class="hero-chip"><i class="fa-solid fa-pen-nib"></i>毎朝AIが書くnote</a>
           </div>
@@ -813,7 +814,7 @@
               <div class="flex flex-wrap gap-2 mb-3"><span class="made-tag">無料ツール集</span><span class="made-tag">広告なし・登録不要</span></div>
               <h3 class="text-xl font-bold mb-2">さくっとツール ─ ファイルを送らない仕事道具</h3>
               <p class="text-sm text-white/75 leading-relaxed mb-5">
-                CSVの文字化け直し、PDFの結合、iPhoneの写真（HEIC）変換、文字起こしなど<b class="text-white">70本</b>（2026年11月時点）。
+                CSVの文字化け直し、PDFの結合、iPhoneの写真（HEIC）変換、文字起こしなど<b class="text-white">72本</b>（2026年11月時点）。
                 処理は全部ブラウザの中で行い、ファイルを外へ送りません。
               </p>
               <span class="mt-auto inline-flex items-center text-sm font-bold text-[#f5c864]">ツールを使ってみる<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
@@ -1041,6 +1042,10 @@
       </div>
     </div>
   </footer>
+
+  <a id="sp-consult-bar" data-link="COCONALA_CONSULT_URL" href="https://coconala.com/users/2497162" target="_blank" rel="noopener" class="md:hidden">
+    <i class="fa-solid fa-comments" aria-hidden="true"></i><span>無料で見積り相談（ココナラ）</span><i class="fa-solid fa-arrow-up-right-from-square sp-consult-ext" aria-hidden="true"></i>
+  </a>
 
   <div id="consult-modal" class="fixed inset-0 z-[60] items-center justify-center p-4 bg-black/40 backdrop-blur-sm" style="display:none;">
     <div class="bg-white rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl">
@@ -1272,7 +1277,7 @@
       { key: 'INSTAGRAM_URL',  name: 'Instagram',            sub: '@sakusaku_excel',                    icon: 'fa-brands fa-instagram',     color: '#d62976' },
       { key: 'TIKTOK_URL',     name: 'TikTok',               sub: '@sakusaku_excel',                    icon: 'fa-brands fa-tiktok',        color: '#111111' },
       { key: 'SOUBA_URL',      name: '北海道の不動産相場',     sub: '170市町村の成約価格を地図で',        icon: 'fa-solid fa-map-location-dot', color: '#1b5e20' },
-      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール70本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
+      { key: 'TOOLS_URL',      name: 'さくっとツール',         sub: 'ファイルを送らない無料ツール72本',   icon: 'fa-solid fa-toolbox',        color: '#217346' },
       { key: 'BOOTH_SHOP_URL', name: 'Excelテンプレ（BOOTH）', sub: '買ってすぐ使えるテンプレ',          icon: 'fa-solid fa-file-excel',     color: '#fc4d50' },
       { key: 'GAMES_URL',      name: 'さくっとゲーム',         sub: 'ブラウザで遊べる3Dミニゲーム',       icon: 'fa-solid fa-gamepad',        color: '#e8732a' },
       { key: 'LEARN_URL',      name: 'さくっと学習',           sub: '書いて動かして覚える（無料）',       icon: 'fa-solid fa-graduation-cap', color: '#3f6fd8' },

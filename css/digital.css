@@ -471,3 +471,20 @@ li.flex.items-start.gap-2 > i:first-child { position: absolute; left: 0; top: .3
 @media (min-width: 1024px) {
   #sample-grid.mc > * { flex-basis: 30.5% !important; width: 30.5% !important; }
 }
+
+/* ---------- スマホの下の固定ボタン（ココナラの見積り相談・2026-11-10 本社依頼）----------
+   767px 以下だけ。メニュー（z-50）と暗幕（z-40）より下に置く＝メニューを開いたら隠れる。
+   最後の行が隠れないように、同じ幅だけ body の下に余白を足す。 */
+#sp-consult-bar { display: none; }
+@media (max-width: 767px) {
+  body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+  #sp-consult-bar {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    position: fixed; left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 30;
+    min-height: 50px; padding: .7rem 1rem; border-radius: 14px;
+    font-weight: 800; font-size: .95rem; color: #06140d; text-decoration: none;
+    background: linear-gradient(90deg, var(--mint), var(--gold));
+    box-shadow: 0 8px 24px rgba(0,0,0,.35), 0 0 0 1px rgba(94,230,160,.5);
+  }
+  #sp-consult-bar .sp-consult-ext { font-size: .75rem; opacity: .7; }
+}
