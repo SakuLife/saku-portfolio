@@ -870,11 +870,11 @@
             BOOTH（ピクシブのショップ）でダウンロード販売しています。
           </p>
         </div>
-        <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto mb-10" id="shop-grid"></div>
+        <div class="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto mb-10" id="shop-grid"></div>
         <div class="text-center">
           <a data-link="BOOTH_SHOP_URL" data-hide-empty href="#" target="_blank" rel="noopener"
              class="inline-flex items-center px-8 py-3.5 text-sm font-bold text-charcoal bg-surface-muted border border-gray-200 rounded-xl hover:border-primary/40 hover:text-primary transition">
-            <i class="fa-solid fa-store mr-2 text-primary"></i>BOOTHのショップを見る<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs opacity-60"></i>
+            <i class="fa-solid fa-store mr-2 text-primary"></i>BOOTHのショップで全部見る<i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs opacity-60"></i>
           </a>
           <p class="text-xs text-charcoal-lighter mt-4">「うちの帳票に合わせて直してほしい」は、<button type="button" data-consult="販売中のテンプレを、うちに合わせて直してほしい" class="underline underline-offset-2 text-primary font-bold">こちらから相談</button>できます。</p>
         </div>
@@ -1248,10 +1248,27 @@
     }
 
     // ===== テンプレ販売（BOOTH）。商品が増えたら1行足す。値段・題名は BOOTH の商品ページと同じにする（2026-10-02 確認）=====
+    // 2026-11-10 本社依頼で「仕事向け」6本に差し替え（3列×2段）（BOOTH の店は14点。題名・値段は BOOTH の商品ページ .json で同日に確認）。
+    // 確認テスト作成ツール（8914376）は学校向けなので外した（BOOTH には残っている）。2本セット（9013423）は絵が価格改定と同じなので文で案内。SNS投稿管理（9015806）は7本目で1枚だけ余るので外した
     const SHOP_ITEMS = [
-      { title: '確認テスト作成ツール', sub: '問題リストから小テストを自動で作る（生徒用・解答用つき）', price: '¥1,980',
-        img: 'images/shop/kakunin-test.webp', url: 'https://booth.pm/ja/items/8914376',
-        points: ['範囲と問題数を選ぶだけ', 'A4に1枚25問・最大100問', 'Windows版Excel（マクロ入り）'] },
+      { title: '事務のボタン集', sub: 'Excel のリボンに5つのボタン（重複に印・文字を整える・シートへ分ける・月ごとに集計・ファイルをまとめる）', price: '¥1,980',
+        img: 'images/shop/jimu-buttons.webp', url: 'https://booth.pm/ja/items/9119841',
+        points: ['いつもの表を1か所クリックしてボタンを押すだけ', '4万行の重複探しが約1秒（当店のパソコン）', 'Windows版Excel専用（マクロのアドイン）'] },
+      { title: '時間帯別の人数が出るシフト表', sub: '記号を入れるだけで、足りない時間が赤くわかる', price: '¥2,480',
+        img: 'images/shop/shift-jikantai.webp', url: 'https://booth.pm/ja/items/9013963',
+        points: ['1時間ごと／30分ごとの人数', '日付をまたぐ夜勤も翌日に数える', 'Excel（マクロなし）'] },
+      { title: '写真をまとめて報告書に貼るExcel', sub: 'フォルダを選ぶだけで1ページ6枚・向きも自動で直す', price: '¥1,980',
+        img: 'images/shop/photo-report.webp', url: 'https://booth.pm/ja/items/8984150',
+        points: ['写真220枚→37ページが約45秒（当店のパソコン）', '1ページ6枚・4枚・2枚から選べる', 'Windows版Excel専用（マクロ入り）'] },
+      { title: '値上げ・価格改定のお知らせ 一括作成', sub: '取引先ごとの価格表から1社1枚、ボタン1つで全員分PDF', price: '¥1,980',
+        img: 'images/shop/kakaku-kaitei.webp', url: 'https://booth.pm/ja/items/8984130',
+        points: ['改定率と端数処理で新単価を自動計算', '取引先だけの特価も反映', '写真報告書との2本セットは¥2,980（BOOTH）'] },
+      { title: '小口現金・立替経費 集計表', sub: '1行ずつ書くだけで残高・月別集計・精算書', price: '¥1,980',
+        img: 'images/shop/koguchi-genkin.webp', url: 'https://booth.pm/ja/items/8941370',
+        points: ['科目×12か月の集計が自動', '立替えた人ごとの精算書', 'Windows版Excelで確認（マクロなし）'] },
+      { title: '現金出納帳（1枚）', sub: '入金・出金を書くだけで残高が自動で出る', price: '¥300',
+        img: 'images/shop/suitou-1mai.webp', url: 'https://booth.pm/ja/items/9018151',
+        points: ['手元の現金との差額も出る', '入れ間違いは行が赤くなる', 'Excel（マクロなし）'] },
     ];
     const shopGrid = document.getElementById('shop-grid');
     if (shopGrid) {
