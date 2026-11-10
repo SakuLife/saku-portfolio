@@ -70,6 +70,7 @@
     table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; min-width: 560px; }
     th, td { border-bottom: 1px solid var(--line); padding: 12px 14px; text-align: left; font-size: 15px; vertical-align: top; }
     th { background: var(--primary-50); white-space: nowrap; }
+    @media (max-width: 600px) { .table-wrap table { min-width: 0; } .table-wrap tr, .table-wrap th, .table-wrap td { display: block; } .table-wrap th { border-bottom: 0; padding-bottom: 6px; } }
     .steps { counter-reset: s; display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
     .steps li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px 16px 62px; position: relative; }
     .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 18px; top: 16px; width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 900; display: grid; place-items: center; }
@@ -190,7 +191,26 @@
       </div>
     </section>
 
-    <section class="white">
+    <section class="white" id="options">
+      <div class="wrap">
+        <h2>追加でできること</h2>
+        <p class="sec-lead">どのコースにも、制作のときに足せます（税込）。予約と販売のサービスはお店が自分で契約するので、お金はこちらを通らず、お店に直接入ります。</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th>お問い合わせフォーム<br />＋9,800円</th><td>名前・連絡先・内容の欄を作り、お店の Google アカウントに直接届く形で置きます。届いたら通知のメールも届きます。月額は変わりません。<br />5ページコース・しっかり集客コースには、最初から入っています。</td></tr>
+            <tr><th>予約<br />＋9,800円</th><td>お店が契約した予約サービスの予約ページを、ボタンか埋め込みで置き、見た目をホームページに合わせます。メニュー・時間・定休日など、最初の設定もお手伝いします。月額は変わりません。<br />しっかり集客コースには、最初から入っています。</td></tr>
+            <tr><th>販売・お支払い<br />＋19,800円</th><td>お店が契約したネットショップや支払いリンクを、ホームページにつなぎます。商品の写真・説明・値段の登録はこちらで代わりにします（10点まで。超える分は10点ごとに＋4,980円）。</td></tr>
+            <tr><th>商品の入れ替え<br />月＋1,980円</th><td>公開した後の商品の入れ替え・値段の変更を、毎月まとめて頼みたい方へ（月3回まで）。頼まない月が多い方は、月額の直しの回数の中でお受けします。</td></tr>
+          </table>
+        </div>
+        <ul class="notes">
+          <li>予約の受付・キャンセルの対応、発送・在庫・返品の対応は、お店でお願いします。</li>
+          <li>ネットで売る時の「特定商取引法に基づく表記」は、ひな形をお渡しします（中身はお店で決めていただきます）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
       <div class="wrap">
         <h2>公開までの流れ</h2>
         <ol class="steps">
@@ -203,7 +223,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="white">
       <div class="wrap">
         <h2>お申し込みとお支払い</h2>
         <p class="sec-lead">「これでお願いします」と決まってからの流れです。</p>
@@ -217,7 +237,7 @@
       </div>
     </section>
 
-    <section class="white">
+    <section>
       <div class="wrap">
         <h2>やめるとき・変わるとき</h2>
         <ul class="rules">
@@ -231,7 +251,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="white">
       <div class="wrap">
         <h2>業種別の見本</h2>
         <p class="sec-lead">どれも架空のお店で作った見本です。押して動かせます。</p>
