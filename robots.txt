@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sakulife.github.io/saku-portfolio/sitemap.xml
+Sitemap: https://work.sakulife-labo.com/sitemap.xml
