@@ -106,7 +106,7 @@
   // 見た目の切り替えは CSS の @media (max-width: 767px) だけ＝PC は今まで通り。ここは印（class）と点・ボタンを付けるだけ
   // 例外＝HP の見本（#sample-grid）は PC でも横スライド（11-05 社長「並べ方工夫しないと・カルーセル的な」）。矢印とドラッグは下の節
   const CAROUSELS = ['#trust .grid.grid-cols-1', '#industry-grid', '#sample-grid', '#pricing .grid.md\\:grid-cols-3',
-    '#services .grid.md\\:grid-cols-3', '#works .grid.md\\:grid-cols-3', '#made .grid.lg\\:grid-cols-3', '#membership .grid.md\\:grid-cols-2', '#shop-grid'];
+    '#services .grid.md\\:grid-cols-3', '#works .grid.md\\:grid-cols-3', '#made .grid.md\\:grid-cols-2', '#membership .grid.md\\:grid-cols-2', '#shop-grid'];
   CAROUSELS.forEach((sel) => document.querySelectorAll(sel).forEach((box) => {
     const items = Array.from(box.children);
     if (items.length < 2 || box.classList.contains('mc')) return;
